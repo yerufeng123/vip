@@ -1,0 +1,136 @@
+/* CSS Document */
+.clear{ clear:both; height:0; line-height:0;}
+html,body,header, footer, nav, article, section, aside, time, code, div, p, ul, ol, li, dl, dd, dt, h1, h2, h3, a, span, strong, em, small, form, label, input, textarea {
+	border:0;margin:0;padding:0;font-family:Microsoft YaHei; font-style:normal; font-weight:normal;
+}
+html,body{ height:100%; width:100%; display:block;}
+body{ background:#fff; }
+
+#wrap{ width:1000px; height:700px; display:block; margin:auto; margin-top:40px; border:1px solid #daddd2;
+border-radius:4px;
+-webkit-border-radius:4px;
+-moz-border-radius:4px;
+}
+#wrap > header{ height:100px; line-height:100px; text-align:center; font-size:18px; font-weight:bold;}
+
+#wrap > section{ width:850px; height:700px; margin:auto; display:block; position:relative; overflow:hidden;}
+#wrap > section > aside{ width:1800px; height:700px; display:block; position:absolute;}
+#wrap > section > aside > article{ float:left; display:block;}
+
+#wrap > section > aside > article > header{ height:60px; width:850px; display:block; margin:auto;}
+#wrap > section > aside > article > section{ width:750px; height:480px; display:block; margin:auto; border:1px solid #daddd2; padding:0 47px;
+border-radius:4px;
+-webkit-border-radius:4px;
+-moz-border-radius:4px;
+}
+#wrap > section > aside > article:last-child > header{ position:relative}
+#wrap > section > aside > article:last-child{ display:block; left:850px;}
+#wrap > section > aside > article:last-child > header span.search{ position:absolute; right:0; height:30px; width:30px; display:block; cursor:pointer;}
+
+/**********************************第一屏***************************************/
+#wrap > section > aside > article:first-child{ display:block;}
+#wrap > section > aside > article:first-child > header{text-align:center;}
+#wrap > section > aside > article:first-child > header span,#del_sign{ width:156px; height:36px; line-height:36px; display:inline-block; margin:0 32px; border:1px solid #90ae29; text-align:center; color:#90ae29; cursor:pointer;
+border-radius:18px;
+-webkit-border-radius:18px;
+-moz-border-radius:18px;
+}
+#wrap > section > aside > article:first-child > header span.selected{ color:#fff; background:#90ae29;}
+
+#wrap > section > aside > article:first-child > section{ position:relative;}
+#wrap > section > aside > article:first-child > section > div > input{ width:400px; height:30px; line-height:30px; border:1px solid #daddd2; background:#fff; margin-top:5px;
+border-radius:4px;
+-webkit-border-radius:4px;
+-moz-border-radius:4px;
+}
+#wrap > section > aside > article:first-child > section > div{ padding-top:50px;}
+#wrap > section > aside > article:first-child > section > div:first-child{ width:410px; display:block; float:left;}
+#wrap > section > aside > article:first-child > section > div:last-child{ width:310px; display:block; float:right; padding-left:30px;}
+
+#wrap > section > aside > article:first-child > section > div:first-child img{ display:block; margin:auto; width:180px; height:180px; margin-top:60px;}
+#wrap > section > aside > article:first-child > section > div:last-child > span{ min-height:40px; line-height:40px; text-align:left; font-size:18px; display:block;}
+#wrap > section > aside > article:first-child > section > div:last-child > span > span.red{ color:#ec6941;}
+#wrap > section > aside > article:first-child > section > div:last-child > span > span.green{ color:#90ae29;}
+#wrap > section > aside > article:first-child > section > div:last-child > a:link,#wrap > section > aside > article:first-child > section > div:last-child > a:visited{width:156px; height:36px; line-height:36px; display:inline-block; margin:0 32px; background:#90ae29; color:#fff; text-align:center; cursor:pointer; text-decoration:none; margin:15px 0 28px 0;
+border-radius:18px;
+-webkit-border-radius:18px;
+-moz-border-radius:18px;
+}
+#wrap > section > aside > article:first-child > section > div:last-child > article{ height:28px; line-height:28px; text-align:left; font-size:14px;}
+
+#wrap > section > aside > article:first-child > section > nav{ background:url(../Image/arrow_right_1.png) no-repeat; width:30px; height:35px; display:block; position:absolute; right:10px; top:200px; cursor:pointer;}
+#wrap > section > aside > article:first-child > section > nav:hover{background:url(../Image/arrow_right_2.png) no-repeat;}
+
+
+/**********************************第二屏***************************************/
+#wrap > section > aside > article:last-child{ display:block; left:850px;}
+#wrap > section > aside > article:last-child > header span{ float:left; display:inline-block;}
+#wrap > section > aside > article:last-child > header input{ float:right; display:inline-block; width:180px; height:30px; line-height:30px; border:1px solid #daddd2; background:url(../Image/find.png) right no-repeat; padding:0 30px 0 10px;
+border-radius:4px;
+-webkit-border-radius:4px;
+-moz-border-radius:4px;
+}
+
+
+#wrap > section > aside > article:last-child > section{ position:relative;}
+#wrap > section > aside > article:last-child > section > table{ display:block; width:750px; height:365px; margin:auto; border:1px solid #daddd2; margin-top:16px; font-family:'宋体'; font-size:12px;
+border-radius:4px;
+-webkit-border-radius:4px;
+-moz-border-radius:4px;
+}
+#wrap > section > aside > article:last-child > section > table tr{border-bottom:1px solid #daddd2; display:block;}
+#wrap > section > aside > article:last-child > section > table tr td{ height:40px; text-align:center; border-right:1px solid #daddd2;}
+#wrap > section > aside > article:last-child > section > table > thead{  width:100%; background:#fafafa; display:block;}
+
+#wrap > section > aside > article:last-child > section > table > tbody{ overflow-x:hidden; overflow-y:scroll;  max-height:325px; min-height:325px; overflow:auto; display:block; }
+
+#wrap > section > aside > article:last-child > section > footer{ text-align:right; padding-top:10px;}
+#wrap > section > aside > article:last-child > section > footer > span{ width:88px; height:32px; line-height:32px; color:#fff; background:#90ae29; display:inline-block; margin-left:10px; font-size:14px; text-align:center; cursor:pointer;
+border-radius:4px;
+-webkit-border-radius:4px;
+-moz-border-radius:4px;
+}
+#wrap > section > aside > article:last-child > section > footer > aside{ width:100%; display:block; height:40px; line-height:40px; text-align:center; padding:0;}
+#wrap > section > aside > article:last-child > section > footer > aside > article{ font-size:12px; font-family:'宋体'; display:inline-block; margin:auto; width:40%; text-align:center;}
+#wrap > section > aside > article:last-child > section > footer > aside > article:first-child{ width:28%}
+#wrap > section > aside > article:last-child > section > footer > aside > article:last-child{ width:28%}
+#wrap > section > aside > article:last-child > section > footer > aside > article > span{ font-size:16px; font-weight:bold;font-family:Microsoft YaHei; color:#90ae29; padding:0 5px;}
+
+#wrap > section > aside > article:last-child > section > table tr > td:nth-child(1){ width:120px;}
+#wrap > section > aside > article:last-child > section > table tr > td:nth-child(2){ width:120px;}
+#wrap > section > aside > article:last-child > section > table tr > td:nth-child(3){ width:400px;}
+#wrap > section > aside > article:last-child > section > table tr > td:last-child{ width:89px; margin:0; border:0;}
+
+
+#wrap > section > aside > article:last-child > section > nav{ background:url(../Image/arrow_left_1.png) no-repeat; width:30px; height:35px; display:block; position:absolute; left:10px; top:200px; cursor:pointer;}
+#wrap > section > aside > article:last-child > section > nav:hover{background:url(../Image/arrow_left_2.png) no-repeat;}
+
+
+/* 设置滚动条的样式 */
+#wrap > section > aside > article:last-child > section > table > tbody::-webkit-scrollbar{
+    width: 6px;
+}
+/* 滚动槽 */
+#wrap > section > aside > article:last-child > section > table > tbody::-webkit-scrollbar-track{
+    box-shadow: inset 0 0 6px #c9ccc0; 
+}
+/* 滚动条滑块 */
+#wrap > section > aside > article:last-child > section > table > tbody::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background: #90ae29; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

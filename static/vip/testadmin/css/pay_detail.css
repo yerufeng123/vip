@@ -1,0 +1,124 @@
+/*公共样式*/
+html,body{-webkit-tap-highlight-color:rgba(0,0,0,0);color:#302e31;font:13px "微软雅黑",Helvetica;font-size:13px;line-height:160%;margin:0;padding:0;-webkit-user-select:none;}
+form,table,td,h1,h2,h3,h4,ul,ol,li,p{margin:0;padding:0;border:0;list-style:none}
+input,img{vertical-align:middle}
+html,body{width:100%; height:100%;}
+body{-webkit-text-size-adjust:none;background:#7c0000 url(../img/pay_bg.jpg) no-repeat center;background-size:cover;}
+img{border:0 none;max-width: 100%;height: auto;}
+ol, ul {list-style: none;}
+:focus {outline: 0;}
+textarea{resize:none;overflow:auto;}
+a{-webkit-touch-callout:none;-webkit-user-select:none;text-decoration:none}
+a,a:link,a:visited,a:hover,a:active{ color:inherit; text-decoration:none;}
+table {border-collapse: collapse;border-spacing: 0;}
+input:focus,textarea:focus{outline:0}
+/*横屏设置*/
+.orientation_set{display:none;}
+@media screen and (orientation: landscape){
+    .orientation_set{display:block; position:fixed;top:0;left:0;color:#fff;width:100%;height:100%;background:#397ddb;text-align:center; display:-webkit-box;-weibit-box-pack:center;-webkit-box-align:center;z-index:999;font-size:14px;line-height: 2em;font-family:'微软雅黑',Microsoft YaHei;}
+    .orientation_set img{display:inline-block;-webkit-animation:zhuan 1.5s .3s infinite;}
+    .orientation_set > div{width:100%;}
+}
+@-webkit-keyframes zhuan {
+    0%{-webkit-transform: rotate(0deg);opacity: 1;}
+    50%{-webkit-transform: rotate(-90deg);opacity: 1;}
+    100% {-webkit-transform: rotate(0deg);opacity: 1;}
+}
+/* 动画修复特效 */
+.translate{-webkit-transform: translate3d(0, 0, 0);-webkit-backface-visibility: hidden;-webkit-perspective: 1000;}
+ #wrap{width:100%;height:100%;} 
+
+ /*微信支付1*/
+.p_main{position:relative;height:100%;overflow:hidden;}
+.pay_tit_tu{position:absolute;left:50%;margin-left:-150px;top:30%;margin-top:-122px;width:299px;height:66px;}
+.pay_one_tit{position:absolute;width:238px;left:50%;top:30%;margin-top:-106px;margin-left:-114px;font-size:16px;color:#fff;text-align:left;}
+.pay_main{position:absolute;left:50%;margin-left:-45%;top:50%;margin-top:-138px;width:90%;height:212px;background:#fff;
+          -webkit-border-radius:6px;border-radius:6px;}
+.pay_ps{width:90%;height:188px;-webkit-border-radius:6px;border-radius:6px;border:1px dashed #7c0000;position:absolute;margin:auto;top:0px;bottom:0px;left:0px;right:0px;}
+.pay_tit1{width:118px;height:28px;margin:24px auto 26px;display:block;}
+.pay_money{text-align:center;height:38px;line-height:38px;font-size:16px;color:#7c0000;}
+.pay_money .input_text{height:32px;border:1px solid #7c0000;width:52%;padding-left:6px;padding-right:6px;}
+.pay_money span{display:inline-block;}
+.pay_notice{padding-left:6%;padding-right:6%;margin:18px auto 10px;font-size:12px;color:#787777;line-height:18px;}
+.pay_bt{position:absolute;bottom:-2%;margin-bottom:-23px;width:100%;left:0px;right:0px;}
+.pay_bnt{position:absolute;top:80%;margin-top:-42px;background:url(../img/pay_btn.png) no-repeat;background-size:200px 38px;width:200px;left:50%;margin-left:-100px;height:38px;line-height:38px;text-align:center;
+        font-size:20px;color:#563805;display:block;}
+.pay_btn_gray{background:url(../img/pay_btn_gray.png) no-repeat;background-size:200px 38px;}
+/*微信支付2*/
+.succ_main{ position:absolute;top:50%;left:50%;-webkit-transform: translate(-50%,-50%);width:88%;text-shadow:1px 2px 1px #000;}
+.pay_success{font-size:36px;font-weight:bold;color:#fff;text-align:center;}
+.pay_success_detail{font-size:20px;font-weight:bold;color:#fff;text-align:center;margin-top:20px;line-height:30px;}
+/*核销页面*/
+.pay_hx_main{margin-top:-152px;}
+.pay_hx_tit{position:absolute;top:30%;margin-top:-108px;left:50%;margin-left:-87px;display:block;
+	width:174px;height:29px;font-size:28px;color:#fff;font-weight:bold;letter-spacing:1px;text-align:center;}
+.hx_tp,.hx_mid,.hx_bt{margin:4px 18px;padding-bottom:4px;}
+.hx_tp li,.hx_bt li{padding-left:10px;padding-right:10px;line-height:20px;}
+.hx_mid{border-bottom:1px dashed #7c0000;}
+.hx_tp li{color:#7c0000;font-size:14px;}
+.hx_mid{padding-bottom:0px;}
+.hx_md_tp{background:#7c0000;padding-top:4px;padding-bottom:4px;text-align:center;color:#fff;line-height:23px;}
+.hx_md_tp h4{font-size:18px;font-weight:bold;}
+.hx_md_tp p{font-size:12px;}
+.hx_bt li{color:#787777;font-size:12px;}
+.pay_hx_tit1{font-size:18px;color:#7c0000;font-weight:bold;
+	text-align:center;display:block;height:20px;margin:6px auto;}
+.hx_rule{position:absolute;top:50%;margin-top:64px;width:88%;left:50%;margin-left:-44%;font-size:12px;color:#fff;text-align: justify;z-index:3;}
+.hx_bt2 li{text-align:center;padding-top:12px;}
+
+/*团购凭证*/
+.pay_tg_tit{position:absolute;top:30px;display:block;width:100%;text-align:center;font-size:28px;color:#fff;letter-spacing:1px;}
+.pay_tg_tab{position:absolute;width:80%;left:50%;margin-left:-40%;top:66px;display:-webkit-box;display:box;height:34px;line-height:34px;}
+.pay_tg_tab li{-webkit-box-flex:1;box-flex:1;text-align:center;background:#fff;color:#bd934d;font-size:14px;}
+.pay_tg_tab li:nth-of-type(1){border-top-left-radius:6px;border-bottom-left-radius:6px;}
+.pay_tg_tab li:nth-of-type(2){border-top-right-radius:6px;border-bottom-right-radius:6px;}
+.pay_tg_tab li.current{background:#bd934d;color:#fff;}
+.tg_rule{top:106px;width:86%;margin-left:-43%;margin-top:0px;}
+.tg_list{position:absolute;top:200px;padding-top:12px;padding-bottom:12px;left:50%;margin-left:-45%;width:90%;overflow:auto;}
+.tg_list li{height:54px;background:#fff;padding:8px;position:relative;margin-bottom:8px;}
+.tg_list .x-current{background:#d0d0d0;}
+.tg_list li:after{content:"";display:inline-block;width:12px;height:12px;border:2px solid #000;border-right:0;border-bottom:0;
+-webkit-transform:rotate(135deg);position:absolute;right:10px;top:30px}
+.tg_left{height:auto;-webkit-box-flex:2;}
+.tg_left .pay_tg_er{width:55px;height:55px;float:left;}
+.tg_left p{float:left;padding-left:6px;padding-top:6px;color:#000;}
+.tg_left p:nth-of-type(1){font-size:14px;font-weight:bold;width:66%;overflow:hidden;white-space: nowrap; text-overflow: ellipsis;}
+.tg_left p:nth-of-type(2){padding-top:2px;font-size:12px;}
+.tg_right{-webkit-box-flex:1;}
+.tg_right p{position:absolute;top:27px;right:26px;font-size:14px;color:#000;}
+
+
+
+/*游戏页面*/
+.game_list_main{position:relative;}
+.game_index{background:#bd0c2b url(../img/g_first_bg.jpg) no-repeat center;background-size:cover;overflow-x: hidden;}
+.g_list li{position:absolute;}
+.g_list li:nth-of-type(1){left:-20px;top:30%;margin-top:-23px;background:url(../img/g_one_gray.png) no-repeat;background-size:140px 286px;width:140px;height:286px;}
+.g_list li:nth-of-type(2){left:50%;top:30%;margin-top:-8px;margin-left:-70px;background:url(../img/g_two_gray.png) no-repeat;background-size:140px 240px;width:140px;height:240px;}
+.g_list li:nth-of-type(3){right:-20px;top:30%;margin-top:-33px;background:url(../img/g_three_gray.png) no-repeat;background-size:140px 332px;width:140px;height:332px;}
+.g_list li span{width:86px;height:22px;color:#bd0c2b;font-size:14px;}
+.g_list li:nth-of-type(1) span{position:absolute;top:30%;left:25px;margin-top:156px;text-align:center;}
+.g_list li:nth-of-type(2) span{position:absolute;top:30%;left:27px;margin-top:119px;text-align:center;}
+.g_list li:nth-of-type(3) span{position:absolute;top:30%;left:27px;margin-top:189px;text-align:center;}
+.g_list li:nth-of-type(1).active{background:url(../img/g_one_active.png) no-repeat;background-size:140px 286px;}
+.g_list li:nth-of-type(2).active{background:url(../img/g_two_active.png) no-repeat;background-size:140px 240px;}
+.g_list li:nth-of-type(3).active{background:url(../img/g_three_active.png) no-repeat;background-size:140px 332px;}
+.g_list li.active{-webkit-transform-origin:top center;-webkit-animation:rotateZ 2.5s linear infinite;animation:rotateZ 2.5s linear infinite;}
+@-webkit-keyframes rotateZ  {
+ 0%{-webkit-transform:rotateZ(0deg);}
+ 25%{-webkit-transform:rotateZ(3deg);}
+ 50%{-webkit-transform:rotateZ(0deg);}
+ 75%{-webkit-transform:rotateZ(-3deg);}
+ 100%{-webkit-transform:rotateZ(0deg);}
+}
+.g_tit_name{position:absolute;display:block;top:80%;left:50%;width:220px;margin-left:-115px;margin-top:-96px;}
+
+/*power_by*/
+.power_by{width:100%;color:#fff;background-color:rgba(3,3,20,0.65);position:absolute;left:0px;right:0px;bottom:0px;height:28px;line-height:28px;font-family:'微软雅黑';font-size:12px;text-align: center;}
+.power_by a{color:#fff;text-decoration:none;}
+
+
+
+
+
+

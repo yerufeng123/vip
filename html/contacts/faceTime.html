@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <!-- <meta id="viewport" name="viewport" content="width=375,minimum-scale=0.2,maximum-scale=3,user-scalable=no"> -->
+    <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <!-- UC强制全屏 --><meta name="full-screen" content="yes">
+    <!-- UC应用模式 --><meta name="browsermode" content="application">
+    <!-- QQ强制全屏 --><meta name="x5-fullscreen" content="true">
+    <!-- QQ应用模式 --><meta name="x5-page-mode" content="app">
+    <title>明星来电拜年，先听哪个？</title>
+    <style>
+      </style>
+    <link rel="stylesheet" href="css/sass/faceTime.css">
+  </head>
+  <body>
+  	<div id="wrap">
+  		<!-- 通信录 -->
+  		<div class="communi" >
+  			<dl class="communiList">
+  				<dt class="communiTit" id="G">G</dt>
+  				<dd class="communiLi">郭德纲</dd>
+  				<dt class="communiTit" id="H">H</dt>
+  				<dd class="communiLi">胡歌</dd>
+  				<dd class="communiLi">黄晓明</dd>
+  				<dt class="communiTit" id="L">L</dt>
+  				<dd class="communiLi">陆毅</dd>
+  				<dt class="communiTit" id="M">M</dt>
+  				<dd class="communiLi">孟非</dd>
+  				<dt class="communiTit" id="S">S</dt>
+  				<dd class="communiLi">沈腾</dd>
+  				<dd class="communiLi">宋佳</dd>
+  				<dd class="communiLi">孙楠</dd>
+  				<dt class="communiTit" id="T">T</dt>
+  				<dd class="communiLi">田亮</dd>
+  				<dt class="communiTit" id="W">W</dt>
+  				<dd class="communiLi">汪涵</dd>
+  				<dd class="communiLi">吴镇宇</dd>
+  				<dt class="communiTit" id="X">X</dt>
+  				<dd class="communiLi">小沈阳</dd>
+  				<dt class="communiTit" id="Y">Y</dt>
+  				<dd class="communiLi">岳云鹏</dd>
+  			</dl>
+  			<div class="communiLab">
+  				<a>G</a>
+  				<a>H</a>
+  				<a>L</a>
+  				<a>M</a>
+  				<a>S</a>
+  				<a>T</a>
+  				<a>W</a>
+  				<a>X</a>
+  				<a>Y</a>
+  				<a>#</a>
+  			</div>
+  			<div class="search">
+  				
+  				<div class="search_input"><i class="icons searchIcon"></i>搜索</div>
+  			</div>
+  			<ul class="communiTab">
+  				<li class="communiTabLi">
+  					<i class="icons pensonIcon"></i>
+  					我的语音
+  				</li>
+  				<li class="communiTabLi">
+  					<i class="icons commIcon"></i>
+  					通信录
+  				</li>
+  				<li class="communiTabLi">
+  					<i class="icons wordIcon"></i>
+  					语音留言
+  				</li>
+  			</ul>
+  		</div>
+  		<div id="box" style="display:none">
+  			<!-- faceTime -->
+	  		<div class="faceTime">
+	  			<div id="videoBg"></div>
+	  			<video id="video" width="320" src="" webkit-playsinline></video>
+	  			<img id="videoPoster">
+	  			<div class="mask"></div>
+	  			<div class="name"></div>
+	  			<div class="state"></div>
+	  			<div class="pic"></div>
+	  			<ul class="photo">
+	  				<div class="icons phoneIcon_down"></div>
+	  				<div class="icons phoneIcon_hold" style="display:none"></div>
+	  			</ul>
+	  		</div>
+	  		<!-- 分享 -->
+	  		<div class="share" >
+	  			<ul class="tabList">
+	  				<li class="tabLi">
+	  					<i class="icons communiIcon" data-num="99"></i>
+	  					通信录
+	  				</li>
+	  				<li class="tabLi">
+	  					<i class="icons shareIcon"></i>
+	  					分享
+	  				</li>
+	  			</ul>
+	  		</div>
+  		</div>
+  	</div>
+  	<audio id="sound" preload="auto" loop='loop' src="video/sound.mp3"hide></audio>
+    <script type="text/javascript" src="http://r1.ykimg.com/0510000055FF635467BC3D17B909FA5D.js">//JQ</script>
+    <script type="text/javascript">
+    
+    $(document).ready(function(){
+    	var name = new Map();
+    	name.put('郭德纲',{name:'郭德纲',img:'http://r4.ykimg.com/0510000056A1D3EE67BC3D65A103991A',mp4:'video/g1.mp4',photo:'http://r1.ykimg.com/0510000056A1D43C67BC3D65CA052D78'})
+    	name.put('胡歌',{name:'胡歌',img:'http://r4.ykimg.com/0510000056A1D3EF67BC3D644907AE77',mp4:'video/h1.mp4',photo:'http://r2.ykimg.com/0510000056A1D43C67BC3D63DE02708F'})
+    	name.put('黄晓明',{name:'黄晓明',img:'http://r4.ykimg.com/0510000056A1D3EF67BC3D659E069C62',mp4:'video/h2.mp4',photo:'http://r2.ykimg.com/0510000056A1D43D67BC3D65AB026AAC'})
+    	name.put('陆毅',{name:'陆毅',img:'http://r4.ykimg.com/0510000056A1D3EF67BC3D644D09DA01',mp4:'video/l1.mp4',photo:'http://r2.ykimg.com/0510000056A1D43D67BC3D655709AB01'})
+    	name.put('孟非',{name:'孟非',img:'http://r1.ykimg.com/0510000056A1D3F067BC3D64510B7B19',mp4:'video/m1.mp4',photo:'http://r2.ykimg.com/0510000056A1D43D67BC3D65A806CD87'})
+    	name.put('沈腾',{name:'沈腾',img:'http://r1.ykimg.com/0510000056A1D3F067BC3D6455013E66',mp4:'video/s1.mp4',photo:'http://r3.ykimg.com/0510000056A1D43D67BC3D63C604206C'})
+    	name.put('宋佳',{name:'宋佳',img:'http://r1.ykimg.com/0510000056A1D3F067BC3D659F0EBC80',mp4:'video/s2.mp4',photo:'http://r3.ykimg.com/0510000056A1D43E67BC3D656B0145E3'})
+    	name.put('孙楠',{name:'孙楠',img:'http://r2.ykimg.com/0510000056A1D3F067BC3D657D03E93E',mp4:'video/s3.mp4',photo:'http://r3.ykimg.com/0510000056A1D43E67BC3D63E206C869'})
+    	name.put('田亮',{name:'田亮',img:'http://r2.ykimg.com/0510000056A1D3F167BC3D645603167E',mp4:'video/t1.mp4',photo:'http://r3.ykimg.com/0510000056A1D43E67BC3D63E404C801'})
+    	name.put('汪涵',{name:'汪涵',img:'http://r2.ykimg.com/0510000056A1D3F167BC3D65A2028201',mp4:'video/w1.mp4',photo:'http://r4.ykimg.com/0510000056A1D43E67BC3D63E80CE65A'})
+    	name.put('吴镇宇',{name:'吴镇宇',img:'http://r4.ykimg.com/0510000056A1D41767BC3D6499051D30',mp4:'video/w2.mp4',photo:'http://r1.ykimg.com/0510000056A1D41867BC3D64B80B35A7'})
+    	name.put('小沈阳',{name:'小沈阳',img:'http://r4.ykimg.com/0510000056A1D41767BC3D64AD0285A3',mp4:'video/x1.mp4',photo:'http://r1.ykimg.com/0510000056A1D41867BC3D64B70BD7E0'})
+    	name.put('岳云鹏',{name:'岳云鹏',img:'http://r4.ykimg.com/0510000056A1D41767BC3D64A90D165F',mp4:'video/y1.mp4',photo:'http://r1.ykimg.com/0510000056A1D41867BC3D65710335B4'})
+    	
+    	$('.communiLi').on('click',function(e){
+    		var _name = $(this).html();
+    		var obj = name.get(_name);
+    		$('.state').html('正在连接中....');
+    		$('.name').html(_name);
+    		$('#videoBg').css('background-image','url()');
+    		$('.pic').css('background-image','url('+obj.photo+')')
+    		$('#videoPoster')[0].src = obj.img;
+    		$('#video')[0].src = obj.mp4;
+    		$('#video')[0].load();
+
+    		$('.phoneIcon').addClass('null');
+    		$('.communi').hide();
+    		$('#box').show().removeClass('rotate');
+    		mediaPlay($('#sound')[0]);
+    	});
+    	$('.phoneIcon_hold').on('click',function(e){
+  			$('#video').css('visibility',' visible');
+  			mediaPlay($('#video')[0]);
+  			mediaStop($('#sound')[0]);
+  			$('.name').html('');
+  			$('.state').html('');
+    		$(this).hide();
+    	});
+      $('.phoneIcon_down').on('click',function(){
+        mediaStop($('#video')[0]);
+        $('#video').css('visibility','hidden');
+        $('#video')[0].src = '';
+        $('#box').hide();
+        $('.communi').show();
+      })
+    	$('#videoPoster').on('load',function(e){
+    		var _src = $(this)[0].src;
+    		$('#videoBg').css('background-image','url('+_src+')');
+    	})
+    	$('#video').on('loadeddata', function(e) {
+    		console.log(e);
+    	  var that = $(this);
+		    var timer = setInterval(function() {
+  		    var end = getEnd(that),
+  		        duration = that.duration;
+  		    if(end < duration) return
+      		$('.state').html('');
+          $('.phoneIcon_hold').show();
+  		    clearInterval(timer)
+		  }, 1000)
+
+      
+      $('.shareIcon').on('click',function(e){
+        alert('分享');
+      });
+      $('.wordIcon').on('click',function(){
+        alert('录制语音');
+      })
+      $('.pensonIcon').on('click',function(){
+        alert('我的语音');
+      })
+		})
+		// 获取视频已经下载的时长
+		function getEnd(video) {
+		  var end = 0
+		  try {
+		    end = video.buffered.end(0) || 0    
+		    end = parseInt(end * 1000 + 1) / 1000
+		  } catch(e) {
+		  }
+		  return end
+		}
+    	$('#video').on('ended',function(e){
+    		$('#box').addClass('rotate');
+    		setTimeout(function(){
+    			$('.phoneIcon').removeClass('down');
+    			$('#video')[0].src = '';
+    			$('#video').css('visibility','hidden');
+    			$('#videoBg').css('background-image','url()');
+    		},500)
+    	})
+    	
+    	$('.communiIcon').on('click',function(e){
+    		$('.communi').show();
+    		$('#box').hide().removeClass('rotate');
+    	})
+    })
+	function mediaPlay(_dom){
+		_dom.currentTime = 0;
+		_dom.play();
+	}
+	function mediaStop(_dom){
+		_dom.pause();
+
+	}
+
+    //映射
+	function Map(){
+	    this.container = {};
+	}
+	Map.prototype = {
+	    put:function(key,value){
+	        this.container[key] = value;
+	    },
+	    get:function(key){
+	        return this.container[key]||null;
+	    },
+	    del:function(key){
+	        delete this.container[key];
+	    },
+	    find:function(value){
+	        for (i in this.container){
+	            if(this.container[i] == value){
+	                return i;
+	            }
+	        }
+	    },
+	    //模糊匹配
+	    fuzzy:function(str){
+	    	var attr = [];
+	    	for (i in this.container){
+	    		if(i.indexOf(str)>-1){
+	    			attr.push(i)
+	    		}
+	        }
+	        return attr;
+	    }
+	}
+    </script>
+  </body>
+</html>

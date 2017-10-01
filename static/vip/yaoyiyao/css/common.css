@@ -1,0 +1,71 @@
+/*公共样式*/
+html,body{-webkit-tap-highlight-color:rgba(0,0,0,0);color:#302e31;font:13px "微软雅黑",Helvetica;font-size:13px;line-height:160%;margin:0;padding:0;-webkit-user-select:none;}
+form,table,td,h1,h2,h3,h4,ul,ol,li,p{margin:0;padding:0;border:0;list-style:none}
+input,img{vertical-align:middle}
+html,body{min-width:100%; height:100%;background:#ffff96}
+body{-webkit-text-size-adjust:none;background-size:cover;background：#ffff96}
+img{border:0 none;height: auto; max-width: 100%;}
+ol, ul {list-style: none;}
+:focus {outline: 0;}
+textarea{resize:none;overflow:auto;}
+a{-webkit-touch-callout:none;-webkit-user-select:none;text-decoration:none}
+a:link {-webkit-tap-highlight-color:rgba(229, 59, 44, 0.4)}
+table {border-collapse: collapse;border-spacing: 0;}
+input:focus,textarea:focus{outline:0}
+
+#wrap{width:100%;height:100%;min-width:320px;overflow-x:hidden;}
+#wrap.wrap{width:100%;height:100%;position:relative;background: url(../img/page_bg.jpg) no-repeat center top;background-size:cover;overflow:hidden}
+.page_body{width:100%;height:416px;left:50%;margin-left:-50%;top:50%;margin-top:-208px;position: absolute;}
+.page_body > *{position:absolute}
+#page_list > li{-webkit-transform:translate(0,243px) translateZ(0);opacity:0;-webkit-transition:all 1s;}
+#page_list > li.show{ z-index: 99;-webkit-transform:translate(0,0) translateZ(0);opacity:1}
+@-webkit-keyframes text_top{
+	0%{-webkit-transform:translate3d(0,0,0)}
+	10%{-webkit-transform:translate3d(0,-90px,0);}
+	90%{-webkit-transform:translate3d(0,-90px,0);}
+	100%{-webkit-transform:translate3d(0,0,0)}
+}
+
+@-webkit-keyframes text_bot{
+	0%{-webkit-transform:translate3d(0,0,0)}
+	10%{-webkit-transform:translate3d(0,90px,0);}
+	90%{-webkit-transform:translate3d(0,90px,0);}
+	100%{-webkit-transform:translate3d(0,0,0)}
+}
+/*首页*摇一摇交互*/
+.logo{ position: absolute;width:115px; height: 35px; z-index: 99; left: 10px; top: 10px;}
+.shake_top.s_top{-webkit-animation:text_top 1.5s linear forwards;}
+.shake_bot.s_bot{-webkit-animation:text_bot 1.5s linear forwards;}
+.shake_top{width:100%;height:50%;left: 50%;margin-left: -50%;top:0px;position: absolute;background:#ffffef url(../img/top1.jpg) no-repeat center bottom;background-size:100% auto}
+.shake_bot{width:100%;height:50%;left: 50%;margin-left: -50%;  bottom: 1px;position: absolute;background:url(../img/bot1.jpg) no-repeat center top;background-size:100% auto}
+.mask_box{width:100%;height:188px;background: url(../img/shake_box.png) no-repeat center;background-size:100% 188px;position: absolute;left: 50%;margin-left:-50%;top:50%;margin-top:-94px;}
+.s_people{width:127px;height:143px;margin:25px 0 0 40px;}
+.s_text{width:181px;height:34px;margin:35px 0 0 16px;}
+/*文字*/
+.text_img{ position: static;width:415px;}
+.text{ position: static;padding:10px 5px; margin:20px;background: rgba(253,247,202,.5); color: #090909; border-radius: 5px;}
+.text div{ overflow:auto; max-height:120px;font-size: 16px; }
+/*卡券*/
+.icon_card{width:132px;height:132px;left:50%;margin-left:-66px;top:35px;}
+.text_click{width:93px;height:15px;}
+.icon_click{right:84px;bottom:167px;}
+.icon_line{width:35px;height:33px;top:26px;right:52px;position: absolute;}
+.present_box{width:135px;height:138px;left:50%;margin-left:-67px;bottom:0}
+/*语音*/
+.voice_photo{ position: absolute; left: 0; right: 0; top: 12%; bottom: 23%; text-align: center;}
+.icon_head{ max-width: 100%;height: 100%;}
+.click_voice{width:324px;height:65px; position: absolute; left: 50%; bottom: 8%; margin-left: -162px; display: block; background: url(../img/voice_box.png) no-repeat center;background-size: auto 65px;}
+/*图片展示*/
+.mask_top{width:100%;height:95%;background: url(../img/mask_top.png) no-repeat center;background-size:100% 75%;position: absolute;top:10px;}
+.img_box{width:342px;height:275px;position: absolute;left:50%;margin-left:-175px; bottom: 175px; z-index: 98;}
+.img_box ul{width:342px;height:100%;}
+.img_box ul li{;position:absolute;bottom:0;border:solid 4px #fff;}
+.img_box ul li img{width:100%;}
+.mask_bot{width:100%;height:260px;background:url(../img/mask_bot2.png) no-repeat center; background-size:100% 260px;position:absolute;bottom: 0px;left:50%;margin-left:-50%;z-index: 99;}
+.dialog{width:326px;height:auto;border:solid 2px #ffc000;border-radius:3px;background: #fbd9d8;padding:12px 8px;position:absolute;left:50%;margin-left:-175px;bottom:15%}
+.dialog span{font-size:13px;font-family: "微软雅黑";color:#303030;}
+#line{position: absolute;right:15px;top:43%}
+#line ul li{width:5px;height:5px;border:solid 1px #fff;border-radius: 50%;margin:10px 0}
+#line ul li.on{background: #fff;}
+
+.img_one{ position: absolute; top: 50%; margin-top: -263px;}     

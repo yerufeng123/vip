@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>YKK（中国）投资有限公司</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/animations.css">
+	<script>
+		var page_list = [];	//页面动画动画元素
+		var page = {
+			_width :0,			//页面宽度
+			_height:0,			//页面高度
+			_zoom : 1,			//页面适配缩放比
+			_index:0, 			//当前显示第几个页面
+			_num:0,   			//页面个数
+			sign:true,			//页面跳转标识
+			clear:true,			//页面清除动画标识
+			skip:"line",		//页面换页方式{卡片:card;跳转:jump;旋转:rotat;风车:wind;连线:line|翻页:book;}
+			_dir:-1,			//页面切换的方向（-1为向下，1为向上）
+			_top:0,				//滚动元素到页面顶上的距离
+			_pre:false,			
+		};
+	</script>
+	</head>
+	<body>
+	<section id="loading">
+    	<img src="img/preloader5.gif" width="88" height="88"><br>
+    	<span id="loading_num">精彩正在加载...0%</span>
+    </section>
+	<script type="text/javascript" src="js/loading2.js"></script> 
+	<div id="sound"></div>
+	<audio controls autoplay="autoplay" loop="loop" id="audio" src="video/sound.mp3"></audio>
+  	<div id="wrap">
+  		<ul id="page_list">
+  			<li class="page show" id="page1">
+				<div class="page1_img"><img src="img/page1.gif" /></div>
+				<article class="page_body">
+					<img class="logo icon_big quick show" delay="500" src="img/logo.png" />
+				</article>
+  			</li>
+			<!-- page2 -->
+			<li class="page" id="page2">
+				<div class="page_logo text_left quick" delay="300"><img src="img/logo2.png" /></div>
+				<div class="page2_top text_left quick" delay="50"></div>
+				<div class="page2_text1 text_left quick" delay="400"><img src="img/text.png" /></div>
+				<div class="page2_bot text_right quick" delay="50"></div>
+			</li>
+			<!-- page3 -->
+  			<li class="page" id="page3">
+				<div class="page_logo text_left quick" delay="300"><img src="img/logo2.png" /></div>
+				<div class="page3_top text_left quick" delay="50"></div>
+				<article class="page_body">
+					<video id="myvideo" class="page3_img1" src="video/situo2.mp4" preload="auto" controls></video>
+					<div class="text text_left quick" delay="400">
+						<!-- <b>YKK（中国）投资有限公司</b><br>董事&emsp;常务副总经理<br>AP事业部 事业部长<img src="img/text2.png" /> -->
+						<img src="img/text0.png" />
+					</div>
+				</article>
+  				<div class="page3_img2 text_bottom quick" delay="800"><img src="img/text1.png" /></div>
+				<div class="page3_bot text_right quick" delay="50"></div>
+			</li>
+			<!-- page4 -->
+			<li class="page" id="page4">
+				<div class="page_logo text_left quick" delay="300"><img src="img/logo2.png" /></div>
+				<div class="page4_top text_left quick" delay="50"></div>
+				<article class="page_body">
+					<div class="page4_img1"><img src="img/map2.jpg" /></div>
+					<div class="address"></div>
+					<ul class="text_list">
+						<li class="page4_text1 page4_text text_bottom quick" delay="550"><img src="img/page_text1.png" /></li>
+						<li class="page4_text2 page4_text text_bottom quick" delay="550"><img src="img/page_text2.png" /></li>
+						<li class="page4_text3 page4_text text_bottom quick" delay="550"><img src="img/page_text3.png" /></li>
+						<li class="page4_text4 page4_text text_bottom quick" delay="550"><img src="img/page_text4.png" /></li>
+						<li class="page4_text5 page4_text text_bottom quick" delay="550"><img src="img/page_text5.png" /></li>
+						<li class="page4_text6 page4_text text_bottom quick" delay="550"><img src="img/page_text6.png" /></li>
+						<li class="page4_text7 page4_text text_bottom quick" delay="550"><img src="img/page_text7.png" /></li>
+						<!-- <li class="page4_text8 page4_text text_bottom quick" delay="550"><img src="img/page_text8.png" /></li> -->
+						<!-- <img class="page_text text_bottom quick" delay="550" src="img/page_text.png" /> -->
+					</ul>
+				</article>
+				<div class="page3_img2 text_bottom quick" delay="800"><img src="img/text1.png" /></div>
+				<div class="page3_bot text_right quick" delay="50"></div>
+			</li>
+		</ul>
+  		<img id="drop_down" src="img/drop_down2.png">
+    </div> 
+  </body>	
+	<script type="text/javascript" src="js/slide.js"></script>
+	<script type="text/javascript" src="js/zepto.min.js" defer="defer"></script>
+	<script type="text/javascript" src="js/init.js" defer="defer"></script> 
+</html>

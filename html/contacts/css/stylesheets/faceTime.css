@@ -1,0 +1,555 @@
+@charset "UTF-8";
+/* (name:font,level:dark,color:#333),
+(name:font,level:normal,color:#666),
+(name:font,level:pale,color:#999), */
+/******************通用*******************/
+/* line 52, ../sass/faceTime.scss */
+html, body {
+  -webkit-tap-highlight-color: transparent;
+  color: #333333;
+  font: 12px/1.6 "微软雅黑", Helvetica !important;
+  margin: 0;
+  padding: 0;
+  -webkit-user-select: none;
+  width: 100%;
+  height: 100%;
+  min-width: 100%;
+  background-color: black;
+}
+
+/* line 53, ../sass/faceTime.scss */
+form, table, td, h1, h2, h3, h4, ul, ol, li, p {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  list-style: none;
+}
+
+/* line 54, ../sass/faceTime.scss */
+input, img {
+  vertical-align: middle;
+}
+
+/* line 55, ../sass/faceTime.scss */
+body {
+  position: relative;
+  -webkit-text-size-adjust: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* line 56, ../sass/faceTime.scss */
+img {
+  border: 0 none;
+  height: auto;
+}
+
+/* line 57, ../sass/faceTime.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 58, ../sass/faceTime.scss */
+a:focus, input:focus, img:focus, textarea:focus {
+  outline: 0;
+}
+
+/* line 59, ../sass/faceTime.scss */
+textarea {
+  resize: none;
+  overflow: auto;
+}
+
+/* line 60, ../sass/faceTime.scss */
+a {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  text-decoration: none;
+}
+
+/* line 61, ../sass/faceTime.scss */
+a:link, a:visited, a:hover, a:active {
+  color: inherit;
+}
+
+/* line 62, ../sass/faceTime.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 63, ../sass/faceTime.scss */
+input.error::-webkit-input-placeholder {
+  color: #ea6060;
+}
+
+/* line 64, ../sass/faceTime.scss */
+input.error {
+  color: #ea6060;
+  border-color: #ea6060 !important;
+}
+
+/* line 65, ../sass/faceTime.scss */
+dl, dt, dd {
+  padding: 0;
+  margin: 0;
+}
+
+/* 公共 */
+/* line 67, ../sass/faceTime.scss */
+.font_u {
+  text-decoration: underline;
+}
+
+/* line 68, ../sass/faceTime.scss */
+.font_b {
+  font-weight: bold;
+}
+
+/* line 69, ../sass/faceTime.scss */
+#wrap {
+  width: 100%;
+  height: 100%;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-perspective: 1000;
+  perspective: 1000;
+}
+
+/* line 70, ../sass/faceTime.scss */
+.icons {
+  background: url(http://r4.ykimg.com/0510000056A1D34F67BC3D63FA0BCA2F) no-repeat;
+  background-size: 41.33333rem auto;
+}
+
+/* 通信录 */
+/* line 72, ../sass/faceTime.scss */
+.communi, .faceTime, .share {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+/* line 73, ../sass/faceTime.scss */
+.communi {
+  overflow: auto;
+  background-color: white;
+}
+
+/* line 74, ../sass/faceTime.scss */
+.search {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 2.33333rem;
+  padding: 0.66667rem;
+  background-color: #929292;
+}
+
+/* line 75, ../sass/faceTime.scss */
+.searchInput {
+  width: 100%;
+  height: 100%;
+  display: block;
+  -webkit-border-radius: 0.41667rem;
+  -moz-border-radius: 0.41667rem;
+  -ms-border-radius: 0.41667rem;
+  -o-border-radius: 0.41667rem;
+  border-radius: 0.41667rem;
+  background-color: white;
+  text-align: center;
+}
+/* line 76, ../sass/faceTime.scss */
+.searchInput input {
+  padding: 0;
+  border: 0;
+  height: 100%;
+  line-height: 2.33333rem;
+  display: inline-block;
+  text-align: center;
+}
+/* line 77, ../sass/faceTime.scss */
+.searchInput input::-webkit-input-placeholder {
+  color: #999999;
+  text-align: center;
+  font-size: 1.08333rem;
+}
+
+/* line 79, ../sass/faceTime.scss */
+.search_input {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  line-height: 2.33333rem;
+  -webkit-border-radius: 0.41667rem;
+  -moz-border-radius: 0.41667rem;
+  -ms-border-radius: 0.41667rem;
+  -o-border-radius: 0.41667rem;
+  border-radius: 0.41667rem;
+  font-size: 1.08333rem;
+  color: #aaa;
+  background-color: white;
+}
+
+/* line 80, ../sass/faceTime.scss */
+.searchIcon {
+  display: inline-block;
+  margin-right: 0.41667rem;
+  vertical-align: text-bottom;
+  width: 1.08333rem;
+  height: 1.08333rem;
+  background-position: -2.95833rem -5.91667rem;
+}
+
+/* line 82, ../sass/faceTime.scss */
+.communiList {
+  margin: 0 0 4.08333rem;
+}
+
+/* line 83, ../sass/faceTime.scss */
+.communiTit {
+  font-size: 1.25rem;
+  text-indent: 1.33333rem;
+  font-weight: bold;
+  line-height: 2.33333rem;
+  color: black;
+  background-color: #f2f2f2;
+}
+
+/* line 84, ../sass/faceTime.scss */
+.communiTit:nth-of-type(1) {
+  margin-top: 4.08333rem;
+}
+
+/* line 85, ../sass/faceTime.scss */
+.communiLi {
+  font-size: 1.41667rem;
+  line-height: 3.625rem;
+  color: black;
+  margin: 0 1.33333rem;
+}
+/* line 87, ../sass/faceTime.scss */
+.communiLi + .communiLi {
+  border-top: 0.04167rem solid #aaaaaa;
+}
+
+/* line 89, ../sass/faceTime.scss */
+.communiLab {
+  position: fixed;
+  right: 0;
+  top: 4.5rem;
+  font-size: 0.66667rem;
+  color: #007aff;
+  width: 1.25rem;
+}
+/* line 90, ../sass/faceTime.scss */
+.communiLab a {
+  display: block;
+  font-size: 1rem;
+  line-height: 1.25rem;
+  text-align: center;
+}
+
+/* line 92, ../sass/faceTime.scss */
+.communiTab {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 3.66667rem;
+  border-top: 0.04167rem solid #aaaaaa;
+  background-color: #f4f4f4;
+}
+
+/* line 93, ../sass/faceTime.scss */
+.communiTabLi {
+  float: left;
+  width: 20%;
+  text-align: center;
+  font-size: 0.75rem;
+  color: #929292;
+}
+/* line 94, ../sass/faceTime.scss */
+.communiTabLi .icons {
+  display: block;
+  width: 2.58333rem;
+  height: 2.16667rem;
+  margin: 0.41667rem auto 0;
+}
+/* line 95, ../sass/faceTime.scss */
+.communiTabLi.select {
+  color: #007aff;
+}
+
+/* line 97, ../sass/faceTime.scss */
+.pensonIcon {
+  background-position: 0 0;
+}
+
+/* line 98, ../sass/faceTime.scss */
+.nearIcon {
+  background-position: 0 -2.95833rem;
+}
+
+/* line 99, ../sass/faceTime.scss */
+.commIcon {
+  background-position: 0 -5.91667rem;
+}
+
+/* line 100, ../sass/faceTime.scss */
+.linkIcon {
+  background-position: -2.95833rem 0;
+}
+
+/* line 101, ../sass/faceTime.scss */
+.wordIcon {
+  background-position: -2.95833rem -2.95833rem;
+}
+
+/* line 103, ../sass/faceTime.scss */
+#box {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transition: 500ms transform;
+  transition: 500ms transform;
+}
+
+/* line 104, ../sass/faceTime.scss */
+#box.rotate {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+/* faceTime */
+/* line 106, ../sass/faceTime.scss */
+.faceTime, .share {
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* line 107, ../sass/faceTime.scss */
+.faceTime {
+  background-color: black;
+}
+
+/* line 108, ../sass/faceTime.scss */
+#video {
+  min-width: 100%;
+  min-height: 100%;
+  position: absolute;
+  visibility: hidden;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-size: cover;
+}
+
+/* line 109, ../sass/faceTime.scss */
+#videoPoster {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+/* line 110, ../sass/faceTime.scss */
+#videoBg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: no-repeat center;
+  background-size: cover;
+}
+
+/* line 111, ../sass/faceTime.scss */
+.mask {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* line 112, ../sass/faceTime.scss */
+.name, .state {
+  position: absolute;
+  left: 1.16667rem;
+  top: 10%;
+  color: #f7f7f7;
+}
+
+/* line 113, ../sass/faceTime.scss */
+.name {
+  margin-top: -3.75rem;
+  font-size: 2.5rem;
+}
+
+/* line 114, ../sass/faceTime.scss */
+.state {
+  margin-top: -0.41667rem;
+  font-size: 1.5rem;
+}
+
+/* line 115, ../sass/faceTime.scss */
+.pic {
+  position: absolute;
+  right: 1.16667rem;
+  top: 10%;
+  margin-top: -2.5rem;
+  width: 6.25rem;
+  height: 6.25rem;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  background: no-repeat center;
+  background-size: contain;
+}
+
+/* line 116, ../sass/faceTime.scss */
+.photo {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 10%;
+  margin-bottom: -2.5rem;
+  text-align: center;
+  -webkit-transition: transform 400ms;
+  transition: transform 400ms;
+}
+/* line 117, ../sass/faceTime.scss */
+.photo.down {
+  -webkit-transform: translateY(300px);
+  -moz-transform: translateY(300px);
+  -ms-transform: translateY(300px);
+  -o-transform: translateY(300px);
+  transform: translateY(300px);
+}
+/* line 118, ../sass/faceTime.scss */
+.photo .icons {
+  width: 6.16667rem;
+  height: 6.16667rem;
+  margin: 0 1.25rem;
+  display: inline-block;
+}
+/* line 119, ../sass/faceTime.scss */
+.photo .photoIcon {
+  background-position: -5.91667rem 0;
+}
+/* line 120, ../sass/faceTime.scss */
+.photo .phoneIcon {
+  background-position: -23.625rem 0;
+}
+/* line 122, ../sass/faceTime.scss */
+.photo .soundIcon {
+  background-position: -14.75rem 0;
+}
+/* line 123, ../sass/faceTime.scss */
+.photo .phoneIcon.down {
+  background-position: -32.45833rem 0;
+}
+/* line 124, ../sass/faceTime.scss */
+.photo .phoneIcon.null {
+  background-position: 32.45833rem 0;
+  visibility: hidden;
+}
+
+/* 分享 */
+/* line 129, ../sass/faceTime.scss */
+.share {
+  background: url(http://r4.ykimg.com/0510000056A1D34F67BC3D63F109C825) no-repeat center;
+  background-size: cover;
+  -webkit-transform: rotateY(180deg) translateZ(1px);
+  -moz-transform: rotateY(180deg) translateZ(1px);
+  -ms-transform: rotateY(180deg) translateZ(1px);
+  -o-transform: rotateY(180deg) translateZ(1px);
+  transform: rotateY(180deg) translateZ(1px);
+}
+
+/* line 130, ../sass/faceTime.scss */
+.tabList {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* line 131, ../sass/faceTime.scss */
+.tabLi {
+  display: inline-block;
+  font-size: 0.91667rem;
+  color: #f9f9f9;
+  line-height: 1.83333rem;
+}
+/* line 132, ../sass/faceTime.scss */
+.tabLi .icons {
+  display: block;
+  position: relative;
+  width: 5rem;
+  height: 5rem;
+  margin: 1.16667rem 1.25rem 0;
+}
+/* line 133, ../sass/faceTime.scss */
+.tabLi .communiIcon {
+  background-position: 0 -8.875rem;
+  font-style: normal;
+}
+/* line 134, ../sass/faceTime.scss */
+.tabLi .communiIcon:after {
+  content: attr(data-num);
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  position: absolute;
+  right: -0.875rem;
+  top: -0.875rem;
+  width: 1.75rem;
+  height: 1.75rem;
+  line-height: 1.75rem;
+  background-color: #fa141b;
+  color: white;
+}
+/* line 136, ../sass/faceTime.scss */
+.tabLi .shareIcon {
+  background-position: -5.91667rem -8.875rem;
+}
+/* line 137, ../sass/faceTime.scss */
+.tabLi .shareIcon:after {
+  content: '';
+  position: absolute;
+  width: 15rem;
+  height: 3.08333rem;
+  left: -4rem;
+  top: -3.75rem;
+  background: url(http://r4.ykimg.com/0510000056A1D34F67BC3D63FA0BCA2F) no-repeat -17.70833rem -8.875rem;
+  background-size: 41.33333rem auto;
+}
+/* line 139, ../sass/faceTime.scss */
+.tabLi .linkIcon {
+  background-position: -11.79167rem -8.875rem;
+}

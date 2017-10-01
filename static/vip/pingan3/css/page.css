@@ -1,0 +1,56 @@
+﻿@charset "utf-8";
+/******************通用*******************/
+html,body{-webkit-tap-highlight-color:rgba(0,0,0,0);color:#fff;font:12px/1.6 "微软雅黑",Helvetica;margin:0;padding:0;-webkit-user-select:none;width:100%;height:100%;}
+form,table,td,h1,h2,h3,h4,ul,ol,li,p,dt,dd{margin:0;padding:0;border:0;list-style:none}
+input,img{vertical-align:middle}
+html,body{min-width:100%;}
+body{-webkit-text-size-adjust:none;}
+img{border:0 none;max-width:100%;height:auto;}
+ol,ul{list-style:none;}
+:focus{outline:0;}
+textarea{resize:none;overflow:auto;}
+a{-webkit-touch-callout:none;-webkit-user-select:none;text-decoration:none}
+a:link {-webkit-tap-highlight-color:rgba(229,59,44,0.4)}
+table{border-collapse: collapse;border-spacing: 0;}
+input:focus,textarea:focus{outline:0}
+#wrap{width:100%;height:100%;overflow-x:hidden;}
+#page_list{width:100%;height:100%; -webkit-transition:all ease-out 1s;transition:all ease-out 1s;}
+#page_list > .page{ width:100%;height: 100%;background-position: center; overflow: hidden; background-repeat: no-repeat; background-size:cover; z-index: 9; background-color: #fff; -webkit-transition:all ease-in-out .5s;transition:all ease-in-out .5s;}
+#page_list.draw > .page,
+#page_list.jump > .page{ position:absolute; left: 0;top:0;}
+#page_list 		> .page.show{z-index: 99;}
+/*跳转式*/
+#page_list.jump  > .page{-webkit-transform:translate(0,-100%);transform:translate(0,-100%);}
+#page_list.jump  > .page.show{ -webkit-transform:translate(0,0);transform:translate(0,0);}
+#page_list.jump  > .page.show ~ .page{ -webkit-transform:translate(0,100%);transform:translate(0,100%);}
+/*抽取卡片式*/
+#page_list.draw  > .page{-webkit-transform:translate(0,-416px);transform:translate(0,-416px); opacity: 0}
+#page_list.draw  > .page.show{-webkit-transform:translate(0,0);transform:translate(0,0); opacity: 1;}
+#page_list.draw  > .page.show ~ .page{ -webkit-transform:translate(0,0);transform:translate(0,0); opacity: 1;}
+
+
+.page > .page_body{ width: 415px; height : 540px; left: 50%; top: 50%; margin-left:-207.5px; margin-top: -270px;background-position: center; background-repeat: no-repeat; background-size:cover;}
+.page_bg{ position: absolute; top:0;right:0;bottom:0;left:0; background:no-repeat center; background-size:cover;}
+.page_body{position: absolute;-webkit-box-sizing:border-box;box-sizing:border-box;}
+.page_body > img{ position: absolute;}
+/***********************出场效果**********************/
+.out-biter_rotate{-webkit-transform:rotate(30deg);}
+.out-left	{-webkit-transform:translate(-90px,0);transform:translate(-90px,0);}
+.out-right 	{-webkit-transform:translate(90px,0);transform:translate(90px,0);}
+.out-top	{-webkit-transform:translate(0,-90px);transform:translate(0,-90px);}
+.out-bottom	{-webkit-transform:translate(0,90px);transform:translate(0,90px);}
+.out-rotate	{-webkit-transform:scale(0.1) rotate(180deg);transform:scale(0.1) rotate(180deg);}
+.out-rotateY{-webkit-transform:rotateY(90deg);transform:rotateY(90deg);}
+.out-more_left	{-webkit-transform:translate(-180px,0);transform:translate(-180px,0);}
+.out-more_right	{-webkit-transform:translate(180px,0);transform:translate(180px,0);}
+.out-more_top	{-webkit-transform:translate(0,-180px);transform:translate(0,-180px);}
+.out-more_bottom{-webkit-transform:translate(0,180px);transform:translate(0,180px);}
+.out-more_rotat {-webkit-transform:scale(0.1) rotate(-1800deg);transform:scale(0.1) rotate(-1800deg);}
+.out-big	{-webkit-transform:scale(5);transform:scale(5);}
+.out-small  {-webkit-transform:scale(.1);transform:scale(.1);}
+.out-opacity{opacity: 0;}
+/***********************入场效果**********************/
+/*设置延迟时间*/
+[delay],[touch-delay]{-webkit-transition: all .5s ease-in-out;transition: all .5s ease-in-out;opacity: 0;}
+/*设置动画函数*/
+.active{-webkit-transform:translateZ(0); opacity: 1;}

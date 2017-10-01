@@ -1,0 +1,102 @@
+@charset "utf-8";
+/******************通用*******************/
+html,body{-webkit-tap-highlight-color:rgba(0,0,0,0);color:#302e31;font:13px "微软雅黑";margin:0;padding:0;-webkit-user-select:none;background:#fafafa;width:100%;height:100%;}
+form,table,td,h1,h2,h3,h4,ul,ol,li,p{margin:0;padding:0;border:0;list-style:none}
+input,img{vertical-align:middle; border:0;}
+html,body{width:100%; height:100%;}
+body{background:#000;-webkit-text-size-adjust:none;}
+img{border:0 none;max-width:100%;height:auto;}
+ol,ul{list-style:none;}
+:focus{outline:0;}
+textarea{resize:none;overflow:auto;}
+a{-webkit-touch-callout:none;-webkit-user-select:none;text-decoration:none}
+a:link {-webkit-tap-highlight-color:rgba(0,0,0,0)}
+table{border-collapse: collapse;border-spacing: 0;}
+input:focus,textarea:focus{outline:0}
+/*************************通用*************************/
+#wrap{ position: relative; height: 100%; width: 100%;background-position: center; background-size: cover; overflow: hidden;}
+#main{ position: absolute; width:415px; height: 540px; left: 50%; top: 50%; margin-left: -207px; margin-top: -270px; text-align: center;}
+/*************************登陆页面*************************/
+.login#wrap{ background-image:url(../img/login.jpg);}
+.login_logo{ display: block;width:139px; height: 47px; margin:0 auto 25px;}
+.login_tit1{display: block; margin:0 auto; width:237px; height: 26px;}
+.login_tit2{display: block; margin:4px auto 17px; width:251px; height: 133px;}
+.btn_check,
+.btn_input,
+.btn_sublime{display: block;margin:7px auto; height: 40px; width:188px; padding: 0 20px; border:2px solid #ff33a1; font: 29px/38px "微软雅黑"; color:#ff33a1;-webkit-border-radius: 22px; border-radius: 22px;}
+.btn_check{ position:relative; background: url(../img/btn_check.png) no-repeat 15px center; background-size: 26px 26px;}
+.checked::before{content: ""; position: absolute; left: 13px; width:32px; height: 31px;background: url(../img/btn_check-s.png) no-repeat center; background-size: 32px 31px;}
+.btn_input{ background-color: #fff; text-align: center;}
+.btn_input::-webkit-input-placeholder{ text-align: center; color:#999;}
+.btn_sublime{ margin-top: 45px;}
+/*************************游戏规则*************************/
+.index#wrap{ background-image:url(../img/index.jpg); background-position: center bottom;}
+.index_tit{ position: absolute; width: 235px; height: 235px; border: 18px solid #ff9db7; left: 50%; top:50%;margin-top:-260px;margin-left: -136px; background: #d11f4f url(../img/index_tit.png) no-repeat center 40%; background-size: 152px 179px;-webkit-border-radius: 50%; border-radius: 50%;}
+.btn_play{ position: absolute;bottom: 140px;width:162px; height: 49px;left: 50%;margin-left:-81px; background: url(../img/btn_play.png) no-repeat center; background-size:162px 49px;}
+.btn_play.none{ background-image: url(../img/btn_play-n.png)}
+
+.let_share,
+.none_share{ font-size: 20px;}
+
+.rule{ position: absolute; bottom: 0; left: 33px; right: 23px; padding-bottom: 5px; font-size: 12.5px; line-height: 20px; color:#cfa972;counter-reset:rule;}
+.rule_tit{ font-size: 15px;}
+.rule_text{ position:relative; margin-left: 20px;counter-increment:rule;}
+.rule_text::before{content: counter(rule)"、"; position: absolute; left: -20px;}
+/*************************金币游戏*************************/
+#people{ position: absolute; width: 73px; height: 73px; bottom: 7%; background: url(../img/people.png) no-repeat center; background-size: 73px 73px;}
+.head{ position: absolute; right: 10px; top: -47px; width: 45px; height: 58px;
+	-webkit-transform-origin: 10px bottom; transform-origin: 10px bottom;
+	-webkit-animation: shack .5s infinite linear alternate;animation: shack .5s infinite linear alternate;}
+
+#time{ position: absolute; left:10px;top:5px; width: 96px; height: 54px; background: url(../img/time.png) no-repeat center; background-size: contain; text-align: center; font:bold 19px/54px "微软雅黑"; color: #fff;}
+#stage{ position: absolute;left: 0;right: 0;bottom: 0;top: 0; background:url(../img/game.jpg) no-repeat center bottom; background-size: cover; overflow: hidden;}
+#mask{ position: fixed;left: 0;top: 0;right: 0;bottom: 0; background: rgba(0,0,0,0.8) url(../img/share.png) no-repeat 80% 10px; background-size: 278px 385px;}
+
+#gold{ position: absolute; width: 70px;height: 70px; left: 0; bottom: 6%; border-radius: 50%; background: no-repeat center; background-size: contain;
+	-webkit-animation: rotate .5s infinite linear;animation: rotate .5s infinite linear;
+	-webkit-transition: bottom 1s linear;transition: bottom 1s linear;
+}
+#gold.move{-webkit-animation: move 1.5s infinite linear alternate;animation: move 1.5s infinite linear alternate;}
+[value="0"]#gold{background-image: url(../img/gold1.png)}
+[value="1"]#gold{background-image: url(../img/gold2.png)}
+
+#receive{width: 276px; height: 63px; position: absolute; left: 50%; top:11%; margin-left: -138px; background-size: contain;}
+[value="0"]#receive{background-image: url(../img/game_tit1.png);}
+[value="1"]#receive{background-image: url(../img/game_tit2.png);}
+
+
+#result{ position: fixed; left: 0; top: 0; right: 0; bottom: 0; text-align: center;}
+.result_text{width: 289px; height: 203px; padding-top: 86px; position: absolute; left: 50%; top: 50%; margin-top: -145px; margin-left: -145px; 
+	background: rgba(255,255,255,0.7) url(../img/mask_bg.png) no-repeat 75% 20%; background-size:213px 196px;
+	white-space: pre-line; font-size: 12.5px; line-height: 19px; color: #6a3906; -webkit-border-radius: 50%; border-radius: 50%;}
+.btn_again,
+.btn_share{ position: absolute; top: 50%; margin-top: 165px; background-size: contain;width:162px; height: 49px;}
+.btn_again{left:30px;  background-image: url(../img/btn_again.png);}
+.btn_share{right:30px;  background-image: url(../img/btn_share.png);}
+/********************动画效果*******************/
+@-webkit-keyframes move{ 
+	0%{-webkit-transform:translateX(0) rotate(0);}
+	100%{-webkit-transform:translateX(345px) rotate(1440deg);}
+}
+@keyframes move{ 
+	0%{transform:translateX(0) rotate(0);}
+	100%{transform:translateX(345px) rotate(1440deg);}
+}
+@-webkit-keyframes rotate{ 
+	0%{-webkit-transform:rotateX(0);}
+	100%{-webkit-transform:rotateX(360deg);}
+}
+@keyframes rotate{ 
+	0%{transform:rotateX(0);}
+	100%{transform:rotateX(360deg);}
+}
+@-webkit-keyframes shack{ 
+	0%{-webkit-transform:rotate(0);}
+	100%{-webkit-transform:rotate(10deg);}
+}
+@keyframes shack{ 
+	0%{transform:rotate(0);}
+	100%{transform:rotate(10deg);}
+}
+
+

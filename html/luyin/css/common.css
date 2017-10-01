@@ -1,0 +1,573 @@
+@charset "UTF-8";
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 5, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* (name:font,level:dark,color:#333),
+(name:font,level:normal,color:#666),
+(name:font,level:pale,color:#999), */
+/******************通用*******************/
+/* line 71, ../style/sass/common.scss */
+html, body {
+  -webkit-tap-highlight-color: transparent;
+  color: #333333;
+  font: 12px/1.6 "微软雅黑", Helvetica;
+  width: 100%;
+  height: 100%;
+  -webkit-user-select: none;
+}
+
+/* line 72, ../style/sass/common.scss */
+body {
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-perspective: 1000;
+  perspective: 1000;
+}
+
+/* line 73, ../style/sass/common.scss */
+.icons {
+  background: url(../img/icons.png) no-repeat 0 0;
+  background-size: 11.79167rem auto;
+}
+
+/* line 74, ../style/sass/common.scss */
+#wrap {
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transition: -webkit-transform 600ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: transform 600ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+/* line 80, ../style/sass/common.scss */
+#wrap.rotate {
+  -webkit-transform: rotateY(-180deg);
+  -moz-transform: rotateY(-180deg);
+  -ms-transform: rotateY(-180deg);
+  -o-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
+}
+
+/* line 82, ../style/sass/common.scss */
+.page, .audioShow {
+  background-color: white;
+  position: absolute;
+  left: 0;
+  top: 0;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* line 88, ../style/sass/common.scss */
+.page {
+  width: 100%;
+  height: 100%;
+}
+
+/* line 90, ../style/sass/common.scss */
+.pageList {
+  width: 100%;
+  height: 100%;
+}
+/* line 92, ../style/sass/common.scss */
+.pageList .pageLi {
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+/* line 93, ../style/sass/common.scss */
+.pageList .pageLi.show {
+  display: block;
+}
+/* line 96, ../style/sass/common.scss */
+.pageList .userPage {
+  background-size: cover;
+  background-position: center;
+}
+/* line 100, ../style/sass/common.scss */
+.pageList .userMask {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+/* line 104, ../style/sass/common.scss */
+.pageList .myPhoto {
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  width: 10rem;
+  height: 10rem;
+  -webkit-border-radius: 0.83333rem;
+  -moz-border-radius: 0.83333rem;
+  -ms-border-radius: 0.83333rem;
+  -o-border-radius: 0.83333rem;
+  border-radius: 0.83333rem;
+  margin: -5rem 0 0 -5rem;
+  background-size: cover;
+  background-position: center;
+  box-shadow: inset 0 0 6px black;
+}
+/* line 113, ../style/sass/common.scss */
+.pageList .myName {
+  position: absolute;
+  top: 35%;
+  left: 0;
+  right: 0;
+  font-size: 1.66667rem;
+  color: white;
+  text-align: center;
+  margin-top: 3.33333rem;
+}
+/* line 119, ../style/sass/common.scss */
+.pageList .myAudio {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  margin: 0 0 1.66667rem -3.02083rem;
+  width: 6.04167rem;
+  height: 6.04167rem;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  text-align: center;
+  color: white;
+  font-size: 1.875rem;
+  line-height: 6.04167rem;
+  background-color: #da4a4a;
+}
+/* line 127, ../style/sass/common.scss */
+.pageList .myAudio:after {
+  content: "录音";
+}
+/* line 128, ../style/sass/common.scss */
+.pageList .myAudio[data-audio] {
+  background-color: #09bb07;
+}
+/* line 130, ../style/sass/common.scss */
+.pageList .myAudio[data-audio]:after {
+  content: "播放";
+}
+/* line 136, ../style/sass/common.scss */
+.pageList .recordHead {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  padding: 0.20833rem 0.41667rem;
+  border-bottom: 0.04167rem solid #b2b2b2;
+  background-color: white;
+}
+/* line 142, ../style/sass/common.scss */
+.pageList .recordBtn {
+  -webkit-border-radius: 0.20833rem;
+  -moz-border-radius: 0.20833rem;
+  -ms-border-radius: 0.20833rem;
+  -o-border-radius: 0.20833rem;
+  border-radius: 0.20833rem;
+  -webkit-transition: background 500ms;
+  transition: background 500ms;
+  background-color: #409b18;
+  color: white;
+  font-size: 1.33333rem;
+  line-height: 3.33333rem;
+  text-align: center;
+}
+/* line 148, ../style/sass/common.scss */
+.pageList .recordBtn.stop {
+  background-color: #ec1c24;
+}
+/* line 152, ../style/sass/common.scss */
+.pageList .recordTip {
+  position: fixed;
+  left: 0;
+  top: 3.66667rem;
+  right: 0;
+  padding: 0.20833rem 1.33333rem;
+  text-align: center;
+  background-color: #c9c9ce;
+}
+/* line 158, ../style/sass/common.scss */
+.pageList .recordList {
+  padding: 5.625rem 0 3.70833rem;
+  height: 100%;
+  box-sizing: border-box;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+/* line 164, ../style/sass/common.scss */
+.pageList .recordLi {
+  font-size: 1.33333rem;
+  height: 4.66667rem;
+  line-height: 4.66667rem;
+}
+/* line 167, ../style/sass/common.scss */
+.pageList .recordLi + .recordLi .recordMain {
+  border-top: 0.04167rem solid #b2b2b2;
+}
+/* line 169, ../style/sass/common.scss */
+.pageList .recordUpload, .pageList .recordDelete {
+  width: 3em;
+  text-align: center;
+  float: right;
+  padding: 0.83333rem 1.33333rem;
+  margin: 1.02083rem 0.41667rem;
+  -webkit-border-radius: 0.20833rem;
+  -moz-border-radius: 0.20833rem;
+  -ms-border-radius: 0.20833rem;
+  -o-border-radius: 0.20833rem;
+  border-radius: 0.20833rem;
+  font-size: 1rem;
+  line-height: 1rem;
+  color: white;
+}
+/* line 176, ../style/sass/common.scss */
+.pageList .recordUpload {
+  background-color: #007aff;
+}
+/* line 178, ../style/sass/common.scss */
+.pageList .recordUpload:after {
+  content: "上传";
+}
+/* line 179, ../style/sass/common.scss */
+.pageList .recordUpload.load {
+  background-color: rgba(0, 122, 255, 0.6);
+}
+/* line 180, ../style/sass/common.scss */
+.pageList .recordUpload.load:after {
+  content: "上传中";
+}
+/* line 181, ../style/sass/common.scss */
+.pageList .recordUpload.finish {
+  background-color: rgba(0, 122, 255, 0.4);
+}
+/* line 182, ../style/sass/common.scss */
+.pageList .recordUpload.finish:after {
+  content: "完成";
+}
+/* line 184, ../style/sass/common.scss */
+.pageList .recordDelete {
+  background-color: #b2b2b2;
+}
+/* line 186, ../style/sass/common.scss */
+.pageList .recordMark {
+  width: 2.91667rem;
+  height: 100%;
+  float: left;
+}
+/* line 187, ../style/sass/common.scss */
+.pageList .recordMain {
+  margin-left: 2.91667rem;
+}
+/* line 196, ../style/sass/common.scss */
+.pageList .search {
+  height: 2.33333rem;
+  padding: 0.625rem;
+  border-bottom: 0.04167rem solid #b2b2b2;
+  background-color: #c9c9ce;
+}
+/* line 202, ../style/sass/common.scss */
+.pageList .searchByname {
+  width: 100%;
+  height: 100%;
+  -webkit-border-radius: 0.41667rem;
+  -moz-border-radius: 0.41667rem;
+  -ms-border-radius: 0.41667rem;
+  -o-border-radius: 0.41667rem;
+  border-radius: 0.41667rem;
+  background-color: white;
+  text-align: center;
+  line-height: 2.33333rem;
+}
+/* line 207, ../style/sass/common.scss */
+.pageList .audioList {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 3.625rem;
+  bottom: 4.125rem;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+/* line 211, ../style/sass/common.scss */
+.pageList .audioTit {
+  margin-right: 1.25rem;
+  font-size: 1rem;
+  text-indent: 1.33333rem;
+  line-height: 2.33333rem;
+  font-weight: bold;
+  background-color: #f8f8f8;
+}
+/* line 216, ../style/sass/common.scss */
+.pageList .audioLi {
+  margin: 0 1.33333rem;
+  font-size: 1.33333rem;
+  line-height: 3.25rem;
+}
+/* line 219, ../style/sass/common.scss */
+.pageList .audioLi + .audioLi {
+  border-top: 0.04167rem solid #b2b2b2;
+}
+/* line 220, ../style/sass/common.scss */
+.pageList .audioLi:after {
+  content: attr(data-name);
+}
+/* line 222, ../style/sass/common.scss */
+.pageList .audioPic {
+  display: inline-block;
+  float: left;
+  width: 2rem;
+  height: 2rem;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  margin: 0.75rem 0.41667rem 0 0;
+  background-position: center;
+  background-size: cover;
+}
+/* line 232, ../style/sass/common.scss */
+.pageList .searchList {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  width: 1.25rem;
+  text-align: center;
+}
+/* line 237, ../style/sass/common.scss */
+.pageList .searchLi {
+  display: block;
+  line-height: 1.33333rem;
+  font-size: 0.91667rem;
+  color: #007aff;
+  text-decoration: none;
+}
+
+/* line 246, ../style/sass/common.scss */
+.tabList {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 4.08333rem;
+  background-color: #f8f8f8;
+  border-top: 0.04167rem solid #b2b2b2;
+  font-size: 0.83333rem;
+  color: #ababab;
+  line-height: 1.04167rem;
+  text-align: center;
+}
+/* line 253, ../style/sass/common.scss */
+.tabList .tabLi, .tabList .tabshare {
+  float: left;
+  width: 25%;
+  height: 4.08333rem;
+}
+/* line 255, ../style/sass/common.scss */
+.tabList .tabLi.click, .tabList .tabshare.click {
+  color: #007aff;
+}
+/* line 257, ../style/sass/common.scss */
+.tabList .icons {
+  width: 2.33333rem;
+  height: 2.33333rem;
+  display: block;
+  margin: 0.41667rem auto 0;
+}
+
+/* line 262, ../style/sass/common.scss */
+.user {
+  background-position: 0 0;
+}
+/* line 263, ../style/sass/common.scss */
+.click .user {
+  background-position: 0 -2.95833rem;
+}
+
+/* line 265, ../style/sass/common.scss */
+.record {
+  background-position: -2.95833rem 0;
+}
+/* line 266, ../style/sass/common.scss */
+.click .record {
+  background-position: -2.95833rem -2.95833rem;
+}
+
+/* line 268, ../style/sass/common.scss */
+.audio {
+  background-position: -5.91667rem 0;
+}
+/* line 269, ../style/sass/common.scss */
+.click .audio {
+  background-position: -5.91667rem -2.95833rem;
+}
+
+/* line 271, ../style/sass/common.scss */
+.share {
+  background-position: -8.875rem 0;
+}
+/* line 272, ../style/sass/common.scss */
+.click .share {
+  background-position: -8.875rem -2.95833rem;
+}
+
+/* line 276, ../style/sass/common.scss */
+.audioShow {
+  -webkit-transform: rotateY(180deg) translateZ(1px);
+  -moz-transform: rotateY(180deg) translateZ(1px);
+  -ms-transform: rotateY(180deg) translateZ(1px);
+  -o-transform: rotateY(180deg) translateZ(1px);
+  transform: rotateY(180deg) translateZ(1px);
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  color: white;
+}
+
+/* line 283, ../style/sass/common.scss */
+.audioP, .audioN, .audioTip {
+  position: absolute;
+  left: 2rem;
+  top: 20%;
+}
+
+/* line 287, ../style/sass/common.scss */
+.audioP {
+  width: 8.33333rem;
+  height: 8.33333rem;
+  -webkit-border-radius: 5%;
+  -moz-border-radius: 5%;
+  -ms-border-radius: 5%;
+  -o-border-radius: 5%;
+  border-radius: 5%;
+  margin-top: -6.66667rem;
+  background-position: center;
+  background-size: cover;
+}
+
+/* line 294, ../style/sass/common.scss */
+.audioN {
+  margin-top: 1.66667rem;
+  font-size: 1.33333rem;
+  font-weight: bold;
+}
+
+/* line 300, ../style/sass/common.scss */
+.audioTip {
+  margin-top: 3.54167rem;
+}
+
+/* line 303, ../style/sass/common.scss */
+.audioMask {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* line 309, ../style/sass/common.scss */
+.audioB {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 10%;
+  text-align: center;
+}
+/* line 311, ../style/sass/common.scss */
+.audioB .icons {
+  width: 6.04167rem;
+  height: 6.04167rem;
+  display: inline-block;
+  text-align: center;
+}
+/* line 315, ../style/sass/common.scss */
+.audioB .audioOff {
+  background-position: 0 -5.91667rem;
+}
+
+/* line 319, ../style/sass/common.scss */
+.maskLoad {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.4) url(../img/load.gif) no-repeat center;
+}

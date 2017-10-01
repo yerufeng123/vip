@@ -1,0 +1,52 @@
+@charset "utf-8";
+/******************通用*******************/
+html,body{-webkit-tap-highlight-color:rgba(0,0,0,0);color:#302e31;font:13px/1.6 "微软雅黑",Helvetica;margin:0;padding:0;-webkit-user-select:none;width:100%;height:100%;}
+form,table,td,h1,h2,h3,h4,ul,ol,li,p{margin:0;padding:0;border:0;list-style:none}
+input,img{vertical-align:middle}
+html,body{min-width:100%;}
+body{-webkit-text-size-adjust:none;}
+img{border:0 none;max-width:100%;height:auto;}
+ol,ul{list-style:none;}
+:focus{outline:0;}
+textarea{resize:none;overflow:auto;}
+a{-webkit-touch-callout:none;-webkit-user-select:none;text-decoration:none}
+a:link {-webkit-tap-highlight-color:rgba(229,59,44,0.4)}
+table{border-collapse: collapse;border-spacing: 0;}
+input:focus,textarea:focus{outline:0}
+
+/*测试*/
+#wrap .page{width: 100%;height: 100%; background: url(../img/bg.jpg) center; background-size: 105px auto;}
+.photo{ width: 100%; height: 100%; background: no-repeat center; background-size: contain;}
+#mask{ position: fixed; left: 0;top:0; right: 0; bottom: 0;background:rgba(0,0,0,.4)  no-repeat center;z-index: 99; opacity: 0;  pointer-events:none;-webkit-transition: opacity .3s; transition: opacity .3s;}
+#mask.on{ opacity: 1;  pointer-events:auto;}
+#mask > li{width: 100%;height: 100%;background: no-repeat center; background-size: contain; display: none;}
+#mask > li.on{ display:block;}
+#drop_down{ width:22px; height: 12px; position: fixed; left: 50%; margin-left: -11px; bottom: 5%;}
+/******************page1*******************/
+#page1 > .photo{ background-image: url(../img/1.jpg)}
+#page2 > .photo{ background-image: url(../img/2.jpg)}
+#page3 > .photo{ background-image: url(../img/3.jpg)}
+#page4 > .photo{ background-image: url(../img/4.jpg)}
+#page5 > .photo{ background-image: url(../img/5.jpg)}
+#page6 > .photo{ background-image: url(../img/6.jpg)}
+/*#page7 > .photo{ background-image: url(../img/7.jpg)}
+#page8 > .photo{ background-image: url(../img/8.jpg)}
+#page9 > .photo{ background-image: url(../img/9.jpg)}
+#page10 > .photo{ background-image: url(../img/10.jpg)}
+#page11 > .photo{ background-image: url(../img/11.jpg)}
+#page12 > .photo{ background-image: url(../img/12.jpg)}*/
+/*****************page2***********************/
+#page_list > .page1 > .photo{ background-image: url(../img/da1.jpg)}
+#page_list > .page2 > .photo{ background-image: url(../img/da2.jpg)}
+#page_list > .page3 .photo{ background-image: url(../img/da3.jpg)}
+#page_list > .page4 .photo{ background-image: url(../img/da4.jpg)}
+/*****************page3***********************/
+#page_list > .page5 > .photo{ background-image: url(../img/da5.jpg)}
+#page_list > .page6 > .photo{ background-image: url(../img/da6.jpg)}
+/*****************page4***********************/
+#page_list > .page7 > .photo{ background-image: url(../img/7.jpg)}
+#page_list > .page8 > .photo{ background-image: url(../img/8.jpg)}
+#page_list > .page9 > .photo{ background-image: url(../img/9.jpg)}
+#page_list > .page10 > .photo{ background-image: url(../img/10.jpg)}
+#page_list > .page11 > .photo{ background-image: url(../img/11.jpg)}
+

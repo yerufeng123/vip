@@ -1,0 +1,69 @@
+/*--------------base------------------*/
+.clearbar5{
+    width:100%;
+    height:5px;
+}
+.clearbar10{
+    width:100%;
+    height:10px;
+}
+.clearbar15{
+    width:100%;
+    height:15px;
+}
+
+.Tc_input {
+    width: 85%;
+    margin-left: 1%;
+    border: 1px solid #000000;
+    float:left;
+    text-align: center;
+}
+.input25{
+    border: 1px #cccccc solid;
+    width:325px;
+    height: 25px;
+}
+
+.select25{
+    border: 1px #cccccc solid;
+    width:325px;
+    height:25px;
+    text-align: center;
+}
+
+.textarea40{
+    border: 1px #cccccc solid;
+    width: 325px;
+    height:  40px;
+    margin: auto;
+}
+
+.textarea100{
+    border: 1px #cccccc solid;
+    width: 325px;
+    height:  100px;
+    margin: auto;
+}
+
+.textarea250{
+    border: 1px #cccccc solid;
+    width: 325px;
+    height:  250px;
+    margin: auto;
+}
+
+.button50{
+    width:50px;
+    height: 25px;
+}
+
+.STYLE3 {
+    font-size: 12px; 
+    font-weight: bold;
+}
+
+.STYLE4 {
+    color: #03515d;
+    font-size: 12px;
+}

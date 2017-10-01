@@ -1,0 +1,328 @@
+'use strict';
+var page = {
+    _width: 0, //页面宽度
+    _height: 0, //页面高度
+    _delay: 0, //页面切换停留时间
+    _last: 300, //页面切换持续时间
+    _zoom: 1, //页面适配缩放比
+    _index: 0, //当前显示第几个页面
+    _num: 0, //页面个数
+    sign: true, //页面跳转标识
+    _top: 0, //滚动元素到页面顶上的距离
+    _temp: 0, //临时缓存区
+    _list: [], //页面动画动画元素
+    _static: [], //资源列表
+    _lazy: [], //懒加载列表
+    _allok:true,//是否全部答对/*高祥栋2015-6-23*/
+};
+$(document).ready(function(e) {
+    document.addEventListener('touchmove', function(e) {
+        e.preventDefault();
+    }, false);
+    document.addEventListener('click', function(e) {
+
+    })
+    page._num = $("[scene]").length;
+    page._height = $("body").height();
+    page._width = $("body").width();
+    //加载背景音乐
+    if (h5.bg_audio) {
+        var _audio = document.createElement("audio");
+        _audio.loop = 'loop';
+        _audio.src = h5.address + h5.bg_audio;
+        h5.bg_audio = _audio;
+    }
+    init();
+    //滑动组件初始化
+    /*var slide = new Slide("#page_list");
+     slide.SlideY = function(_dir){
+     page_move(_dir);
+     }*/
+    //下一页跳转
+    $("#bg_music").on("click", function() {
+        var that = $(this);
+        if (that.hasClass("on")) {
+            that.removeClass("on");
+            audio_off(h5.bg_audio);
+        } else {
+            that.addClass("on");
+            audio_on(h5.bg_audio);
+        }
+    })
+    $('.btn_star').one('click', function(e) {
+        setTimeout(function() {
+            page_move();
+            setTimeout(function(){
+                $('.index .active').removeClass('active')
+            },1000)
+        }, 1000)
+    })
+
+    $('.max_select .ans').on('click', function(e) {
+        $(this).toggleClass('select');
+    })
+    $('.only_select .ans').on('click', function(e) {
+        $(this).addClass('select').siblings('.ans').removeClass('select');
+    })
+    $('.btn_next').on('click', function(e) {
+        var _right = $('[scene]').eq(page._index).find('.right');
+        var _select = $('[scene]').eq(page._index).find('.select');
+        /*高祥栋2015-6-23*/
+        if(_select.length <= 0){
+            alert('请选择答案！');//要不要待定
+            return false;
+        }
+        /*高祥栋2015-6-23结束*/
+        var _sign = true;
+        _right.each(function() {
+            if (!$(this).hasClass('select')) {
+                _sign = false;
+                return false;
+            }
+        })
+        if (_sign) {
+            _select.each(function() {
+                if (!$(this).hasClass('right')) {
+                    _sign = false;
+                    return false;
+                }
+            })
+        }
+        //alert(_sign);
+        
+        
+        /*高祥栋2015-6-23*/
+        switch (page._index) {
+            case 1:
+                $('.ans_photo').css('background-position','0%');
+                $('.askmsg').html('上汽大通G10拥有2.0T高性能发动机和2.4L节能环保发动机的双擎动力，搭配ZF 6速手自一体变速箱，使最高时速达到190Km/h！');
+                $('#mask').show();
+                if (_sign) {
+                    $('#mask_err').hide();
+                    $('#mask_ok').show();
+                    
+                } else {
+                    page._allok=false;
+                    $('#mask_ok').hide();
+                    $('#mask_err').show();
+                }
+
+                break;
+            case 2:
+                $('.ans_photo').css('background-position','25%');
+                $('.askmsg').html('1070mm的超大间距，为你提供黄金第二排！就算你是一米九的大个，也能在G10的第二排悠闲地翘二郎腿哦！');
+                $('#mask').show();
+                if (_sign) {
+                    $('#mask_err').hide();
+                    $('#mask_ok').show();
+                    
+                } else {
+                    page._allok=false;
+                    $('#mask_ok').hide();
+                    $('#mask_err').show();
+                }
+                break;
+            case 3:
+                $('.ans_photo').css('background-position','50%');
+                $('.askmsg').html('上汽大通G10的行李箱最大空间达到2500L，远超市面上主流MPV的2倍，放置6个高尔夫球包都绰绰有余！');
+                $('#mask').show();
+                if (_sign) {
+                    $('#mask_err').hide();
+                    $('#mask_ok').show();
+                    
+                } else {
+                    page._allok=false;
+                    $('#mask_ok').hide();
+                    $('#mask_err').show();
+                }
+                break;
+            case 4:
+                $('.ans_photo').css('background-position','75%');
+                $('.askmsg').html('上汽大通G10的大科技从不说虚，从ESP到一键启动，从智能防夹自动滑移门系统到nivomat自适应平衡系统，数十种豪华科技配置，给你一台智能人性的MPV！');
+                $('#mask').show();
+                if (_sign) {
+                    $('#mask_err').hide();
+                    $('#mask_ok').show();
+                    
+                } else {
+                    page._allok=false;
+                    $('#mask_ok').hide();
+                    $('#mask_err').show();
+                }
+                break;
+            case 5:
+                $('.ans_photo').css('background-position','100%');
+                $('.askmsg').html('上市以来，上汽大通G10先后服务APEC峰会、青奥会、亚信峰会、上合组织会议、珠海航展、博鳌亚洲论坛、全国两会等赛会，展现中国“智”造实力，堪称“最火国宾车”！');
+                $('#mask').show();
+                if (_sign) {
+                    $('#mask_err').hide();
+                    $('#mask_ok').show();
+                    
+                } else {
+                    page._allok=false;
+                    $('#mask_ok').hide();
+                    $('#mask_err').show();
+                }
+                break;
+            default:
+                alert('序列号错误');
+
+        }
+        /*高祥栋2015-6-23结束*/
+        
+        
+    })
+    
+    
+    /*高祥栋2015-6-23开始*/
+    //单击赢滴滴红包按钮
+    $('#redpacket').bind('click',function(e){
+        $('.resule').show();
+        $('.dia').hide();
+        $('.dia_write').show();
+    });
+    //单击关注商家按钮
+    $('#follow').bind('click',function(e){
+        $('.resule').show();
+        $('.dia').hide();
+        $('.dia_share').show();
+    })
+    //单击呼朋唤友按钮
+    $('#gxd_share').bind('click',function(e){
+        //$('.dia').hide();
+        //$('.resule').hide();
+        //$('#mask').hide();
+        $('#share').show();
+    });
+    //单击分享遮罩
+    $('#share').bind('click',function(e){
+        $('#share').hide();
+    });
+    /*高祥栋2015-6-23开始*/
+    
+    
+    $('#mask .btn').on('click', function(e) {
+        $('#mask').hide();
+        page_move();
+    })
+    var scene = document.getElementById('wrap');
+    var parallax = new Parallax(scene);
+    //动画运行
+    ani_run(0)
+    $('#music').bind('click',function(){ 
+		if($(this).hasClass('on')){
+			_audioOff()
+			$(this).removeClass('on');
+		}else{
+			_audioon()
+			$(this).addClass('on');
+		}
+	})
+//打开音乐
+function _audioon(){
+	var audio = document.getElementById("audio");
+	audio.play();
+	}
+//关闭音乐
+function _audioOff(){
+	var audio = document.getElementById("audio");
+	audio.pause();
+	}
+});
+//初始化
+function init() {
+    for (var i = 0; i < page._num; i++) {
+        //动画
+        var scene = $("[scene]").eq(i);
+        var _Dom = scene.find("[delay]");
+        var _Num = _Dom.length;
+        var _Top = scene.offset().top;
+        var _stop = scene.attr("stop-move") || 0;//记录页面移动的状态
+        page._list.push({"_dom": _Dom, "_num": _Num, "_top": -_Top, "_stop": _stop, });
+        //图片
+        _Dom = scene.find("[lazy-src]");
+        _Num = scene.find("[lazy-src]").length;
+        page._lazy.push({"_dom": _Dom, "_num": _Num});
+    }
+    //加载前两个页面的图片
+    for (var i = 0; i < h5.lazy; i++) {
+        //lazy_load(0);
+    }
+}
+//动画运行
+function ani_run(_index) {
+    console.log('运行动画');
+    var _list = page._list[_index];
+    var _t = 0;
+    var _d = null;
+    for (var i = 0; i < _list._num; i++) {
+        _d = $(_list._dom[i]);
+        _t = $(_d).attr("delay");
+        var c = function(_DOM, _TIME) {
+            setTimeout(function() {
+                $(_DOM).addClass("active");
+            }, _TIME);
+        }(_d, _t)
+    }
+}
+//懒加载
+function lazy_load(_index) {
+    var _list = page._lazy[_index];
+    var _src = "";
+    for (var i = 0; i < _list._num; i++) {
+        var _dom = $(_list._dom[i]);
+        _src = $(_dom).attr("lazy-src");
+        if (_dom[0].tagName == "IMG") {
+            $(_dom).attr("src", _src);
+        } else {
+            $(_dom).css("background-image", "url(" + _src + ")");
+        }
+        $(_dom).bind("error", function() {
+            this.removeAttribute("src");
+        })
+    }
+    page._lazy.shift();
+}
+//答题跳转
+function page_move() {
+    
+    var index = page._index++;
+    
+    $('[scene]').eq(index).removeClass('show')
+    if (page._index >= 6) {
+        //alert('最后一道题目了');
+        if(page._allok){/*高祥栋2015-6-23*/
+            $('.resule').show();
+            $('.dia').hide();
+            $('.dia_ok').show();
+            
+        }else{
+            $('.resule').show();
+            $('.dia').hide();
+            $('.dia_no').show();
+        }
+        return false;
+    }
+    $('[scene]').eq(index + 1).addClass('show')
+
+}
+//倒计时
+function countdown(_dom, _num) {
+    if (_num <= 0) {
+        return false;
+    }
+    var _D = _dom;
+    var _N = _num - 1;
+    setTimeout(function() {
+        $(_D).html(_N);
+        countdown(_D, _N);
+    }, 1000)
+}
+//播放音乐
+function audio_on(_dom) {
+    _dom.play();
+}
+//暂停音乐
+function audio_off(_dom) {
+    _dom.pause();
+}

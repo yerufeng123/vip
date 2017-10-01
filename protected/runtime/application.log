@@ -1,0 +1,713 @@
+2017/09/01 19:35:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "static/vip/tujia/img/shared.jpg".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('static/vip/tuji...')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/static/vip/tujia/img/shared.jpg?radom=1504265608
+---
+2017/09/01 22:57:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "robots.txt".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('robots.txt')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/robots.txt
+---
+2017/09/01 23:00:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "static/vip/tujia/img/shared.jpg".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('static/vip/tuji...')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/static/vip/tujia/img/shared.jpg?radom=1504277820
+---
+2017/09/02 06:36:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "robots.txt".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('robots.txt')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/robots.txt
+---
+2017/09/02 07:52:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "robots.txt".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('robots.txt')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/robots.txt
+---
+2017/09/02 07:52:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "robots.txt".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('robots.txt')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/robots.txt
+---
+2017/09/02 11:19:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "robots.txt".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('robots.txt')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/robots.txt
+---
+2017/09/02 11:19:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "static/vip/tujia/img/shared.jpg".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('static/vip/tuji...')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/static/vip/tujia/img/shared.jpg?radom=1503956399
+---
+2017/09/02 12:54:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "static/vip/tujia/img/shared.jpg".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('static/vip/tuji...')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/static/vip/tujia/img/shared.jpg?radom=1504010492
+---
+2017/09/02 15:10:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "static/vip/tujia/img/shared.jpg".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('static/vip/tuji...')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/static/vip/tujia/img/shared.jpg?radom=1503948241
+---
+2017/09/02 17:25:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "static/vip/tujia/img/shared.jpg".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('static/vip/tuji...')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/static/vip/tujia/img/shared.jpg?radom=1504220827
+---
+2017/09/02 19:18:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "static/vip/tujia/img/shared.jpg".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('static/vip/tuji...')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/static/vip/tujia/img/shared.jpg?radom=1504277820
+---
+2017/09/02 19:18:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "static/vip/tujia/img/shared.jpg".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('static/vip/tuji...')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/static/vip/tujia/img/shared.jpg?radom=1504253313
+---
+2017/09/02 19:30:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "static/vip/tujia/img/shared.jpg".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('static/vip/tuji...')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/static/vip/tujia/img/shared.jpg?radom=1504265608
+---
+2017/09/03 00:18:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "robots.txt".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('robots.txt')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/robots.txt
+---
+2017/09/03 06:57:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "wp-includes/wlwmanifest.xml".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('wp-includes/wlw...')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/wp-includes/wlwmanifest.xml
+---
+2017/09/03 06:57:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "xmlrpc.php".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('xmlrpc.php')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/xmlrpc.php?rsd
+---
+2017/09/03 06:57:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "blog/wp-includes/wlwmanifest.xml".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('blog/wp-include...')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/blog/wp-includes/wlwmanifest.xml
+---
+2017/09/03 06:57:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "wordpress/wp-includes/wlwmanifest.xml".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('wordpress/wp-in...')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/wordpress/wp-includes/wlwmanifest.xml
+---
+2017/09/03 06:57:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "wp/wp-includes/wlwmanifest.xml".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('wp/wp-includes/...')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/wp/wp-includes/wlwmanifest.xml
+---
+2017/09/03 06:57:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "site/wp-includes/wlwmanifest.xml".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('site/wp-include...')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/site/wp-includes/wlwmanifest.xml
+---
+2017/09/03 18:32:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "robots.txt".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('robots.txt')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/robots.txt
+---
+2017/09/04 16:38:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "robots.txt".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('robots.txt')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/robots.txt
+---
+2017/09/06 03:20:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "robots.txt".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('robots.txt')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/robots.txt
+---
+2017/09/06 07:21:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "robots.txt".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('robots.txt')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/robots.txt
+---
+2017/09/07 07:03:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "robots.txt".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('robots.txt')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/robots.txt
+---
+2017/09/08 11:57:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "robots.txt".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('robots.txt')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/robots.txt
+---
+2017/09/08 19:05:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2017/09/09 23:28:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "robots.txt".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('robots.txt')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/robots.txt
+---
+2017/09/10 02:59:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "robots.txt".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('robots.txt')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/robots.txt
+---
+2017/09/10 02:59:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "robots.txt".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('robots.txt')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/robots.txt
+---
+2017/09/10 04:00:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "robots.txt".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('robots.txt')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/robots.txt
+---
+2017/09/10 05:14:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "robots.txt".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('robots.txt')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/robots.txt
+---
+2017/09/11 01:16:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "robots.txt".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('robots.txt')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/robots.txt
+---
+2017/09/11 14:09:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "robots.txt".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('robots.txt')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/robots.txt
+---
+2017/09/12 05:49:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "robots.txt".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('robots.txt')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/robots.txt
+---
+2017/09/12 09:00:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "robots.txt".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('robots.txt')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/robots.txt
+---
+2017/09/14 08:37:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "robots.txt".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('robots.txt')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/robots.txt
+---
+2017/09/15 21:29:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "wp-includes/wlwmanifest.xml".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('wp-includes/wlw...')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/wp-includes/wlwmanifest.xml
+---
+2017/09/15 21:29:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "xmlrpc.php".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('xmlrpc.php')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/xmlrpc.php?rsd
+---
+2017/09/15 21:29:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "blog/wp-includes/wlwmanifest.xml".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('blog/wp-include...')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/blog/wp-includes/wlwmanifest.xml
+---
+2017/09/15 21:29:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "wordpress/wp-includes/wlwmanifest.xml".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('wordpress/wp-in...')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/wordpress/wp-includes/wlwmanifest.xml
+---
+2017/09/15 21:29:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "wp/wp-includes/wlwmanifest.xml".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('wp/wp-includes/...')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/wp/wp-includes/wlwmanifest.xml
+---
+2017/09/15 21:29:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "site/wp-includes/wlwmanifest.xml".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('site/wp-include...')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/site/wp-includes/wlwmanifest.xml
+---
+2017/09/15 21:29:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "cms/wp-includes/wlwmanifest.xml".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('cms/wp-includes...')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/cms/wp-includes/wlwmanifest.xml
+---
+2017/09/16 14:03:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "robots.txt".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('robots.txt')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/robots.txt
+---
+2017/09/16 17:08:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "robots.txt".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('robots.txt')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/robots.txt
+---
+2017/09/17 23:57:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "robots.txt".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('robots.txt')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/robots.txt
+---
+2017/09/18 19:53:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "robots.txt".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('robots.txt')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/robots.txt
+---
+2017/09/19 06:46:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "robots.txt".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('robots.txt')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/robots.txt
+---
+2017/09/19 16:39:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "robots.txt".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('robots.txt')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/robots.txt
+---
+2017/09/20 18:23:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "robots.txt".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('robots.txt')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/robots.txt
+---
+2017/09/20 22:20:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "robots.txt".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('robots.txt')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/robots.txt
+---
+2017/09/22 01:06:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "robots.txt".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('robots.txt')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/robots.txt
+---
+2017/09/22 05:41:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "robots.txt".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('robots.txt')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/robots.txt
+HTTP_REFERER=http://vip.jellyideas.net/robots.txt
+---
+2017/09/22 07:37:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "robots.txt".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('robots.txt')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/robots.txt
+---
+2017/09/22 17:33:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController(false)
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?m=member&c=index&a=register&siteid=1
+---
+2017/09/22 17:37:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController(false)
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?m=wap&a=index&siteid=1
+---
+2017/09/22 19:22:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController(false)
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?m=member&c=index&a=register&siteid=1
+---
+2017/09/22 19:22:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController(false)
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?m=wap&a=index&siteid=1
+---
+2017/09/23 02:37:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController(false)
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?m=member&c=index&a=register&siteid=1
+---
+2017/09/23 02:37:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController(false)
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?m=wap&a=index&siteid=1
+---
+2017/09/23 09:12:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController(false)
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?m=member&c=index&a=register&siteid=1
+---
+2017/09/23 09:12:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController(false)
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?m=wap&a=index&siteid=1
+---
+2017/09/23 19:12:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController(false)
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?m=member&c=index&a=register&siteid=1
+---
+2017/09/23 19:12:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController(false)
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?m=wap&a=index&siteid=1
+---
+2017/09/24 03:24:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "robots.txt".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('robots.txt')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/robots.txt
+---
+2017/09/24 05:02:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController(false)
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?m=member&c=index&a=register&siteid=1
+---
+2017/09/24 05:02:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController(false)
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?m=wap&a=index&siteid=1
+---
+2017/09/24 05:53:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "robots.txt".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('robots.txt')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/robots.txt
+---
+2017/09/24 21:20:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "robots.txt".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('robots.txt')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/robots.txt
+---
+2017/09/24 23:25:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "robots.txt".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('robots.txt')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/robots.txt
+---
+2017/09/26 09:40:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "robots.txt".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('robots.txt')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/robots.txt
+---
+2017/09/27 14:31:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2017/09/27 14:57:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "robots.txt".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('robots.txt')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/robots.txt
+---
+2017/09/28 06:48:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "robots.txt".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('robots.txt')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/robots.txt
+---
+2017/09/28 13:37:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "robots.txt".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('robots.txt')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/robots.txt
+---
+2017/09/29 00:01:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "robots.txt".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('robots.txt')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/robots.txt
+---
+2017/09/29 00:01:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "robots.txt".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('robots.txt')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/robots.txt
+---
+2017/09/29 00:01:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "static/vip/licai/js/caifu.html".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('static/vip/lica...')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/static/vip/licai/js/caifu.html
+---
+2017/09/29 00:01:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "caifu.html".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('caifu.html')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/caifu.html
+---
+2017/09/29 00:01:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "robots.txt".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('robots.txt')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/robots.txt
+---
+2017/09/29 10:46:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "robots.txt".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('robots.txt')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/robots.txt
+---
+2017/09/29 10:46:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "robots.txt".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('robots.txt')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/robots.txt
+---
+2017/09/29 19:00:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "robots.txt".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('robots.txt')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/robots.txt
+---
+2017/09/30 10:59:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "robots.txt".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('robots.txt')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/robots.txt
+---
+2017/09/30 11:11:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "robots.txt".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('robots.txt')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/robots.txt
+---
+2017/09/30 11:13:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "robots.txt".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('robots.txt')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/robots.txt
+---
+2017/10/01 03:12:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "robots.txt".' in /www/web/vip/public_html/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/web/vip/public_html/framework/web/CWebApplication.php(141): CWebApplication->runController('robots.txt')
+#1 /www/web/vip/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /www/web/vip/public_html/index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/robots.txt
+---

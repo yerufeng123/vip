@@ -1,0 +1,3 @@
+admin1 为后台样式模板
+uploadify 为上传控件
+weixincache 和wxshare  分别保存 微信 php缓存和  jsapi相关文件

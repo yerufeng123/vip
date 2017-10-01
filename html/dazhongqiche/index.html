@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no">
+	<meta name="format-detection" content="email=no">
+    <meta id="viewport" name="viewport" content="width=device-width,user-scalable=no,initial-scale=1">
+    <title>大众汽车</title>
+    <link rel="stylesheet" href="css/page.css">
+    <link rel="stylesheet" href="css/common.css">
+    <script>
+		var h5 = { 
+			skip 		:"jump",	
+			//页面换页方式{正常状态:normal;抽取卡片:draw;旋转卡片：card;跳转:jump;旋转:rotat;风车:wind;连线:line;翻页:book;水平:banner;}
+			clear 		:true,		//页面清除动画
+			address 	:"",		//默认地址
+			lazy 		:1,			//懒加载页面个数
+			preload 	:true,
+			bg_audio	:"video/bg.mp3",		//背景音乐URL和对背景音乐的操作对象
+		}
+	</script>
+  </head>
+  <body> 
+ 	
+	<div id="preload" style="">
+ 	</div>
+  	<div id="wrap" style="display:;">
+  		<ul id="page_list" stage="">
+  			<li class="page show" id="p1" scene="1" stop-move="-1">
+  				<div class="page_body"> 
+					<img src="img/p1_tit1.png" class="p1_tit1 out-top-t quicker" delay="600">
+					<img src="img/p1_tit2.png" class="p1_tit2 active_big quick" delay="800">
+					<img src="img/means.png" class="means">
+  				</div>
+  			</li>
+  			<li class="page" id="p2" scene="2">
+				  <div class="page_body">
+  					<img src="img/p2_tit1.png" class="p2_tit1 out-top-t quicker" delay="600">
+  					<img src="img/p2_tu.jpg" class="p2_tu quicker" delay="900">
+  					<img src="img/p2_car.png" class="p2_car slower" delay="1200">
+            <ul class="p2_list">
+              <li class="out-right quicker" delay="1500">最大功率150kW</li>
+              <li class="out-right quicker" delay="1600">峰值扭距350N·m</li>
+              <li class="out-right quicker" delay="1700">0-100Km/h 加速时需7.6秒</li>
+              <li class="out-right quicker" delay="1800">最高时速可达202Km/h</li>
+            </ul>
+  					 <img src="img/means.png" class="means">
+  				</div>
+  			</li>
+  			<li class="page" id="p3" scene="3" >
+  				<div class="page_body">
+  					<img src="img/p3_tit1.png" class="p3_tit1 out-top-t quicker" delay="600">
+            <div class="p3_tit2 quicker" delay="800">
+  					 <img src="img/p3_tit2.png">
+            </div>
+  					<img src="img/means.png" class="means">
+  				</div>
+  			</li>
+
+        <li class="page" id="p4" scene="4">
+          <div class="page_body">
+              <ul class="p4_tit">
+                  <li><img src="img/p4_tit1.png" class="p4_tit1 out-right quick" delay="600" class="p4_tit1"></li>
+                  <li><img src="img/p4_tit2.png" class="p4_tit2 out-right quick" delay="800"></li>
+                  <li><img src="img/p4_tit3.png" class="p4_tit3 out-right quick" delay="1000"></li>
+              </ul>
+              <img src="img/p4_tu1.png" class="p4_tu1 out-right slower" delay="1200">
+              <img src="img/p4_tu2.png" class="p4_tu2 out-left slower" delay="1400">
+              <img src="img/p4_tu3.png" class="p4_tu3 out-right slower" delay="1600">
+          </div>
+        </li>
+
+        <li class="page" id="p5" scene="5" >
+          <div class="page_body">
+              <ul class="p5_tit">
+                <li><img src="img/p5_tit1.png" class="p5_tit1 out-top-t quick" delay="600"></li>
+                <li><img src="img/p5_tit2.png" class="p5_tit2 out-bottom-b quick" delay="800"></li>
+                <li><img src="img/p5_tit3.png" class="p5_tit3 out-bottom-b quick" delay="1000"></li>
+            </ul>
+              <img src="img/p5_tu1.jpg" class="p5_tu1 out-right slower" delay="1200">
+              <img src="img/p5_tu2.jpg" class="p5_tu2 out-left slower" delay="1300">
+              <img src="img/p5_tu3.jpg" class="p5_tu3 out-right slower" delay="1400">
+          </div>
+        </li>
+
+        <li class="page" id="p6" scene="6">
+        <div class="page_body">
+            <ul class="p6_tit">
+                <li><img src="img/p6_tit1.png" class="p6_tit1 out-top-t quick" delay="600"></li>
+                <li><img src="img/p6_tit2.png" class="p6_tit2 out-left slower" delay="800"></li>
+                <li><img src="img/p6_tit3.png" class="p6_tit3 out-right slower" delay="1000"></li>
+            </ul>
+            <img src="img/p6_tu1.jpg" class="p6_tu1 out-right slower" delay="1200">
+            <img src="img/p6_tu2.jpg" class="p6_tu2 out-left slower" delay="1300">
+            <img src="img/p6_tu3.jpg" class="p6_tu3 out-right slower" delay="1400">
+        </div>
+        </li>
+
+        <li class="page" id="p7" scene="7">
+          <div class="page_body">
+              <ul class="p7_tit">
+                <li><img src="img/p7_tit1.png" class="p7_tit1 out-top-t quick" delay="600"></li>
+                <li><img src="img/p7_tit2.png" class="p7_tit2 out-bottom-b slower" delay="800"></li>
+                <li><img src="img/p7_tit3.png" class="p7_tit3 out-bottom-b slower" delay="1000"></li>
+            </ul>
+              <img src="img/p7_tu1.jpg" class="p7_tu1 out-right slower" delay="1200">
+              <img src="img/p7_tu2.jpg" class="p7_tu2 out-right slower" delay="1400">
+          </div>
+        </li>
+
+        <li class="page" id="p8" scene="8">
+          <div class="page_body">
+              <img src="img/p8_tit1.png" class="p8_tit1 out-top-t quicker" delay="600">
+              <img src="img/p8_tit2.png" class="p8_tit2 out-bottom-b quicker" delay="800">
+              <img src="img/p8_tit3.png" class="p8_tit3 out-bottom-b quicker" delay="1000">
+              <img src="img/p8_tit4.png" class="p8_tit4 out-bottom-b quicker" delay="1200">
+              <img src="img/means.png" class="means">
+          </div>
+        </li>
+
+        <li class="page" id="p9" scene="9" stop-move="1">
+          <div class="page_body">
+              <img src="img/p9_tit1.png" class="p9_tit1 out-top-t quicker" delay="600">
+              <img src="img/p9_tit2.png" class="p9_tit2 active_big quick" delay="900">
+              <img src="img/p9_tu.jpg" class="p9_tu out-bottom-b quicker" delay="1200">
+              <img src="img/means.png" class="means">
+          </div>
+        </li>
+  		</ul>
+      <div id="bg_music" class="on"></div>
+  		<img id="drop_down" src="img/drop_down.png">
+    </div> 
+	<script type="text/javascript" src="js/slide.js" defer="defer"></script>
+	<script type="text/javascript" src="js/zepto.min.js"></script>
+  <script type="text/javascript" src="js/init.js?1"></script>
+  </body>
+</html>

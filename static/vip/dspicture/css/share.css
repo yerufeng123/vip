@@ -1,0 +1,49 @@
+/*公共样式*/
+html,body{-webkit-tap-highlight-color:rgba(0,0,0,0);color:#302e31;font:13px "微软雅黑",Helvetica;font-size:13px;line-height:160%;margin:0;padding:0;-webkit-user-select:none;}
+form,table,td,h1,h2,h3,h4,ul,ol,li,p{margin:0;padding:0;border:0;list-style:none}
+input,img{vertical-align:middle}
+html,body{width:100%; height:100%;}
+body{-webkit-text-size-adjust:none;background: #f7f7f7 url(../img/page2_bg.jpg) no-repeat center; background-size:cover;}
+img{border:0 none;max-width: 100%;height: auto;}
+ol, ul {list-style: none;}
+:focus {outline: 0;}
+textarea{resize:none;overflow:auto;}
+a{-webkit-touch-callout:none;-webkit-user-select:none;text-decoration:none}
+a:link {-webkit-tap-highlight-color:rgba(229, 59, 44, 0.4)}
+table {border-collapse: collapse;border-spacing: 0;}
+input:focus,textarea:focus{outline:0}
+#wrap{width:100%;height:100%;}
+.shop_share{position:relative;height:100%;overflow:hidden;}
+.shop_share img{position:absolute;}
+
+.logo{width:60px;height:58px;right:13px;top:6px;}
+.p6_show{width:70px;height:40px;left:16px;top:12px;}
+.share_tit{width:116px;height:24px;left:50%;margin-left:-58px;top:62px;}
+.share_block{width:250px;position:absolute;left:50%;margin-left:-125px;top:86px;}
+.share_main{width:250px;height:197px;background:url(../img/share_bg1.png) no-repeat;background-size:250px auto;}
+.share_tu{width:231px;height:156px;margin:6px auto 8px;display:block;padding-top:10px;}
+.share_name{width:233px;margin:0 auto;}
+.share_name h3{font-size:12px;font-weight:normal;color:#5e4939;float:left;}
+.share_name span{float:right;font-size:12px;color:#5e4939;}
+.share_detail{background:url(../img/share_bg_detail.png) no-repeat;background-size:250px auto;width:250px;height:69px;margin-top:6px;margin-bottom:6px;}
+.share_detail textarea{font-size:12px;width:242px;height:62px;border:none;margin-top:1px;margin-left:2px;background:none;}
+.share_main2{background:url(../img/share_bg2.png) no-repeat;height:258px;background-size:250px 258px;margin-bottom:6px;}
+.share_text{width:232px;margin:3px auto;max-height:56px;overflow:hidden;font-size:12px;line-height:18px;text-overflow: ellipsis;
+display: -webkit-box;
+ -webkit-line-clamp: 3;
+ -webkit-box-orient: vertical;}
+
+.share_bg{ position:fixed; left: 0;right: 0;top: 0;bottom: 0; background:rgba(0,0,0,.6) no-repeat center;z-index: 9999;overflow:hidden;}
+.share_bg p{display:block;font-size:13px;color:#fff}
+.share_bg p img{width:58px;height:77px;float:right;margin:10px;position:static;}
+.share_bg span{border:1px dashed #fff;color:#fff;display:block;width:60%;text-align:center;height:60px;position:absolute;top:20%;left:50%;margin-left:-30%;}
+.share_bg span b{font-weight:normal;font-size:14px;padding-top:14px;display:block;}
+
+
+
+
+
+
+
+
+

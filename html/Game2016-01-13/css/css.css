@@ -1,0 +1,272 @@
+ a:link { text-decoration: none;color:#000 }/*a:link 指正常的未被访问过的链接；*/
+ a:hover { text-decoration:none;color: #000}/*a:hover 指鼠标在链接上；*/ 
+ a:visited { text-decoration: none;color: #000}/*a:visited 指已经访问过的链接；*/
+ a:active {
+text-decoration: none;
+}
+body{
+    margin: 0;
+    padding: 0;
+
+}
+h1{
+	margin: 0;
+    padding: 0;
+	font-size:25px;
+	align:left;
+	color:#000;
+	margin-left:10px;
+	margin-bottom:10px;
+	margin-top:10px;
+	}
+p{
+    margin: 0;
+}
+p span{
+	color:red;
+	font-size:20px;
+	}
+ul{
+    list-style: none;
+}
+#slg{
+    width: 100%;
+    height: 120px;
+    background-color:#603;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 20px;
+    position: fixed;/*固定定位*/
+	font:Georgia, "Times New Roman", Times, serif;
+	font-size: 80px;
+    color: white;
+    line-height: 100px;
+    margin: auto;
+    text-align: center;
+}
+#top_blank{
+    height: 100px;
+}
+#main{
+    margin: auto;
+    float: none;
+}
+#logo{
+    width: 80px;
+    height: 80px;
+    margin: 5px 1%;
+    float: left;
+    position: fixed;
+    z-index: 50;/*在相对定位的情况下层叠的顺序，z-index 数字越大，越是上层*/
+
+}
+
+#nav{
+    width: 100%;
+    height: 100px;
+	background-color:#FFF;
+}
+#nav_p{
+    font-size: 30px;
+    width: 90%;
+    height: 110px;
+    margin: auto;
+}
+#price{
+    width: 30%;
+    background-color:#ffffff ;
+    height: 110px;
+    padding: 4px;/*设置元素的内边距*/
+    margin-right: 2px;
+    float: left;
+	text-align:center;
+}
+
+#type{
+    width: 30%;
+    background-color: #ffffff;
+    height: 110px;
+    padding: 4px;
+    margin:0 30px;
+    float: left;
+	text-align:center;
+}
+
+#local{
+    width: 30%;
+    background-color: #ffffff;
+    height: 110px;
+    padding: 4px;
+    float: right;
+	text-align:center;
+	
+}
+#tit_info_p{
+    margin-top: 8px;
+    font-size: 35px;
+    height: 40px;
+    text-align: center;
+	/*color:#36f;*/
+	font-weight:400;
+}
+#tit{
+	height: 100px;
+    width: 100%;
+    font-size: 55px;
+    color:#555;
+    line-height: 150px;
+    text-align: center;
+    float: left;
+	margin: -25px;
+font-weight:200;
+}
+#tit_p{
+    width: 100%;
+    font-size: 45px;
+	color:#909;
+    margin-top: 20px;
+	font-weight:300;
+    background-color:#fff;
+}
+#back{
+    width: 98%;
+    padding-left: 20px;
+    text-align: left;
+    line-height: 150px;
+    float: left;
+    position: fixed;/*固定定位*/
+}
+
+#share{
+    width: 98%;
+    padding-right: 20px;
+    text-align: right;
+    line-height: 150px;
+    float: right;
+    position: fixed;/*固定定位*/
+}
+#li_info{
+    margin-top: 50px;
+    width: 95%;
+    height: 350px;/*框高度*/
+    border: 2px solid #bbbbbb;
+	background-color:#FFF;
+}
+#counselor{
+
+}
+#photo{
+    width: 230px;
+    height: 200px;
+    float: left;
+	margin-top:30px;
+	
+}
+#main_top{
+
+    width: 90%;
+    margin: auto;
+}
+
+/*专家详情页面照片*/
+#photo_p{
+    width: 100%;
+    margin: auto;
+	width: 320px;
+    height: 400px;
+	/*position:relative;*/
+  display:table-cell;
+  text-align:center;
+  vertical-align:middle;
+	border-radius:50%;/*实现圆形边框*/
+}
+
+#photo #photo_img{
+    width: 150px;
+    height: 200px;
+    text-align: left;
+    margin-left: 40px;
+	border-radius:100%;/*实现圆形边框*/
+}
+#img_detail{
+	width: 90%;
+    margin: auto;
+	  display:table-cell;
+  text-align:center;
+  vertical-align:middle;
+	
+}
+#info{
+    font-size: 20px;
+}
+#info_p{
+    float: none;
+    width: 90%;
+    margin: auto;
+    padding-bottom: 50px;
+   /* border-bottom: 1px dashed blue ;
+    border-left: 1px dashed blue ;
+    border-right: 1px dashed blue ;*/
+background-color: #ffffff;
+}
+#name{
+    font-size: 40px;
+    margin: 5px 0px 15px 0px;
+	font-weight:bold;
+}
+#name_p{
+    font-size: 60px;
+    /*margin: 5px 0px 15px 0px;*/
+	letter-spacing: 8px;
+	font-weight:bold;
+	text-align: center;
+}
+#info_slg {
+    font-size: 35px;
+    height: 200px;
+    text-indent: 0px;
+	color:#222;
+    overflow: hidden;/*overflow 属性规定当内容溢出元素框时发生的事情*/
+    text-overflow: ellipsis;
+}
+#slg_bottom{
+    width: 90%;
+    height: 50px;
+    line-height: 50px;
+    font-size: 30px;
+	
+    background: white;
+    margin: auto;
+	
+    float: none;
+    white-space: nowrap;/*规定段落中的文本不进行换行*/
+    overflow: hidden;/*overflow 属性规定当内容溢出元素框时发生的事情*/
+    text-overflow: ellipsis;
+    /*border: 2px solid #bbbbbb;*/
+}
+#ico_img{
+    width: 28px;
+    height: 28px;
+	background-position:bottom;
+	
+    /*text-align: left;*/
+	/*margin-top: 15px;*/
+}
+#me_info{
+	color:#000;
+	margin-left:15px;
+	margin-right:10px;
+	color:#333;
+	font-size:16px;
+	}
+#footer{
+    float: none;
+    margin-top: 20px;
+    width: 100%;
+    height: 100px;
+    font-size: 30px;
+    color: wheat;
+    background-color: #999999;
+    text-align: center;
+    line-height: 100px;
+}

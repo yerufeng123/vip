@@ -1,0 +1,303 @@
+@charset "utf-8";
+/* CSS Document */
+/*20150707 add jia公司简介*/
+.logo_nav .welcome_tit{position:absolute;left:8%;top:10%;font-size:11px;color:#fff;}
+.logo_nav .intro_tit{position:absolute;right:32px;top:20px;font-size:28px;color:#000;}
+.logo_nav .intro_tit span{font-size:14px;}
+.logo_nav .about_tit{position:absolute;right:4%;top:40%;font-size:11px;color:#fff;}
+.first_tu{width:165px;height:190px;position:absolute;top:50%;left:50%;margin-left:-71px;margin-top:-40px;z-index:2;}
+.sec_main{position:relative;}
+.first_main_bg{background:url(../images/first_main_bg.png) no-repeat;height:943px;background-size:75px 943px;position:absolute;width:75px;}
+.sec_block1{overflow:hidden;background:-webkit-linear-gradient(top, 2a2a2a, #565656);background:-webkit-gradient(linear, 0 0, 0 bottom, from(#2a2a2a), to(#565656));height:478px;}
+.tu_ren1{width:114px;height:302px;float:left;margin-left:48px;margin-top:20px;clear:both;}
+.sec_block2{overflow:hidden;background:-webkit-linear-gradient(top, 2a2a2a, #565656);background:-webkit-gradient(linear, 0 0, 0 bottom, from(#464646), to(#2b2b2b));height:462px;}
+.detail_com{color:#fff;font-size:14px;line-height:20px;}
+.detail1{width:224px;margin-left:66px;padding-top:16px;}
+.detail2{padding-right:10px;margin-left:172px;margin-top:20px;}
+.detail3{width:221px;margin-left:52px;padding-top:5px;}
+.detail4{width:279px;margin:-18px auto 18px;}
+.detail5{width:212px;float:right;clear:both;padding-right:10px;}
+.cion_line1{width:219px;height:10px;margin-top:0px;margin-left:0px;clear:both;}
+.cion_line2{margin-left:0px;margin-top:14px;}
+.cion_line3{margin-left:-120px;margin-top:16px;}
+.cion_line4{-webkit-transform: rotateY(180deg);float:right;margin:-15px -101px 12px 0px;}
+.tu_ren2{width:279px;height:147px;margin:-15px auto 10px;display:block;}
+
+/*20150707 add jia 员工风采*/
+.ygfc_nav{background:none;}
+.ygfc_nav .intro_tit{top:-20px;right:23px;}
+.fc_tu1{width:68px;height:174px;position:absolute;left:50%;top:50%;margin-left:-99px;margin-top:-55px;}
+.fc_tu2{width:80px;height:188px;position:absolute;left:50%;top:50%;margin-left:-22px;margin-top:-68px;}
+.fc_tu3{width:73px;height:189px;position:absolute;left:50%;top:50%;margin-left:62px;margin-top:-69px;}
+.ygfc_main{background:url(../images/ygfc_bg1.png) repeat-y;background-size:cover;height:1253px;position:relative;z-index:1;}
+.ygfc_t1{background:url(../images/yg_tu1.png) no-repeat;width:205px;height:206px;background-size:205px 206px;position:absolute;top:-6px;left:-12px;}
+.ygfc_t2{background:url(../images/yg_tu2.png) no-repeat;width:163px;height:172px;background-size:163px 172px;position:absolute;top:151px;right:-2px;}
+.ygfc_t3{background:url(../images/yg_tu3.png) no-repeat;width:156px;height:168px;background-size:156px 168px;position:absolute;top:402px;right:-8px;}
+.ygfc_t4{background:url(../images/yg_tu4.png) no-repeat;width:201px;height:177px;background-size:201px 177px;position:absolute;top:596px;right:31px;}
+.ygfc_t5{background:url(../images/yg_tu5.png) no-repeat;width:120px;height:182px;background-size:120px 182px;position:absolute;top:626px;left:-24px;}
+.ygfc_t6{background:url(../images/yg_tu6.png) no-repeat;width:163px;height:187px;background-size:163px 187px;position:absolute;top:788px;right:-13px;}
+.ygfc_t7{background:url(../images/yg_tu7.png) no-repeat;width:192px;height:175px;background-size:192px 175px;position:absolute;top:1025px;right:104px;}
+.coffee{width:233px;height:391px;position:absolute;left:-8px;top:198px;}
+.mask{z-index:300;position: fixed;left: 0;top: 0;right: 0;bottom: 0; height: 100%; background: rgba(0,0,0,.5) no-repeat center;}
+.sh_diag{width:294px;height:220px; display: none; position:absolute;top:50%;left:50%;margin:-110px 0 0 -147px;-webkit-border-radius:6px;z-index:10;}
+.sh_diag:before{content:"";background:url(../images/arrow_left_btn.png) no-repeat;width:10px;height:20px;background-size:10px 20px;position:absolute;left:14px;top:80px;z-index:300;}
+.sh_diag:after{content:"";background:url(../images/arrow_right_btn.png) no-repeat;width:10px;height:20px;background-size:10px 20px;position:absolute;right:10px;top:80px;z-index:300;}
+
+.close_btn_new{position:absolute;z-index:9999;width:28px;height:28px;line-height:28px;color:#fff;text-align:center;font-size:16px;left:50%;top:50%;margin-top:-131px;margin-left:124px;background:#DB0304;-webkit-border-radius:50%;}
+
+.sh_diag.show{ display: block;}
+.sh_diag img::after{display:block;content:"123123";position:absolute;z-index:4000;background:#f00;width:20px;height:20px;}
+.sh_diag img{ position: absolute; left: 0; right: 0; top: 0; opacity: 0;border:1px solid #000;-webkit-transition:opacity 500ms; transition:opacity 500ms;}
+.sh_diag img.select{ opacity:1}
+
+.sh_close{background:#fff url(../images/close.png) no-repeat;width:16px;height:16px;background-size:16px 16px;position:absolute;top:18%;right:13px;z-index:300;}
+/*图片滚动效果*/
+.cont{width:112px;height:127px;left:50%;margin-left:-56px;overflow:hidden;}
+.page_box{height:127px;position:relative;float:right;}
+.left_btn{width:9px;height:20px;top:60px;left:-78px;position:absolute;}
+.right_btn{width:9px;height:20px;top:60px;right:-24px;position:absolute;}
+.img_box{width:732px;height:125px;border-radius:5px}
+.img_box > li{width:112px;height:125px;opacity:0;-webkit-transition:opacity 1.5s;position:absolute;}
+.img_box > li.select{opacity:1;}
+.img_box > li > img{width:112px;height:127px;display:inline-block;}
+
+
+/* 20150707 add jia应聘流程*/
+.process_bg{background:url(../images/process_bg1.jpg) no-repeat;background-size:cover;overflow:hidden;}
+#process{overflow:visible;height:100%;}
+.process_logo{width:62px;height:62px;display:block;position:absolute;left:50%;margin-left:-40px;top:40%;}
+.process_tit{font-size:36px;color:#fff;text-align:center;line-height:48px;text-shadow:2px 3px 2px #000;position:absolute;left:50%;top:60%;margin-left:-72px;}
+.pr_btn{width:100px;height:36px;line-height:36px;text-align:center;display:block;font-size:14px;color:#fff;background:#cd0000;-webkit-border-radius:10px;margin:10% auto;text-decoration:none;}
+.hand_cursor{width:38px;height:57px;position:absolute;left:50%;top:50%;margin-top:-10px;margin-left:-10px;}
+
+/* 20150707 add jia应聘流程详情*/
+#process_detail{overflow:inherit;}
+.p_detail_bg{background:#fff;}
+.process_detail_main{}
+.process_bg_new{width:100%;height:256px;position:absolute;}
+.p_detail_logo{width:62px;height:62px;position:absolute;top:52px;left:50%;margin-left:-31px;display:block;}
+.p_detail_list{width:240px;position:absolute;top:168px;left:50%;margin-left:-120px;}
+.dt_tit{font-size:16px;color:#000;font-weight:bold;padding-left:10px;}
+.pr_arrow{width:19px;height:32px;display:block;margin:16px auto;background:url(../images/flow_arrow.png) no-repeat;background-size:19px 32px;}
+.p_detail_list li:nth-of-type(1){height:58px;line-height:58px;}
+.p_detail_list li:nth-of-type(3){height:34px;line-height:34px;}
+.p_detail_list li:nth-of-type(5){height:29px;line-height:29px;}
+.p_detail_list li:nth-of-type(7){height:24px;line-height:24px;}
+.p_detail_list li:nth-of-type(9){height:25px;line-height:25px;}
+.p_detail_list li:nth-of-type(11){height:25px;line-height:25px;}
+.p_detail_list li:nth-of-type(13){height:24px;line-height:24px;}
+.wchat{width:58px;height:58px;padding-right:21px;}
+.p_detail_list li img{float:left;display:block;}
+.zp_tu{width:68px;height:34px;padding-right:15px;}
+.zwsq_tu{width:67px;height:29px;padding-right:14px;}
+.inf_tu{width:22px;height:24px;margin-left:28px;padding-right:34px;}
+.yf_tu{width:24px;height:22px;margin-left:28px;padding-right:34px;}
+.ph_tu{width:23px;height:25px;margin-left:28px;padding-right:34px;}
+.ms_tu{width:25px;height:25px;margin-left:28px;padding-right:34px;}
+.sg_tu{width:25px;height:24px;margin-left:28px;padding-right:34px;}
+
+
+/*20150707 add jia 分享*/
+.share_page{background:#f3f4f1;}
+#rule_offer{position:relative;}
+.rule_top{background:none;}
+.logo_set{height:72px;line-height:72px;position:absolute;top:5px;left:25px;}
+.rule_share{width:72px;height:72px;float:left;}
+.logo_set span{font-size:18px;color:#fff;margin-left:12px;font-weight:bold;display;block;float:left;}
+.rule_t{font-size:14px;color:#000;display:block;position:absolute;top:36%;left:50%;}
+.share_detail{width:214px;font-size:12px;color:#fff;line-height:20px;position:absolute;left:50%;margin-left:-102px;top:56%;}
+#rule_offer .share_b{margin-top:30px;}
+.share_page .share_b{background:#cd0000;width:100px;height:36px;line-height:36px;text-align:center;font-size:14px;color:#fff;-webkit-border-radius:10px;display:block;margin:60px auto 10px;}
+
+
+/*20150707 add jia 公司荣誉*/
+.honor_nav{background:url(../images/elephant.png) no-repeat;width:246px;background-size:246px auto;left:50%;margin-left:-123px;top:68px;}
+.honor_nav .intro_tit{top:-102px;right:-10px;}
+.honor_tu{background:url(../images/ry_bg.jpg) no-repeat;background-size:cover;height:664px;position:relative;}
+.honor_tu1{position:absolute;width:154px;height:152px;top:57px;-webkit-transform:rotate(135deg);left:-7px;}
+.honor_tu2{position:absolute;width:154px;height:152px;top:57px;-webkit-transform:rotate(135deg);right:-42px;}
+.honor_tu3{position:absolute;width:154px;height:152px;top:50%;-webkit-transform:rotate(135deg);left:50%;margin-left:-60px;margin-top:-164px;}
+.honor_tu4{position:absolute;width:154px;height:152px;top:275px;-webkit-transform:rotate(135deg);left:-7px;}
+.honor_tu5{position:absolute;width:154px;height:152px;top:275px;-webkit-transform:rotate(135deg);right:-42px;}
+.honor_tu6{position:absolute;width:154px;height:152px;top:50%;-webkit-transform:rotate(135deg);left:50%;margin-left:-60px;margin-top:51px;}
+.honor_tu7{position:absolute;width:154px;height:152px;top:495px;-webkit-transform:rotate(135deg);left:-7px;}
+.honor_tu8{position:absolute;width:154px;height:152px;top:495px;-webkit-transform:rotate(135deg);right:-42px;}
+.pic_mask{position: fixed;left: 0;top: 0;right: 0;bottom: 0; background: rgba(255,255,255,.5) no-repeat center;z-index:300;}
+[picture="1"]#p2_mask{background-image: url(../images/img3_3.png);background-size:296px 280px;margin:0 auto;}
+[picture="2"]#p2_mask{ background-image: url(../images/img2_2.png);background-size:296px 280px;margin:0 auto;}
+[picture="3"]#p2_mask{ background-image: url(../images/img1_1.png);background-size:296px 280px;margin:0 auto;}
+[picture="4"]#p2_mask{ background-image: url(../images/img4_4.png);background-size:296px 280px;margin:0 auto;}
+[picture="5"]#p2_mask{ background-image: url(../images/img5_5.png);background-size:296px 280px;margin:0 auto;}
+[picture="6"]#p2_mask{ background-image: url(../images/img6_6.png);background-size:296px 280px;margin:0 auto;}
+[picture="7"]#p2_mask{ background-image: url(../images/img7_7.png);background-size:296px 280px;margin:0 auto;}
+[picture="8"]#p2_mask{ background-image: url(../images/img8_8.png);background-size:296px 280px;margin:0 auto;}
+/*员工关怀*/
+.gh_nav{background:url(../images/gh_tu.png) no-repeat;background-size:cover;height:195px;top:-72px;}
+#care .top{height:195px;}
+.gh_nav .intro_tit{top:148px;right:13px;}
+.gh_list{padding-left:10px;padding-right:10px;}
+.gh_block h3{background:url(../images/yg_tit.png) no-repeat;width:205px;height:74px;background-size:205px auto;margin-top:12px;line-height:63px;}
+.gh_block h3 span{-webkit-transform:rotate(-6deg);font-size:14px;color:#fff;display:block;text-indent:60px;font-weight:normal;}
+.gh_block p{padding-left:20px;padding-right:20px;padding-top:10px;font-size:14px;color:#d20000;}
+.welcome_tu{width:271px;height:141px;margin:0 auto;display:block;}
+/*活动规则  20150708 jia add*/
+.thunder_bg{background:#f84d53;}
+.share_line_btn{width:275px;height:115px;margin:0 auto;display:block;}
+.er_bg{width:114px;margin:-50px auto -100px;padding-bottom:100px;display:block;}
+.active_bg{background:url(../images/activity_bg.png) no-repeat;width:227px;height:44px;background-size:227px 44px;margin:16px auto;line-height:38px;text-align:center;color:#f84d53;font-size:15px;font-weight:normal;}
+.add_share{width:252px;margin:0 auto;color:#fff;font-size:12px;position:relative;}
+.add_share .cion_line{float:left;height:10px;width:2px;background:#fcd03c;display:block;margin-top:5px;}
+.cion_d{margin-left:10px;display:block;font-size:12px;color:#fff;}
+.add_share_btn{width:118px;height:38px;line-height:38px;background:#e60202;-webkit-border-radius:10px;text-align:center;font-size:15px;color:#fff;display:block;margin:16px auto 10px;}
+
+/*职位申请列表*/
+/*.logo_app .welcome_tit{left:20px;}*/
+.ren_t1{width:52px;height:123px;position:absolute;left:50%;top:50%;margin-left:-30px;margin-top:-20px;}
+.ren_t2{width:60px;height:123px;position:absolute;left:50%;top:50%;margin-left:26px;margin-top:-20px;}
+.app_list{padding-left:10px;padding-right:10px;}
+.app_list li{height:62px;padding-top:15px;padding-bottom:15px;border-bottom:1px solid #b5b5b5;}
+.app_list li:last-child{margin-bottom:32px;}
+.left{display:inline-block;padding-left:4px;}
+.left img{float:left;width:63px;height:62px;}
+.left_detail{margin-left:78px;}
+.left_detail h3,.left_detail h3 p{display:inline-block;}
+.left_detail h3{font-size:13px;margin-top:12px;color:#333;}
+.left_detail h3 p{font-size:10px;font-weight:normal;padding-left:34px;color:#666;}
+.left_detail h3 span{color:#cf0000;}
+.address{margin-top:6px;font-size:10px;color:#666;}
+.cion_btn{background:url(../images/cion.png) no-repeat;width:10px;height:15px;display:block;float:right;background-size:10px 15px;margin-top:30px;}
+
+/*职位详情*/
+.apply_tit{height:28px;line-height:28px;background:#cf0000;text-align:center;font-size:13px;color:#fff;font-weight:normal;}
+.apply_tp li{height:35px;line-height:35px;border-bottom:1px solid #b5b5b5;}
+.apply_tp li:first-child{text-indent:10px;font-size:13px;color:#303030;}
+.yuan{background:url(../images/yuan.png) no-repeat;width:7px;height:10px;background-size:7px 10px;display:inline-block;}
+.city{background:url(../images/address.png) no-repeat;width:8px;height:11px;background-size:8px 11px;display:inline-block;}
+.sex{background:url(../images/sex.png) no-repeat;width:8px;height:9px;background-size:8px 9px;display:inline-block;}
+.apply_tp li p{display:inline-block;margin-right:16px;}
+.apply_tp li p span{padding-left:10px;}
+.apply_tp li p:first-child{margin-left:23px;}
+.detail_main{padding-left:8px;padding-right:16px;}
+.detail_block1 h3{clear:both;overflow:hidden;margin-top:6px;font-weight:normal;font-size:12px;color:#303030;margin-bottom:4px;padding-left:6px;}
+.detail_block1 h3:before{content:"";width:4px;height:4px;-webkit-border-radius:50%;background:#cf0000;display:inline-block;vertical-align:middle;margin-right:4px;}
+.detail_block1 ul li{padding-left:30px;font-size:12px;color:#555;}
+.tu_list li{width:131px;float:left;}
+.tu_list li img{width:131px;height:auto;}
+.detail_block1 .tu_list li{padding-left:16px;float:left;margin-bottom:15px;}
+.detail_block1 .ps_list li{padding-left:16px;}
+.ps_list li{font-size:12px;color:#303030;margin-bottom:8px;}
+.ps_list li:first-child{width:107px;float:left;text-align:center;margin-right:13px;}
+.ps_list li:first-child img{width:107px;height:81px;margin-bottom:5px;}
+.ps_list li img{width:73px;height:36px;margin-right:10px;}
+.apply_btn{width:118px;height:38px;line-height:38px;text-align:center;display:block;background:#cd0000;margin:40px auto 30px;color:#fff;-webkit-border-radius:10px;}
+
+/*提交*/
+#jan_offer{height:100%}
+#jan_offer .top{min-height:100%}
+.offer_ren{width:52px;height:123px;position:absolute;top:30px;right:48px;}
+.logo_nav_mh{-webkit-filter: blur(3px);}
+.offer_main{position:absolute;top:40%;left:52%;width:242px;margin-left:-121px;}
+.offer_main input{width:168px;height:30px;border:1px solid #969494;background:rgba(255,255,255,0.9);padding-left:10px;}
+.offer_main p{margin-bottom:14px;}
+.offer_main p:nth-of-type(2){margin-bottom:30px;display:block;}
+.offer_main label{color:#4d4d4d;font-size:13px;}
+.offer_bt{background:url(../images/offer_bt.png) no-repeat;width:120px;height:40px;line-height:40px;text-align:center;color:#fff;display:block;background-size:120px 40px;margin:0 auto;}
+/*弹出框*/
+.diag_success{ position:fixed;left:0;right:0;top:0;bottom:0;background:rgba(0,0,0,.6);z-index:9999}
+.diag_block{background:url(../images/success_tu.png) no-repeat;width:266px;height:266px;background-size:266px 266px;position:absolute;left:50%;top:50%;margin:-133px 0 0 -133px;}
+.diag_block p{font-size:18px;color:#cf0000;text-align:center;display:block;line-height:23px;margin-top:60px;}
+.close{width:29px;height:29px;background:#cf0000;-webkit-border-radius:50%;display:block;position:absolute;top:10px;right:32px;font-size:20px;color:#fff;text-align:center;line-height:29px;}
+
+/*你问我答*/
+.ren_t3{position:absolute;width:43px;height:115px;right:13%;top:36%;}
+.roate_tit{color:#fff;font-size:9px;position:absolute;left:50%;top:50%;margin-top:67px;margin-left:-54px;text-align:left;width:192px;}
+.answer{padding-left:10px;padding-right:10px;}
+.answer .ans_block{margin-top:10px;padding-bottom:35px;border-bottom:1px solid #b5b5b5;}
+.answer .ans_block img{width:46px;height:46px;float:left;}
+.answer_detail{padding-left:60px;}
+.apply_btn.app_answer{margin:40px auto 84px}
+/* 修改开始6.23 */
+.answer_detail h3{line-height:36px;font-size:13px;color:#404040;font-weight:normal;}
+.answer_list{margin-top:10px;}
+.answer_list li{line-height:26px;margin-bottom:4px;font-size:16px;color:#404040;}
+/* 修改结束6.23 */
+.answer_list li span{width:32px;height:32px;line-height:32px;text-align:center;display:inline-block;border:1px solid #fff;-webkit-border-radius:50%;margin-right:6px;}
+/*对错判断*/
+.answer_list .answer_red span{border:1px solid #cd0000;}
+.answer_list .answer_green span{border:1px solid #63d62e;}
+/*对错判断*/
+.diag_detail{width:260px;height:240px;-webkit-border-radius:10px;position:absolute;top:50%;left:50%;margin:-120px 0 0 -130px;}
+.diag_detail h3{margin:0 auto;width:154px;font-size:30px;font-weight:normal;color:#fff;}
+.sorry{font-size:30px;color:#000;font-weight:normal;text-align:center;margin-top:30px;}
+.sorry_ren{background:url(../images/ren_t4.png) no-repeat;width:35px;height:109px;display:inline-block;background-size:35px 109px;margin-right:6px;}
+.score{text-align:center;font-size:29px;margin-top:20px;color:#fff;}
+
+/*规则*/
+.rule_bg{width:282px;height:298px;position:absolute;left:50%;margin-left:-141px;top:38px;}
+.rule_main{width:224px;position:absolute;left:50%;margin-left:-112px;top:165px;}/*20150624 changes jia*/
+.rule_main h3{font-size:14px;color:#fff;font-weight:normal;}
+.rule_main p{font-size:14px;color:#222;line-height:20px;text-indent:23px;}/*20150624 changes jia*/
+#rule_offer .logo{width:62px;height:62px;padding-top:10px;}
+#rule_offer .logo img{display:none;}
+.rule_btn{margin-top:20px;}
+.gcode{width:69px;height:69px;position:absolute;border:2px solid #e60202;left:50%;margin-left:-36px;top:96px;}/*20150624 add jia*/
+
+/*20150623*/
+.know_btn{width:126px;height:36px;line-height:36px;border:1px dashed #fff;-webkit-border-radius:22px;border-radius:22px;display:block;text-align:center;color:#fff;position:absolute;left:50%;top:50%;margin:-18px 0 0 -63px;}
+.share_line{background:url(../images/line_share.png) no-repeat;width:32px;height:71px;background-size:32px 71px;display:block;position:absolute;right:10px;top:20px;}
+
+/*成长路径*/
+#grow{background:url(../images/wrap_act_bg.jpg) no-repeat top;background-size:cover;position:relative;overflow:inherit;height:100%;}
+.radius_tu{width:297px;width:296px;position:absolute;top:84px;left:50%;margin-left:-148px;}
+.as_tit{width:93px;height:31px;position:absolute;top:98px;left:40px;} 
+.ren{width:84px;height:132px;position:absolute;top:35px;left:118px;}
+.clound{width:100%;height:77px;position:absolute;bottom:0px;left:50%;margin-left:-160px;}/*20150624 add jia---*/
+.grow_detail{position:absolute;top:138px;width:216px;left:50%;margin-left:-108px;}
+.grow_detail h3{text-align:center;font-size:14px;color:#303030;font-weight:bold;margin-bottom:4px;}
+.grow_detail p{color:#303030;font-size:14px;}
+.grow_flow p{width:154px;text-align:left;position:absolute;left:50%;margin-left:-77px;}
+
+/*20150623*/
+
+/***************************** 杜鹃-----活动描述文字部分6.23 *************************************/
+.wrap_act1{background:url(../images/wrap_act_bg.jpg) no-repeat center;height:100%;background-size:cover;}
+.wrap_act2{background:url(../images/wrap_act_bg.jpg) no-repeat center;background-size:cover;}
+.close_btn{width:16px;height:16px;position:absolute;right:10px;top:6px;}
+.act_det{width:100%;margin:0 auto;text-align:left;padding-top:20px;padding-left:32px;}
+.act_det label{color:#5d5d5d;font-size:13px;line-height:35px;}
+.act_det input{width:-webkit-calc( 80% - 12px );width:calc( 80% - 12px );height:38px;border-radius:3px;border:solid 1px #b5b5b5;background:rgba(255,255,255,.75);margin-bottom:20px;padding:0 5px;   white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
+.act_det textarea{width:-webkit-calc( 80% - 12px );width:calc( 80% - 12px );height:173px;border-radius:3px;border:solid 1px #b5b5b5;background:rgba(255,255,255,.75);padding:5px 5px 0 5px;line-height:19px;text-indent:12px;}
+.apply_btn.act_save_btn1,.apply_btn.act_save_btn2{margin:15px auto 0;display:inline-block;}
+.apply_btn.act_save_btn2{margin-left:6%;}
+
+.act_det a:nth-child(9){margin-left:32px;}
+.act_det a:nth-child(8){margin-left:-7px;}
+
+/***************************** 杜鹃-----活动描述文字部分--最佳员工6.23 *************************************/
+.wrap_act h6{font-size:14px;color:#cd0000;text-align:center;line-height:35px;margin:0 auto;}
+.act_inf{background:rgba(255,255,255,.5);}
+.h6_tit{font-size:14px;text-indent:5%;}
+.act_inf:last-child{padding-bottom:30px;}
+.act_inf ul li{width:100%; height:110px;border-top:solid 1px #c7c7c7}
+.act_inf ul li:last-child{border-bottom:solid 1px #c7c7c7}
+.header_l{width:75px;float:left;padding:8px 0 5px 15px;}
+.header_box{width:60px;height:60px;border:solid 3px #d32f2f;border-radius:50%;}
+.header_box img{width:60px;height:60px;border-radius:50%;}
+.staff_name{width:59px;height:22px;background:url(../images/text_box.png) no-repeat center;background-size:59px 22px;text-align:center;color:#fff;font-size:14px;line-height:22px;display:block;margin:8px 0 0 5px}
+.act_det_r{width:-webkit-calc( 100% - 110px );float:right;padding:12px 5px 0 5px;line-height:22px;color:#303030;font-size:12px;text-indent:12px;}
+
+/***************************** 分享出页面 *************************************/
+.er_bg_send{width:226px;height:114px;margin:-50px auto -100px;padding-bottom:100px;display:block;}
+.add_share_two{margin-top:10px;}
+
+
+
+
+/***************************** 20150716 add jia *************************************/
+.ba_btn{width:134px;height:38px;text-align:center;line-height:38px;background:#cd0000;color:#fff;font-size:13px;display:block;margin:14px auto;-webkit-border-radius:6px;}
+.first_ba_tit{margin-top:50px;text-indent:23px;}
+.tu_pic_list li{text-align:center;}
+.tu_pic_list img{display:block;margin-bottom:3px;}
+.apply_btn{clear:both;overflow:hidden;}
+.close_btn_h{top:50%;left:50%;margin-top:-153px;margin-left:125px;}
+

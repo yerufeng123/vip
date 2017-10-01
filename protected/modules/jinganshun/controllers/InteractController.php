@@ -1,0 +1,703 @@
+<?php
+header('content-type:text/html;charset=utf-8');
+error_reporting(E_ALL ^ E_NOTICE);
+
+class InteractController extends BaseController
+{
+    
+    // 获取答题结果
+    public function actionAsk()
+    {
+        if (Yii::app()->request->isAjaxRequest) {
+            $rule = JinganshunOther::model()->findByPk($_POST['id']);
+            $rule->content = $_POST['content'];
+            $rule->ctime = time();
+            if ($rule->save()) {
+                // returnJson('成功', '100000');
+            } else {
+                returnJson('更新失败', '500007');
+            }
+            
+            $money1 = JinganshunOther::model()->findByPk($_POST['id2']);
+            $money1->content = $_POST['content2'];
+            $money1->ctime = time();
+            if ($money1->save()) {
+                returnJson('成功', '100000');
+            } else {
+                returnJson('更新失败', '500009');
+            }
+        } else {
+            $sql = "select * from vip_jinganshun_other where type=5 order by ctime desc";
+            $rule = Yii::app()->db->createCommand($sql)->queryRow();
+            
+            $sql2 = "select * from vip_jinganshun_other where type=6 order by ctime desc";
+            $money1 = Yii::app()->db->createCommand($sql2)->queryRow();
+            
+			//默认只选通过的
+			$_POST['state']=1;
+
+            $_POST = array_merge($_GET, $_POST);
+            unset($_POST['_URL_']);
+            
+            // 如果页数为空，默认为1
+            $_POST['p'] = ! empty($_GET['p']) ? $_GET['p'] : '1';
+            // 给模板查询区域赋值
+            $data = $_POST;
+            $databk = $_POST;
+            $search = $_POST;
+            
+            $where = '';
+            /*
+             * 获取管理员列表
+             */
+            /* 查询条件拼写 */
+            // 状态
+            if (! empty($data['state'])) {
+                $where .= ' and state =' . $data['state'];
+            }
+            
+            // 姓名
+            if (! empty($data['name'])) {
+                // $where.=' and name like "%' . $data['name'] . '%"';
+                $where .= ' and name ="' . $data['name'] . '"';
+            }
+            
+            // 手机
+            if (! empty($data['phone'])) {
+                // $where.=' and phone like "%' . $data['phone'] . '%"';
+                $where .= ' and phone = "' . $data['phone'] . '"';
+            }
+            
+            // 开始时间
+            if (! empty($data['stime'])) {
+                $stime = strtotime($data['stime']);
+                $where .= ' and a.ctime >= ' . $stime;
+            }
+            
+            // 结束时间
+            if (! empty($data['etime'])) {
+                $etime = strtotime($data['etime']) + 24 * 60 * 60;
+                $where .= ' and a.ctime <= ' . $etime;
+            }
+            $where = substr($where, 4);
+            
+            $page = $_POST['p']; // 第几页
+            $pernum = 5; // 每页显示数
+            $startnum = ($page - 1) * $pernum;
+
+
+
+			 if (! empty($where)) {
+                if (! empty($data['stime']) || ! empty($data['etime'])) {
+                    $sql = "select a.id,a.openid,a.state,a.ctime,b.name,b.enable,b.username,b.phone from vip_jinganshun_askresult as a left join vip_jinganshun_user b on b.openid=a.openid where b.enable=0 and {$where} group by b.name order by ctime desc limit {$startnum},{$pernum} ";
+                } else {
+                    $sql = "select a.id,a.openid,a.state,a.ctime,b.name,b.enable,b.username,b.phone from vip_jinganshun_askresult as a left join vip_jinganshun_user b on b.openid=a.openid where b.enable=0 and {$where} group by b.name order by ctime desc limit {$startnum},{$pernum} ";
+                }
+            } else {
+                $sql = "select a.id,a.openid,a.state,a.ctime,b.name,b.enable,b.username,b.phone from vip_jinganshun_askresult as a left join vip_jinganshun_user b on b.openid=a.openid where b.enable=0 group by b.name order by ctime desc limit {$startnum},{$pernum}";
+            }
+			
+			
+
+            $data = Yii::app()->db->createCommand($sql)->queryAll();
+
+			
+
+            
+//             if (! empty($databk['stime']) || ! empty($databk['etime'])) {
+//                 // 处理答对次数
+//                 foreach ($data as $key => $value) {
+//                     if (! empty($databk['stime']) && ! empty($databk['etime'])) {
+//                         $sql3 = "select count(id) as num from vip_jinganshun_askresult where state =1 and ctime>=" . strtotime($databk['stime']) . " and ctime<=" . (strtotime($databk['etime']) + 24 * 60 * 60) . " and openid='" . $value['openid'] . "'";
+//                     } elseif (! empty($databk['stime'])) {
+//                         $sql3 = "select count(id) as num from vip_jinganshun_askresult where state =1 and ctime>=" . strtotime($databk['stime']) . " and openid='" . $value['openid'] . "'";
+//                     } else {
+//                         $sql3 = "select count(id) as num from vip_jinganshun_askresult where state =1 and ctime<=" . (strtotime($databk['etime']) + 24 * 60 * 60) . " and openid='" . $value['openid'] . "'";
+//                     }
+//                     $newresult = Yii::app()->db->createCommand($sql3)->queryRow();
+//                     $data[$key]['state'] = '通过' . $newresult['num'] . '次';
+//                 }
+//             }
+            
+            if (! empty($where)) {
+                if (! empty($databk['stime']) || ! empty($databk['etime'])) {
+                    $sql3 = "select a.id,a.openid,a.state,a.ctime,b.name,b.enable,b.username,b.phone from vip_jinganshun_askresult as a left join vip_jinganshun_user b on b.openid=a.openid where b.enable=0 and {$where}";
+                } else {
+                    $sql3 = "select a.id,a.openid,a.state,a.ctime,b.name,b.enable,b.username,b.phone from vip_jinganshun_askresult as a left join vip_jinganshun_user b on b.openid=a.openid where b.enable=0 and {$where}";
+                }
+            } else {
+                $sql3 = "select a.id,a.openid,a.state,a.ctime,b.name,b.enable,b.username,b.phone from vip_jinganshun_askresult as a left join vip_jinganshun_user b on b.openid=a.openid where b.enable=0";
+            }
+            $data3 = Yii::app()->db->createCommand($sql3)->queryAll();
+
+		
+
+			//遍历统计数组
+			$arrnum=array();
+			foreach($data3 as $key=>$user){
+				if(!isset($arrnum[$user['name']])){
+					$arrnum[$user['name']]=1;
+				}else{
+					$arrnum[$user['name']] += 1;
+				}
+			}
+			
+			if (! empty($where)) {
+			    if (! empty($databk['stime']) || ! empty($databk['etime'])) {
+			        $sql2 = "select a.id,a.openid,a.state,a.ctime,b.name,b.enable,b.username,b.phone from vip_jinganshun_askresult as a left join vip_jinganshun_user b on b.openid=a.openid where b.enable=0 and {$where} group by b.name";
+			    } else {
+			        $sql2 = "select a.id,a.openid,a.state,a.ctime,b.name,b.enable,b.username,b.phone from vip_jinganshun_askresult as a left join vip_jinganshun_user b on b.openid=a.openid where b.enable=0 and {$where} group by b.name";
+			    }
+			} else {
+			    $sql2 = "select a.id,a.openid,a.state,a.ctime,b.name,b.enable,b.username,b.phone from vip_jinganshun_askresult as a left join vip_jinganshun_user b on b.openid=a.openid where b.enable=0 group by b.name";
+			}
+			$data2 = Yii::app()->db->createCommand($sql2)->queryAll();
+
+
+
+            if (! empty($data)) {
+                $result['content'] = $data;
+                $result['count'] = count($data2);
+            } else {
+                $result['content'] = array();
+                $result['count'] = count($data2);
+            }
+            
+            // 实现分页
+            include_once 'page.php';
+            $this->renderPartial('ask', array(
+                'page' => $show,
+                'search' => $search,
+                'list' => $result['content'],
+                'data' => $rule,
+                'data2' => $money1,
+                'countnum'=>$count,
+				'arrnum'=>$arrnum,
+            ));
+        }
+    }
+    
+    // 有奖征稿---活动规则
+    public function actionArticle()
+    {
+        if (Yii::app()->request->isAjaxRequest) {
+            $rule = JinganshunOther::model()->findByPk($_POST['id']);
+            $rule->content = $_POST['content'];
+            $rule->ctime = time();
+            if ($rule->save()) {
+                // returnJson('成功', '100000');
+            } else {
+                returnJson('更新失败', '500001');
+            }
+            
+            $desc = JinganshunOther::model()->findByPk($_POST['id2']);
+            $desc->content = $_POST['content2'];
+            $desc->ctime = time();
+            if ($desc->save()) {
+                returnJson('成功', '100000');
+            } else {
+                returnJson('更新失败', '500006');
+            }
+        } else {
+            $sql = "select * from vip_jinganshun_other where type=1 order by ctime desc";
+            $rule = Yii::app()->db->createCommand($sql)->queryRow();
+            $sql2 = "select * from vip_jinganshun_other where type=4 order by ctime desc";
+            $desc = Yii::app()->db->createCommand($sql2)->queryRow();
+            
+            $_POST = array_merge($_GET, $_POST);
+            unset($_POST['_URL_']);
+            
+            // 如果页数为空，默认为1
+            $_POST['p'] = ! empty($_GET['p']) ? $_GET['p'] : '1';
+            // 给模板查询区域赋值
+            $data = $_POST;
+            $search = $_POST;
+            
+            $where = '';
+            /*
+             * 获取管理员列表
+             */
+            /* 查询条件拼写 */
+            
+            // 姓名
+            if (! empty($data['name'])) {
+                $where .= ' and name like "%' . $data['name'] . '%"';
+            }
+            // 手机号
+            if (! empty($data['phone'])) {
+                $where .= ' and phone like "%' . $data['phone'] . '%"';
+            }
+            // 分数
+            if (! empty($data['score'])) {
+                $where .= ' and score >= ' . $data['score'];
+            }
+            
+            $where = substr($where, 4);
+            
+            $page = $_POST['p']; // 第几页
+            $pernum = 5; // 每页显示数
+            $startnum = ($page - 1) * $pernum;
+            if (! empty($where)) {
+                $sql = "select a.id,a.openid,a.title,a.ctime,a.score,b.name,b.phone from vip_jinganshun_article as a left join vip_jinganshun_user b on b.openid=a.openid where {$where} order by ctime desc limit {$startnum},{$pernum} ";
+            } else {
+                $sql = "select a.id,a.openid,a.title,a.ctime,a.score,b.name,b.phone from vip_jinganshun_article as a left join vip_jinganshun_user b on b.openid=a.openid order by ctime desc limit {$startnum},{$pernum}";
+            }
+            $data = Yii::app()->db->createCommand($sql)->queryAll();
+            if (! empty($where)) {
+                $sql2 = "select a.id,a.openid,a.title,a.ctime,a.score,b.name,b.phone from vip_jinganshun_article as a left join vip_jinganshun_user b on b.openid=a.openid where {$where}";
+            } else {
+                $sql2 = "select count(id) as num from vip_jinganshun_article";
+            }
+            $data2 = Yii::app()->db->createCommand($sql2)->queryAll();
+            if (! empty($data)) {
+                $result['content'] = $data;
+                $result['count'] = $data2[0]['num'];
+            } else {
+                $result['content'] = array();
+                $result['count'] = $data2[0]['num'];
+            }
+            
+            // 实现分页
+            include_once 'page.php';
+            $this->renderPartial('article', array(
+                'page' => $show,
+                'search' => $search,
+                'list' => $result['content'],
+                'data' => $rule,
+                'data2' => $desc
+            ));
+        }
+    }
+    
+    // 有奖征稿---修改
+    public function actionArticle_editor()
+    {
+        if (! Yii::app()->request->isAjaxRequest) {
+            $_POST['id'] = $_GET['id'];
+            $where = array(
+                'id' => $_POST['id']
+            );
+            $sql = "select * from vip_jinganshun_article where id='{$_POST['id']}'";
+            $data = Yii::app()->db->createCommand($sql)->queryAll();
+            $this->renderPartial('articleeditor', array(
+                'list' => $data[0]
+            ));
+        } else {
+            if (empty($_POST['score'])) {
+                $_POST['score'] = 0;
+            }
+            
+            $article = JinganshunArticle::model()->findByPk($_POST['id']);
+            $article->score = $_POST['score'];
+            if ($article->save()) {
+                // 更新成功
+                returnJson('成功', '100000');
+            } else {
+                returnJson('更新成绩失败', '500002');
+            }
+        }
+    }
+    
+    // 有奖征稿---删除
+    public function actionArticle_delete()
+    {
+        $_POST['id'] = $_GET['id'];
+        $article = JinganshunArticle::model();
+        $articlenum = $article->deleteByPk($_POST['id']);
+        if ($articlenum > 0) {
+            
+            $this->renderPartial('../public/success', array(
+                'message' => '删除成功！',
+                'jumpUrl' => $_SERVER['HTTP_REFERER'],
+                'waitSecond' => 3
+            ));
+        } else {
+            $this->renderPartial('../public/error', array(
+                'message' => '删除失败！',
+                'jumpUrl' => $_SERVER['HTTP_REFERER'],
+                'waitSecond' => 3
+            ));
+        }
+    }
+    
+    // 评选系统
+    public function actionElect()
+    {
+        if (Yii::app()->request->isAjaxRequest) {
+            $rule = JinganshunOther::model()->findByPk($_POST['id']);
+            $rule->content = $_POST['content'];
+            $rule->ctime = time();
+            if ($rule->save()) {
+                returnJson('成功', '100000');
+            } else {
+                returnJson('更新失败', '500007');
+            }
+        } else {
+            $sql = "select * from vip_jinganshun_other where type=2 order by ctime desc";
+            $rule = Yii::app()->db->createCommand($sql)->queryRow();
+            
+            $_POST = array_merge($_GET, $_POST);
+            unset($_POST['_URL_']);
+            
+            // 如果页数为空，默认为1
+            $_POST['p'] = ! empty($_GET['p']) ? $_GET['p'] : '1';
+            // 给模板查询区域赋值
+            $data = $_POST;
+            $search = $_POST;
+            
+            $where = '';
+            /*
+             * 获取管理员列表
+             */
+            /* 查询条件拼写 */
+            // 类型
+            if (! empty($data['type'])) {
+                $where .= ' and type = ' . $data['type'];
+            }
+            
+            // 姓名
+            if (! empty($data['name'])) {
+                $where .= ' and name like "%' . $data['name'] . '%"';
+            }
+            
+            $where = substr($where, 4);
+            
+            $page = $_POST['p']; // 第几页
+            $pernum = 5; // 每页显示数
+            $startnum = ($page - 1) * $pernum;
+            if (! empty($where)) {
+                $sql = "select * from vip_jinganshun_elect where {$where} order by ctime desc limit {$startnum},{$pernum} ";
+            } else {
+                $sql = "select * from vip_jinganshun_elect order by ctime desc limit {$startnum},{$pernum}";
+            }
+            $data = Yii::app()->db->createCommand($sql)->queryAll();
+            if (! empty($where)) {
+                $sql2 = "select * from vip_jinganshun_elect where {$where}";
+            } else {
+                $sql2 = "select count(id) as num from vip_jinganshun_elect";
+            }
+            $data2 = Yii::app()->db->createCommand($sql2)->queryAll();
+            if (! empty($data)) {
+                $result['content'] = $data;
+                $result['count'] = $data2[0]['num'];
+            } else {
+                $result['content'] = array();
+                $result['count'] = $data2[0]['num'];
+            }
+            
+            // 实现分页
+            include_once 'page.php';
+            $this->renderPartial('elect', array(
+                'page' => $show,
+                'search' => $search,
+                'list' => $result['content'],
+                'data' => $rule
+            ));
+        }
+    }
+    
+    // 评选系统----增加一条
+    public function actionElect_add()
+    {
+        if (Yii::app()->request->isAjaxRequest) {
+            if (empty($_POST['name']) || empty($_POST['content']) || empty($_POST['little_pic'])) {
+                returnJson('缺少必填项', '500008');
+            }
+            $elect = new JinganshunElect();
+            $elect->type = $_POST['type'];
+            $elect->name = $_POST['name'];
+            $elect->pic = $_POST['little_pic'];
+            $elect->content = $_POST['content'];
+            $elect->ctime = time();
+            if ($elect->save()) {
+                returnJson('增加成功', '100000');
+            } else {
+                returnJson('保存失败', '500003');
+            }
+        } else {
+            $this->renderPartial('electadd');
+        }
+    }
+    
+    // 评选系统---修改
+    public function actionElect_editor()
+    {
+        if (! Yii::app()->request->isAjaxRequest) {
+            $_POST['id'] = $_GET['id'];
+            $where = array(
+                'id' => $_POST['id']
+            );
+            $sql = "select * from vip_jinganshun_elect where id='{$_POST['id']}'";
+            $data = Yii::app()->db->createCommand($sql)->queryAll();
+            $this->renderPartial('electeditor', array(
+                'list' => $data[0]
+            ));
+        } else {
+            if (empty($_POST['type']) || empty($_POST['name']) || empty($_POST['content']) || empty($_POST['little_pic'])) {
+                returnJson('缺少必填项', '500004');
+            }
+            
+            $elect = JinganshunElect::model()->findByPk($_POST['id']);
+            $elect->type = $_POST['type'];
+            $elect->name = $_POST['name'];
+            $elect->content = $_POST['content'];
+            $elect->pic = $_POST['little_pic'];
+            if ($elect->save()) {
+                // 更新成功
+                returnJson('成功', '100000');
+            } else {
+                returnJson('更新评选失败', '500005');
+            }
+        }
+    }
+    
+    // 评选系统---删除
+    public function actionElect_delete()
+    {
+        $_POST['id'] = $_GET['id'];
+        $elect = JinganshunElect::model();
+        $electnum = $elect->deleteByPk($_POST['id']);
+        if ($electnum > 0) {
+            
+            $this->renderPartial('../public/success', array(
+                'message' => '删除成功！',
+                'jumpUrl' => $_SERVER['HTTP_REFERER'],
+                'waitSecond' => 3
+            ));
+        } else {
+            $this->renderPartial('../public/error', array(
+                'message' => '删除失败！',
+                'jumpUrl' => $_SERVER['HTTP_REFERER'],
+                'waitSecond' => 3
+            ));
+        }
+    }
+    
+    // 分享有礼---首页
+    public function actionShare()
+    {
+        
+        if (Yii::app()->request->isAjaxRequest) {
+            $money2 = JinganshunOther::model()->findByPk($_POST['id']);
+            $money2->content = $_POST['content'];
+            $money2->ctime = time();
+            if ($money2->save()) {
+                 returnJson('成功', '100000');
+            } else {
+                returnJson('更新失败', '500007');
+            }
+           
+        } else {
+            $sql = "select * from vip_jinganshun_other where type=7 order by ctime desc";
+            $money2 = Yii::app()->db->createCommand($sql)->queryRow();
+            
+            $_POST = array_merge($_GET, $_POST);
+            unset($_POST['_URL_']);
+            
+            // 如果页数为空，默认为1
+            $_POST['p'] = ! empty($_GET['p']) ? $_GET['p'] : '1';
+            // 给模板查询区域赋值
+            $data = $_POST;
+            $databk = $_POST;
+            $search = $_POST;
+            
+            $where = '';
+            /*
+             * 获取管理员列表
+             */
+            /* 查询条件拼写 */
+            // 姓名
+            if (! empty($data['name'])) {
+                // $where.=' and name like "%' . $data['name'] . '%"';
+                $where .= ' and name ="' . $data['name'] . '"';
+            }
+            // 电话
+            if (! empty($data['phone'])) {
+                // $where.=' and phone like "%' . $data['phone'] . '%"';
+                $where .= ' and phone = "' . $data['phone'] . '"';
+            }
+            // 开始时间
+            if (! empty($data['stime'])) {
+                $stime = strtotime($data['stime']);
+                $where .= ' and a.ctime >= ' . $stime;
+            }
+            // 结束时间
+            if (! empty($data['etime'])) {
+                $etime = strtotime($data['etime']) + 24 * 60 * 60;
+                $where .= ' and a.ctime <= ' . $etime;
+            }
+            
+            $where = substr($where, 4);
+            
+            $page = $_POST['p']; // 第几页
+            $pernum = 5; // 每页显示数
+            $startnum = ($page - 1) * $pernum;
+            if (! empty($where)) {
+                if (! empty($data['stime']) || ! empty($data['etime'])) {
+                    $sql = "select a.id,a.openid,a.fopenid,a.state,a.ctime,b.name,b.phone,b.enable from vip_jinganshun_share as a left join vip_jinganshun_user b on b.openid=a.openid where a.state=1 and b.enable=0 and {$where}  order by ctime desc limit {$startnum},{$pernum} ";
+                } else {
+                    $sql = "select a.id,a.openid,a.fopenid,a.state,a.ctime,b.name,b.phone,b.enable from vip_jinganshun_share as a left join vip_jinganshun_user b on b.openid=a.openid where a.state=1 and b.enable=0 and {$where} order by ctime desc limit {$startnum},{$pernum} ";
+                }
+            } else {
+                $sql = "select a.id,a.openid,a.fopenid,a.state,a.ctime,b.name,b.phone,b.enable from vip_jinganshun_share as a left join vip_jinganshun_user b on b.openid=a.openid where  a.state=1 and b.enable=0 order by ctime desc limit {$startnum},{$pernum}";
+            }
+            $data = Yii::app()->db->createCommand($sql)->queryAll();
+//             if (! empty($databk['stime']) || ! empty($databk['etime'])) {
+//                 // 处理答对次数
+//                 foreach ($data as $key => $value) {
+//                     if (! empty($databk['stime']) && ! empty($databk['etime'])) {
+//                         $sql3 = "select count(id) as num from vip_jinganshun_share where state =1 and ctime>=" . strtotime($databk['stime']) . " and ctime<=" . (strtotime($databk['etime']) + 24 * 60 * 60) . " and openid='" . $value['openid'] . "'";
+//                     } elseif (! empty($databk['stime'])) {
+//                         $sql3 = "select count(id) as num from vip_jinganshun_share where state =1 and ctime>=" . strtotime($databk['stime']) . " and openid='" . $value['openid'] . "'";
+//                     } else {
+//                         $sql3 = "select count(id) as num from vip_jinganshun_share where state =1 and ctime<=" . (strtotime($databk['etime']) + 24 * 60 * 60) . " and openid='" . $value['openid'] . "'";
+//                     }
+//                     $newresult = Yii::app()->db->createCommand($sql3)->queryRow();
+//                     $data[$key]['fopenid'] = '新增' . $newresult['num'] . '人';
+//                 }
+//             }
+            
+            if (! empty($where)) {
+                if (! empty($databk['stime']) || ! empty($databk['etime'])) {
+                    $sql2 = "select a.id,a.openid,a.fopenid,a.state,a.ctime,b.name,b.phone,b.enable from vip_jinganshun_share as a left join vip_jinganshun_user b on b.openid=a.openid where a.state=1 and b.enable=0 and {$where}";
+                } else {
+                    $sql2 = "select a.id,a.openid,a.fopenid,a.state,a.ctime,b.name,b.phone,b.enable from vip_jinganshun_share as a left join vip_jinganshun_user b on b.openid=a.openid where a.state=1 and b.enable=0 and {$where}";
+                }
+            } else {
+                $sql2 = "select a.id,a.openid,a.fopenid,a.state,a.ctime,b.name,b.phone,b.enable from vip_jinganshun_share as a left join vip_jinganshun_user b on b.openid=a.openid where a.state=1 and b.enable=0";
+            }
+            $data2 = Yii::app()->db->createCommand($sql2)->queryAll();
+            if (! empty($data)) {
+                $result['content'] = $data;
+                $result['count'] = count($data2);
+            } else {
+                $result['content'] = array();
+                $result['count'] = count($data2);
+            }
+            
+            // 实现分页
+            include_once 'page.php';
+            $this->renderPartial('share', array(
+                'page' => $show,
+                'search' => $search,
+                'list' => $result['content'],
+                'data'=>$money2,
+                'countnum'=>$count,
+            ));
+        }
+    }
+    
+    //满意度调查
+    public function actionSupport()
+    {
+    
+        if (Yii::app()->request->isAjaxRequest) {
+            $money2 = JinganshunOther::model()->findByPk($_POST['id']);
+            $money2->content = $_POST['content'];
+            $money2->ctime = time();
+            if ($money2->save()) {
+                returnJson('成功', '100000');
+            } else {
+                returnJson('更新失败', '500007');
+            }
+             
+        } else {
+            //$sql = "select * from vip_jinganshun_other where type=7 order by ctime desc";
+            //$money2 = Yii::app()->db->createCommand($sql)->queryRow();
+    
+            $_POST = array_merge($_GET, $_POST);
+            unset($_POST['_URL_']);
+    
+            // 如果页数为空，默认为1
+            $_POST['p'] = ! empty($_GET['p']) ? $_GET['p'] : '1';
+            // 给模板查询区域赋值
+            $data = $_POST;
+            $databk = $_POST;
+            $search = $_POST;
+    
+            $where = '';
+            /*
+             * 获取管理员列表
+             */
+            /* 查询条件拼写 */
+            // 姓名
+            if (! empty($data['name'])) {
+                // $where.=' and name like "%' . $data['name'] . '%"';
+                $where .= ' and name ="' . $data['name'] . '"';
+            }
+            // 电话
+            if (! empty($data['phone'])) {
+                // $where.=' and phone like "%' . $data['phone'] . '%"';
+                $where .= ' and phone = "' . $data['phone'] . '"';
+            }
+            // 开始时间
+            if (! empty($data['stime'])) {
+                $stime = strtotime($data['stime']);
+                $where .= ' and a.ctime >= ' . $stime;
+            }
+            // 结束时间
+            if (! empty($data['etime'])) {
+                $etime = strtotime($data['etime']) + 24 * 60 * 60;
+                $where .= ' and a.ctime <= ' . $etime;
+            }
+    
+            $where = substr($where, 4);
+    
+            $page = $_POST['p']; // 第几页
+            $pernum = 5; // 每页显示数
+            $startnum = ($page - 1) * $pernum;
+            if (! empty($where)) {
+                if (! empty($data['stime']) || ! empty($data['etime'])) {
+                    $sql = "select a.id,a.openid,a.fopenid,a.ctime,b.name,b.phone,b.enable from vip_jinganshun_support as a left join vip_jinganshun_user b on b.openid=a.openid where  b.enable=0 and {$where}  group by b.phone order by ctime desc limit {$startnum},{$pernum} ";
+                } else {
+                    $sql = "select a.id,a.openid,a.fopenid,a.ctime,b.name,b.phone,b.enable from vip_jinganshun_support as a left join vip_jinganshun_user b on b.openid=a.openid where  b.enable=0 and {$where}  order by ctime desc limit {$startnum},{$pernum} ";
+                }
+            } else {
+                $sql = "select a.id,a.openid,a.fopenid,a.ctime,b.name,b.phone,b.enable from vip_jinganshun_support as a left join vip_jinganshun_user b on b.openid=a.openid where b.enable=0 order by ctime desc limit {$startnum},{$pernum}";
+            }
+            $data = Yii::app()->db->createCommand($sql)->queryAll();
+            if (! empty($databk['stime']) || ! empty($databk['etime'])) {
+                // 处理答对次数
+                foreach ($data as $key => $value) {
+                    if (! empty($databk['stime']) && ! empty($databk['etime'])) {
+                        $sql3 = "select count(id) as num from vip_jinganshun_support where ctime>=" . strtotime($databk['stime']) . " and ctime<=" . (strtotime($databk['etime']) + 24 * 60 * 60) . " and openid='" . $value['openid'] . "'";
+                    } elseif (! empty($databk['stime'])) {
+                        $sql3 = "select count(id) as num from vip_jinganshun_support where ctime>=" . strtotime($databk['stime']) . " and openid='" . $value['openid'] . "'";
+                    } else {
+                        $sql3 = "select count(id) as num from vip_jinganshun_support where ctime<=" . (strtotime($databk['etime']) + 24 * 60 * 60) . " and openid='" . $value['openid'] . "'";
+                    }
+                    $newresult = Yii::app()->db->createCommand($sql3)->queryRow();
+                    $data[$key]['fopenid'] = '新增' . $newresult['num'] . '人';
+                }
+            }
+    
+            if (! empty($where)) {
+                if (! empty($databk['stime']) || ! empty($databk['etime'])) {
+                    $sql2 = "select a.id,a.openid,a.fopenid,a.ctime,b.name,b.phone,b.enable from vip_jinganshun_support as a left join vip_jinganshun_user b on b.openid=a.openid where b.enable=0 and {$where} group by b.phone ";
+                } else {
+                    $sql2 = "select a.id,a.openid,a.fopenid,a.ctime,b.name,b.phone,b.enable from vip_jinganshun_support as a left join vip_jinganshun_user b on b.openid=a.openid where b.enable=0 and {$where}";
+                }
+            } else {
+                $sql2 = "select a.id,a.openid,a.fopenid,a.ctime,b.name,b.phone,b.enable from vip_jinganshun_support as a left join vip_jinganshun_user b on b.openid=a.openid where b.enable=0";
+            }
+            $data2 = Yii::app()->db->createCommand($sql2)->queryAll();
+            if (! empty($data)) {
+                $result['content'] = $data;
+                $result['count'] = count($data2);
+            } else {
+                $result['content'] = array();
+                $result['count'] = count($data2);
+            }
+    
+            // 实现分页
+            include_once 'page.php';
+            $this->renderPartial('support', array(
+                'page' => $show,
+                'search' => $search,
+                'list' => $result['content'],
+                //'data'=>$money2,
+                'countnum'=>$count,
+            ));
+        }
+    }
+}

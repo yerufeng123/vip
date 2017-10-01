@@ -1,0 +1,103 @@
+@charset "utf-8";
+/******************通用*******************/
+html,body{-webkit-tap-highlight-color:rgba(0,0,0,0);color:#302e31;font:13px "微软雅黑";margin:0;padding:0;-webkit-user-select:none;background:#fafafa;width:100%;height:100%;}
+form,table,td,h1,h2,h3,h4,ul,ol,li,p{margin:0;padding:0;border:0;list-style:none}
+input,img{vertical-align:middle; border:0;}
+html,body{width:100%; height:100%;}
+body{background:#000;-webkit-text-size-adjust:none;}
+img{border:0 none;max-width:100%;height:auto;}
+ol,ul{list-style:none;}
+:focus{outline:0;}
+textarea{resize:none;overflow:auto;}
+a{-webkit-touch-callout:none;-webkit-user-select:none;text-decoration:none}
+a:link {-webkit-tap-highlight-color:rgba(0,0,0,0)}
+table{border-collapse: collapse;border-spacing: 0;}
+input:focus,textarea:focus{outline:0}
+/*************************通用*************************/
+#wrap{ position: relative; height: 100%; width: 100%;background-position: center; background-size: cover; overflow: hidden;}
+#main{ position: absolute; width:415px; height: 540px; left: 50%; top: 50%; margin-left: -207px; margin-top: -270px; text-align: center;}
+/*************************登陆页面*************************/
+#wrap.index{ background: url(../img/index_bg.jpg) no-repeat bottom; background-size: 100% auto;} 
+.logo{ position: absolute;left:19px; top: 10%; margin-top: -40px; width: 63px; height: 31px;}
+.logo2{ position: absolute;left:93px; top: 10%; margin-top: -40px; width: 81px; height: 30px;}
+.tit{ position: absolute;left:50%; top: 50%; margin-left: -129px; margin-top:-245px;  width: 258px; height: 278px;}
+.btn_game,.btn_rule{ position: absolute;  background: no-repeat center; background-size: contain;border-radius:50%;}
+.btn_game{ left: 100px;bottom: 100px; width: 99px; height: 99px; background-image: url(../img/game_btn.png);}
+.btn_rule{ left: 170px;bottom: 45px; width: 69px; height: 69px; background-image: url(../img/rule_btn1.png)}
+/*************************金币游戏*************************/
+#time,#sore{position: absolute; top:5px; width: 77px; height: 36px; background:no-repeat center; background-size: contain; text-align: center; font:23px/37px "微软雅黑"; }
+#time{left:10px; background-image:  url(../img/time.png);color: #355014;}
+#sore{right:10px; background-image:  url(../img/sore.png);color: #f4ff9a;}
+#time:after{content:'秒';}
+#sore:after{content:'分'; font-size: 16px; vertical-align: top; }
+#stage{ position: absolute;left: 0;right: 0;bottom: 0;top: 0; background:url(../img/game_bg.jpg) no-repeat center bottom; background-size:100% auto; overflow: hidden;}
+.stage_foot{ position: absolute; bottom: 0; left: 0; width: 100%;}
+#receive1,#receive2{position: absolute;width:132px; height: 148px; top: 50px; background: url(../img/people.png) no-repeat center; background-size: contain;}
+#receive1:after,#receive2:after{position: absolute;visibility:hidden; content: ''; width:28px; height: 21px; right: 19px; top: 55px; background: url(../img/mouth.png) no-repeat center; background-size: contain;}
+
+#receive1{ right: 50%;margin-right: 20px; }
+#receive2{left: 50%;margin-left: 20px;-webkit-transform: rotateY(180deg); transform: rotateY(180deg);}
+.mouth:after{ visibility: visible !important;}
+
+.boat{ position: absolute; bottom: 20px; width:145px; height: 58px; margin-left: -145px; background: url(../img/boat.png) no-repeat bottom; background-size: contain;
+	/* -webkit-animation: move 5s linear;animation: move 5s linear; */
+	 -webkit-transition: -webkit-transform 5s linear;transition: transform 5s linear;
+}
+.boat.move{-webkit-transform:translateX(465px);transform:translateX(465px);}
+.boat:after{ content: ''; position: absolute; left: 50px; top: 5px; width:36px; height: 33px; background: url(../img/food.png) no-repeat center; background-size: contain;}
+.boat.click{-webkit-animation-duration:2s;animation-duration:2s;}
+.boat.click:after{ visibility: hidden}
+
+.food_fly{ position: absolute; width:36px; height: 33px;bottom: 40px; -webkit-transition: bottom 500ms ease-out;transition: bottom 500ms ease-out;}
+.food_fly.pass{-webkit-transition-timing-function: ease;transition-timing-function: ease;}
+
+.feng{ position: absolute; top: 95px; opacity: 0; font-size: 19px; color: red; -webkit-transition:-webkit-transform 600ms,opacity 600ms;transition:transform 600ms,opacity 600ms;}
+.feng.show{-webkit-transform:translateY(-10px);transform:translateY(-10px); opacity: 1;}
+/*************************弹框*************************/
+#mask{ position: fixed; left: 0; top: 0; right: 0; bottom: 0; background-color: rgba(0,0,0,.8); font:bold 12px/14px '微软雅黑'; color: #46312c;}
+.dialog{ position: absolute; left: 50%;top:50%; width:232px; height: 298px; margin-top: -149px; margin-left: -116px; background: url(../img/dia.png) no-repeat center; background-size: contain;}
+
+.rule_tit{ position: absolute;left:40px; right: 40px; top:40px; font-size: 14px; text-align: center;}
+.rule_text{ position: absolute;left:40px; right: 40px; top:67px;height:142px; overflow:auto;}
+.false_text{ position: absolute; left: 60px; right: 60px; top: 140px;}
+.success_text{ position: absolute; left: 60px; right: 60px; top: 140px;}
+.dialog .success,.dialog .false{position:absolute; top:40px; left:50%; margin-left:-74px;}
+.dialog .success{ width: 147px; height: 70px;}
+.dialog .false{width: 150px; height: 78px;}
+.dialog .btn{ width: 59px; height: 59px; position: absolute; bottom: 30px;}
+
+.dialog .btn_conti{ left: 50px;}
+.dia_false .btn_close{right: 50px;}
+.dia_rule .btn_close,
+.dialog .btn_good{ left: 50%; margin-left: -30px;}
+
+
+
+
+/********************动画效果*******************/
+@-webkit-keyframes move{ 
+	0%{-webkit-transform:translateX(0);}
+	100%{-webkit-transform:translateX(465px);}
+}
+@keyframes move{ 
+	0%{transform:translateX(0);}
+	100%{transform:translateX(465px);}
+}
+@-webkit-keyframes rotate{ 
+	0%{-webkit-transform:rotateX(0);}
+	100%{-webkit-transform:rotateX(360deg);}
+}
+@keyframes rotate{ 
+	0%{transform:rotateX(0);}
+	100%{transform:rotateX(360deg);}
+}
+@-webkit-keyframes shack{ 
+	0%{-webkit-transform:rotate(0);}
+	100%{-webkit-transform:rotate(10deg);}
+}
+@keyframes shack{ 
+	0%{transform:rotate(0);}
+	100%{transform:rotate(10deg);}
+}
+
+

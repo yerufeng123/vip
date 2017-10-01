@@ -1,0 +1,41 @@
+/*公共样式*/
+html,body{-webkit-tap-highlight-color:rgba(0,0,0,0);color:#302e31;font:13px "微软雅黑",Helvetica;font-size:13px;line-height:160%;margin:0;padding:0;-webkit-user-select:none;}
+form,table,td,h1,h2,h3,h4,ul,ol,li,p{margin:0;padding:0;border:0;list-style:none}
+input,img{vertical-align:middle}
+html,body{width:100%; height:100%;}
+body{-webkit-text-size-adjust:none;}
+img{border:0 none;max-width: 100%;height: auto;}
+ol, ul {list-style: none;}
+:focus {outline: 0;}
+textarea{resize:none;overflow:auto;}
+a{-webkit-touch-callout:none;-webkit-user-select:none;text-decoration:none}
+a,a:link,a:visited,a:hover,a:active{ color:inherit; text-decoration:none;}
+a:link {-webkit-tap-highlight-color:rgba(229, 59, 44, 0.4)}
+table {border-collapse: collapse;border-spacing: 0;}
+input:focus,textarea:focus{outline:0}
+ #wrap{width:100%;height:100%;} 
+ /* 竞拍大屏幕 */
+ .jp_web{position:relative;background:#fff;}
+.jp_main{position:absolute;width:620px;height:470px;border-bottom:10px solid #d0000e;overflow:hidden;background:#fff url(../img/jp_bg1.png) no-repeat;top:50%;left:50%;margin-left:-310px;margin-top:-240px;background-size:100% 100%;}
+.jp_big_ps{width:573px;margin:0 auto;}
+.big_tit{width:352px;height:29px;margin:60px auto 30px;display:block;}
+.jp_logo{position:absolute;left:16px;top:-76px;width:88px;z-index:4;}
+.jp_tu_left{width:220px;float:left;position:relative;height:268px;background:#fff;-webkit-border-radius:4px;
+-webkit-box-shadow:0px 1px 8px #ccc;} 
+.jp_tu1{position:absolute;top:-6px;left:50%;margin-left:-36px;width:73px;height:81px;z-index:3;} 
+.jp_img{width:195px;height:240px;display:block;margin:0 auto;padding-top:14px;padding-bottom:0px;}
+.jp_tu_right{width:308px;float:right;}
+.big_time{height:46px;background:#c01a20;line-height:46px;}
+.big_time p{font-size:20px;font-weight:bold;color:#fff;text-align:center;}
+.big_list{padding-left:8px;padding-right:8px;}
+.big_list li{height:34px;line-height:34px;margin-bottom:4px;}
+.big_list li span{line-height:34px;display:block;float:left;margin-right:12px;font-weight:bold;font-size:16px;color:#c01a20;}
+.big_list li span.big_name{width:32px;}
+.big_list li span.big_phone{width:100px;}
+.big_list li span.big_yuan{margin-right:0px;width:90px;text-align:right;}
+.big_list .list_tit{height:34px;line-height:34px;font-size:16px;margin-bottom:0px;font-weight:bold;color:#c01a20;text-align:center;margin-top:3px;}
+.big_list .big_cion{width:34px;height:34px;background:#c01a20;}
+
+
+
+

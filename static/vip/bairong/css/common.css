@@ -1,0 +1,85 @@
+@charset "utf-8";
+/******************通用*******************/
+html,body{-webkit-tap-highlight-color:rgba(0,0,0,0);color:#302e31;font:13px "微软雅黑";margin:0;padding:0;-webkit-user-select:none;background:#fafafa;width:100%;height:100%;}
+form,table,td,h1,h2,h3,h4,ul,ol,li,p{margin:0;padding:0;border:0;list-style:none}
+input,img{vertical-align:middle; border:0;}
+html,body{width:100%; height:100%;}
+body{background:#000;-webkit-text-size-adjust:none; overflow:hidden;}
+img{border:0 none;max-width:100%;height:auto;}
+ol,ul{list-style:none;}
+:focus{outline:0;}
+textarea{resize:none;overflow:auto;}
+a{-webkit-touch-callout:none;-webkit-user-select:none;text-decoration:none}
+a:link {-webkit-tap-highlight-color:rgba(0,0,0,0)}
+table{border-collapse: collapse;border-spacing: 0;}
+input:focus,textarea:focus{outline:0}
+/*************************金币游戏*************************/
+#main{ text-align: center;}
+#time,
+#sore{ font-size:14px; position: relative;}
+#time::before{content: "时间：";}
+#sore::before{content: "+"; float: left; margin:0 5px;}
+#sore::after{content: "积分"; font-size: 16px; margin:0 5px;vertical-align:bottom;}
+#receive{ position: absolute;left: 0; bottom: 20px;background:url(../img/car.png) no-repeat center; background-size: 95px auto; z-index: 99;}
+#stage{ position: absolute;left: 0;right: 0;bottom: 0;top: 0; background: green no-repeat center; background-size: cover; overflow: hidden;}
+
+.gold{ position: absolute; width: 55px;height: 51px; background:url(../img/icon.png) no-repeat center; background-size:cover;bottom: 100%;
+	-webkit-transition:-webkit-transform linear;transition:transform linear;
+}
+.gold[value]{ background-position: -275px 0;}
+.gold[value="1"]{ background-position: 0 0;}
+.gold[value="2"]{ background-position: -55px 0;}
+.gold[value="3"]{ background-position: -110px 0;}
+.gold[value="4"]{ background-position: -165px 0;}
+.gold[value="5"]{ background-position: -220px 0;}
+
+#stage[speed] .gold{-webkit-transition-duration:.8s;transition-duration:.8s;}
+#stage[speed="1"] .gold{-webkit-transition-duration:2s;transition-duration:2s;}
+#stage[speed="2"] .gold{-webkit-transition-duration:1.5s;transition-duration:1.5s;}
+#stage[speed="3"] .gold{-webkit-transition-duration:1s;transition-duration:1s;}
+
+#stage[speed] .gold.pass{-webkit-transition-duration:200ms;transition-duration:200ms;}
+#stage[speed="1"] .gold.pass{-webkit-transition-duration:500ms;transition-duration:500ms;} 
+#stage[speed="2"] .gold.pass{-webkit-transition-duration:400ms;transition-duration:400ms;}
+#stage[speed="3"] .gold.pass{-webkit-transition-duration:300ms;transition-duration:300ms;}
+
+/********************首页******************/
+#wrap.index{width: 100%;height: 100%; position: relative; background:#6d3580 url(../img/index.jpg) no-repeat center top; background-size:415px auto;}
+.btn{ position: absolute; left: 146px;}
+.btn#star_btn{ top: 370px; left: 146px; width: 199px;height: 40px;}
+.btn#inf_btn{ top: 421px;width:170px; height: 34px;}
+.btn#share_btn{ top: 467px;width:170px; height: 34px;}
+
+.btn_ok{ display:block; text-align: center; height: 25px; color: #fff;width:96px; margin:0 auto;  border-radius:25px; background-color: #ff6d0b; font-size: 13px; line-height: 25px;}
+.btn_get{ display:block; text-align: center; height: 25px; color: #fff;width:96px; margin:0 auto;  border-radius:25px; background-color: #cc4494; font-size: 13px; line-height: 25px;}
+#share{ position: fixed; left: 0;right: 0;top: 0;bottom: 0; background:rgba(0,0,0,.6) url(../img/share.png) no-repeat center top; background-size: 281px auto; z-index: 9999}
+/*****************游戏界面****************/
+#stage{ background:#591e8b url(../img/bg.jpg) no-repeat center bottom; background-size:415px auto;}
+#sore{position: absolute; text-align: right;  left: 17px; top: 67px; width: 124px; height: 32px; background:url(../img/sore.png) no-repeat center top; background-size:contain; color: #fff; font:bold 21px/32px "微软雅黑"; z-index: 99;}
+#rule{ position: absolute; left: 50%; top: 50%; margin-left:-139px; margin-top: -130px; padding: 25px; height: 211px;width: 228px; background: url(../img/rule.png) no-repeat center; background-size:contain; color: #e63b39; font-size: 14px;}
+.rule_tit{ font-size: 14px; font-weight: bold;}
+.index .btn_ok{ margin-top: 20px;}
+#mask{ position:absolute; left: 0; top:0; right: 0;bottom: 0; background-color: rgba(0,0,0,.6); z-index: 9999;}
+.dialog{ position: absolute; left: 50%; top: 50%;width:278px; height: 157px; margin-left: -139px; margin-top: -78px; background: url(../img/dialog.png) no-repeat center bottom; background-size: 278px; color: #e63b39;}
+
+.false_tit{position:absolute;left: 42px;top: 30px; font: bold 18px/24px "微软雅黑";}
+.again{ position: absolute; left: 10px; bottom: 30px;}
+#false .share{ position:absolute; left: 115px; bottom: 30px;}
+.false_icon{ position: absolute; right: -55px; bottom: 0; width: 176px; height: 196px;}
+
+.sussess_tit{position:absolute;left: 30px;top: 30px; font: bold 14px/30px "微软雅黑";}
+.phone{ position: absolute; left: 30px; top: 95px; border:1px solid #949494; padding: 0 10px; background-color: #fff; height: 30px; width: 110px;}
+.btn_get{ position: absolute; top: 100px; left: 170px;}
+.sussess_icon{ position: absolute; right: -35px; bottom: 2px; width: 156px; height: 175px;}
+
+.goods_tit{position:absolute;left: 40px;top: 40px; font: bold 14px/24px "微软雅黑";}
+#goods .share{ position:absolute; left: 40px; bottom: 30px;}
+.goods_icon{ position: absolute; right: -11px; bottom: -4px; width: 117px; height: 184px;}
+/*****************手机****************/
+.phone_bg{ position:relative; width: 100%; height: 100%; min-height: 416px; background:url(../img/phone_bg.jpg) center; background-size: cover;}
+.logo{ position: absolute; right: 10px; top: 10px; width:114px; height: 20px;}
+.icon4{ position: absolute; left: 50%; top: 10%; margin-left: -92px;width:185px; height: 118px;}
+.tit{ position: absolute; left: 50%; top: 40%; margin-left: -139px; margin-top: 0px; width: 278px; height: 33px;}
+.phone_input{ position: absolute; left: 50%; top: 50%; padding: 0; margin-left: -138px; margin-top: 0px; border:1px solid #d12277; background-color: #fff;width:276px; height:48px;-webkit-border-radius: 4px; border-radius: 4px; text-align: center;
+	font: 36px/48px "微软雅黑"; color: #d12277;}
+.bnt_sub{ position: absolute; left: 50%; top: 50%; margin-left: -74px; margin-top: 60px; width: 148px; height: 148px; background: url(../img/btn.png) no-repeat center; background-size: 148px 148px}

@@ -1,0 +1,327 @@
+@charset "UTF-8";
+
+@import "screen";
+@import "compass";
+$baseSize: 12;
+/* (name:font,level:dark,color:#333),
+(name:font,level:normal,color:#666),
+(name:font,level:pale,color:#999), */
+$color-stack:
+	(name:gray,level:less,color:#f8f8f8),
+	(name:gray,level:pale,color:#c9c9ce),
+	(name:gray,level:normal,color:#b2b2b2),
+	(name:white,level:normal,color:#fff),
+	(name:black,level:normal,color:#000),
+
+	(name:font,level:dark,color:#333),
+	(name:font,level:normal,color:#666),
+	(name:font,level:pale,color:#999),
+	(name:font,level:less,color:#ababab),
+	(name:blue,level:normal,color:#007aff),
+	(name:green,level:normal,color:#09bb07),
+	(name:green,level:pale,color:#409b18),
+	(name:red,level:pale,color:#ff3b30),
+	(name:red,level:dark,color:#da4a4a),
+	(name:red,level:normal,color:#ec1c24);
+//颜色转换
+@function color($name,$level:normal,$opacity:1){
+	@each $color in $color-stack{
+		$c-color:map-get($color,color);
+		$c-name:map-get($color,name);
+		$c-level:map-get($color,level);
+		@if($name == $c-name and $level == $c-level){
+			@return rgba($c-color, $opacity);
+		}
+	}
+}
+//宽高转换
+@function size($size){
+	@return #{$size/24}rem;
+}
+
+//圆角前缀
+@mixin radius($radius){
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-ms-border-radius: $radius;
+	-o-border-radius: $radius;
+	border-radius: $radius;
+}
+//transform前缀
+@mixin transform($change){
+	-webkit-transform: $change;
+	-moz-transform: $change;
+	-ms-transform: $change;
+	-o-transform: $change;
+	transform: $change;
+}
+//正方形
+@mixin rect($width:0,$height:$width){
+	width:$width;
+	height:$height;
+}
+//图片
+@mixin imgSize($img){
+	width:#{image-width($img)/(image-width($img)*0+24)}rem;
+	height:#{image-height($img)/(image-height($img)*0+24)}rem;
+}
+
+/******************通用*******************/
+
+html,body{-webkit-tap-highlight-color:rgba(0,0,0,0);color:color(font,dark);font:#{$baseSize}px/1.6 "微软雅黑",Helvetica;width:100%;height:100%; -webkit-user-select: none;}
+body{-webkit-transform-style: preserve-3d;transform-style: preserve-3d;-webkit-perspective: 1000;perspective: 1000}
+.icons{ background: url(../img/icons.png) no-repeat 0 0;background-size:size(283) auto;}
+#wrap{
+	-webkit-transform-style: preserve-3d;transform-style: preserve-3d;
+	-webkit-transition:-webkit-transform 600ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+	transition:transform 600ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+	width: 100%;height: 100%;
+	position: relative;
+	&.rotate{@include transform(rotateY(-180deg));}
+}
+.page,.audioShow{
+	background-color: color(white);
+	position: absolute;
+	left: 0;top: 0;
+	-webkit-backface-visibility: hidden;backface-visibility: hidden;}
+//信息展示页面
+.page{width: 100%;height: 100%;}
+
+.pageList{
+	width: 100%;height: 100%;
+	.pageLi{display: none;width: 100%;height: 100%;
+		&.show{display: block;}
+	}
+	//我的信息
+	.userPage{
+		background-size: cover;
+		background-position: center;
+	}
+	.userMask{
+		width: 100%;height: 100%;
+		 background-color: color(black,normal,0.4);
+	}
+	.myPhoto{
+		position:absolute;left:50%;top:30%;
+		@include rect(size(240));
+		@include radius(size(20));
+		margin:size(-120) 0 0 size(-120);
+		background-size: cover;
+		background-position: center;
+		box-shadow: inset 0 0 6px color(black);
+	}
+	.myName{
+		position:absolute;top:35%;left: 0;right: 0;
+		font-size: size(40);
+		color:color(white);text-align: center;
+		margin-top: size(80);
+	}
+	.myAudio{
+		position:absolute;bottom:10%;left: 50%;
+		margin:0 0 size(40) size(-72.5);
+		@include rect(size(145));
+		@include radius(50%);
+		text-align: center;color:color(white);
+		font-size:size(45);line-height:size(145);
+		background-color: color(red,dark);
+		&:after{content:"录音";}
+		&[data-audio]{
+			background-color: color(green);
+			&:after{content:"播放";}
+		}
+	}
+	
+	//语音录制
+	.recordPage{}
+	.recordHead{
+		position: fixed;left: 0;top: 0;right: 0;
+		padding:size(5) size(10);
+		border-bottom: size(1) solid color(gray);
+		background-color: color(white);
+	}
+	.recordBtn{
+		@include radius(size(5));
+		-webkit-transition:background 500ms;transition:background 500ms;
+		background-color: color(green,pale);
+		color:color(white);font-size: size(32);
+		line-height:size(80);text-align: center;
+		&.stop{
+			background-color: color(red);
+		}
+	}
+	.recordTip{
+		position: fixed;left: 0;top:size(88);right: 0;
+		padding:size(5) size(32);
+		text-align: center;
+		background-color: color(gray,pale);
+	}
+	.recordList{
+		padding: size(135) 0 size(89);
+		height: 100%;
+		box-sizing:border-box;
+		overflow: auto;-webkit-overflow-scrolling: touch;
+	}
+	.recordLi{
+		font-size: size(32);
+		height:size(112);line-height:size(112);
+		& + .recordLi .recordMain{border-top:size(1) solid color(gray);}
+	}
+	.recordUpload,.recordDelete{
+		width: 3em;text-align: center;
+		float: right;padding:size(20) size(32); 
+		margin:size(24.5) size(10);
+		@include radius(size(5));
+		font-size:size(24); line-height: size(24);color:color(white);
+	}
+	.recordUpload{
+		background-color: color(blue);
+		&:after{content:"上传";}
+		&.load{background-color: color(blue,normal,0.6);}
+		&.load:after{content:"上传中";}
+		&.finish{background-color: color(blue,normal,0.4);}
+		&.finish:after{content:"完成";}
+	}
+	.recordDelete{background-color: color(gray);}
+
+	.recordMark{@include rect(size(70),100%);float: left;}
+	.recordMain{
+		margin-left: size(70);
+
+	}
+	.recordUpload{}
+	.recordDelete{}
+	
+	//通信录
+	.audioPage{}
+	.search{
+		height: size(56);
+		padding: size(15);
+		border-bottom:size(1) solid color(gray);
+		background-color: color(gray,pale);
+	}
+	.searchByname{
+		@include rect(100%);
+		@include radius(size(10));
+		background-color:color(white); text-align: center; line-height:size(56);
+	}
+	.audioList{
+		position:absolute;left:0;right:0;top: size(87);bottom: size(99);
+		overflow: auto;-webkit-overflow-scrolling: touch;
+	}
+	.audioTit{
+		margin-right: size(30);
+		font-size:size(24);text-indent: size(32); line-height: size(56);font-weight: bold;
+		background-color: color(gray,less);
+	}
+	.audioLi{
+		margin: 0 size(32);
+		font-size:size(32); line-height: size(78);
+		& + .audioLi{border-top:size(1) solid color(gray)}
+		&:after{content:attr(data-name);}
+	}
+	.audioPic{
+		display: inline-block;
+		float: left;
+		@include rect(size(48));
+		@include radius(50%);
+		margin:size(18) size(10) 0 0;
+		background-position: center;
+		background-size: cover;
+	}
+	.audioName{}
+	.searchList{
+		position: fixed;top:50%;right:0;
+		@include transform(translateY(-50%));
+		width: size(30);text-align: center;
+	}
+	.searchLi{
+		display: block;
+		line-height: size(32);font-size: size(22);
+		color:color(blue);text-decoration: none;
+	}
+	//分享页面
+	.sharePage{}
+}
+
+.tabList{
+	position: fixed;left: 0;bottom:0;
+	width: 100%;height: size(98);
+	background-color: color(gray,less);
+	border-top:size(1) solid color(gray);
+	font-size: size(20);color:color(font,less); line-height: size(25);
+	text-align: center;
+	.tabLi,.tabshare{
+		float: left;width: 25%;height: size(98);
+		&.click{color:color(blue);}
+	}
+	.icons{
+		@include rect(size(56));
+		display: block;margin: size(10) auto 0;
+	}
+}
+.user{background-position:0 0;
+	.click &{background-position: 0 size(-71);}
+}
+.record{background-position:size(-71) 0;
+	.click &{background-position: size(-71) size(-71);}
+}
+.audio{background-position:size(-142) 0;
+	.click &{background-position: size(-142) size(-71);}
+}
+.share{background-position:size(-213) 0;
+	.click &{background-position: size(-213) size(-71);}
+}
+
+//通话页面
+.audioShow{
+	@include transform(rotateY(180deg) translateZ(1px));
+	@include rect(100%);
+	background-position: center;
+	background-size: cover;
+	color: color(white);
+}
+.audioP,.audioN,.audioTip{
+	position: absolute;
+	left:size(48);top:20%;
+}
+.audioP{
+	@include rect(size(200));
+	@include radius(5%);
+	margin-top: size(-160);
+	background-position: center;
+	background-size: cover;
+}
+.audioN{
+	margin-top: size(40);
+	font-size:size(32);
+	font-weight: bold;
+
+}
+.audioTip{
+	margin-top: size(85);
+}
+.audioMask{
+	position: absolute;left: 0;top:0;
+	@include rect(100%);
+	background-color: color(black,normal,0.4);
+
+}
+.audioB{
+	position: absolute;left: 0;right: 0;bottom: 10%; text-align: center;
+	.icons{
+		@include rect(size(145));
+		display: inline-block;text-align: center;
+	}
+	.audioOff{
+		background-position: 0 size(-142);
+	}
+}
+.maskLoad{position: fixed;left: 0;top: 0;right: 0;bottom: 0;background:color(white,normal,0.4) url(../img/load.gif) no-repeat center;}
+.tips{
+	padding:size(64);
+	position:fixed;left:50%;top:40%;
+	@include transform(translate(-50%,-50%));
+	background-color:color(black,normal,0.8);
+	color:color(white);
+	font-size:size(32);
+}

@@ -1,0 +1,49 @@
+<?php $this->renderPartial("/public/head") ?>
+<?php $this->renderPartial("/public/lefter") ?>
+
+<div class="cont_right">
+    <div class="cont_right_page1">
+        <span><img src="<?php echo _STATIC_ . 'vip/jinganshun/admin1/'; ?>img/icon_place.png" />您当前位置：<span>分享有礼</span></span>
+    </div>
+    <div class="cont_right_page2">
+        <form action="/jinganshun/interact/share?model=4" method="POST">
+            姓名：<input type="text" name="name" value="<?php echo $search['name'] ?>">
+            电话：<input type="text" name="phone" value="<?php echo $search['phone'] ?>">
+            开始时间：<input type='text' name="stime" placeholder="格式：<?php echo date('Y-m-d', time()); ?>" value='<?php echo $search['stime'] ?>'>
+            结束时间：<input type='text' name="etime" placeholder="格式：<?php echo date('Y-m-d', time()); ?>" value='<?php echo $search['etime'] ?>'>
+            <input type='submit' value="检索">
+        </form>
+    </div>
+    <div class="cont_right_page3">
+        <table cellspacing="0" cellpadding="0" >
+            <thead>
+            <th>序号</th>
+            <th>姓名</th>
+            <th>手机</th>
+            <th>OPENID</th>
+            <th>关注OPENID</th>
+            <th>关注时间</th>
+            </thead>
+
+            <?php if (isset($list) && is_array($list)): ?>
+                <?php foreach ($list as $key => $value): ?>
+                    <tr>
+                        <td><?php echo $key + 1; ?></td>
+                        <td><?php echo $value['name']?></td>
+                        <td><?php echo $value['phone']?></td>
+                        <td><?php echo $value['openid']?></td>
+                        <td><?php echo $value['fopenid']?></td>
+                        <td><?php echo date('Y-m-d H:i:s',$value['ctime']);?></td>
+                    </tr>
+                <?php endforeach; ?>
+            <?php endif; ?>
+
+
+        </table>
+        <div class="cont_right_page4" style="float:right;">
+            <?php echo $page; ?>
+        </div>
+    </div>
+</div>
+
+<?php $this->renderPartial("/public/buttom") ?> 

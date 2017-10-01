@@ -1,0 +1,87 @@
+@charset "utf-8";
+/******************通用*******************/
+html,body{color:#302e31;font:13px "微软雅黑";margin:0;padding:0;-webkit-user-select:none;width:100%;height:100%;}
+form,table,td,h1,h2,h3,h4,ul,ol,li,p{margin:0;padding:0;border:0;list-style:none}
+input,img{vertical-align:middle; border:0;}
+html,body{width:100%; height:100%;}
+body{-webkit-text-size-adjust:none; overflow:hidden;}
+img{border:0 none;max-width:100%;height:auto;}
+ol,ul{list-style:none;}
+:focus{outline:0;}
+textarea{resize:none;overflow:auto;}
+a{-webkit-touch-callout:none;-webkit-user-select:none;text-decoration:none}
+a:link {-webkit-tap-highlight-color:rgba(0,0,0,0)}
+table{border-collapse: collapse;border-spacing: 0;}
+input:focus,textarea:focus{outline:0}
+/*************************金币游戏*************************/
+#wrap{overflow:hidden; width: 100%; height: 100%; background: url(../img/game_bg.jpg) no-repeat center bottom; background-size:100% auto;}
+#main{ text-align: center;}
+#time,
+#time::before{content: "时间：";}
+#receive{position: absolute;left: 0; bottom: 75px;background:url(../img/fanhe.png) no-repeat center; background-size:100% auto; z-index: 99;}
+#stage{ position: absolute;left: 0;right: 0;bottom: 0;top: 0;  background-size: cover; overflow: hidden;}
+
+.gold{ position: absolute; width: 55px;height: 130px; background:url(../img/stone.png) no-repeat center; background-size:cover;bottom: 100%;
+	-webkit-transition:-webkit-transform linear;transition:transform linear;
+}
+.gold[value]{ background-position: 0 0;}
+.gold[value="2"]{ background-position: -55px 0;}
+.gold[value="1"]{ background-position: -110px 0;}
+.gold[value="3"]{ background-position: -169px 0;}
+
+#stage[speed] .gold{-webkit-transition-duration:.8s;transition-duration:.8s;}
+#stage[speed="1"] .gold{-webkit-transition-duration:2s;transition-duration:2s;}
+#stage[speed="2"] .gold{-webkit-transition-duration:1.5s;transition-duration:1.5s;}
+#stage[speed="3"] .gold{-webkit-transition-duration:1s;transition-duration:1s;}
+
+#stage[speed] .gold.pass{-webkit-transition-duration:200ms;transition-duration:200ms;}
+#stage[speed="1"] .gold.pass{-webkit-transition-duration:500ms;transition-duration:500ms;} 
+#stage[speed="2"] .gold.pass{-webkit-transition-duration:400ms;transition-duration:400ms;}
+#stage[speed="3"] .gold.pass{-webkit-transition-duration:300ms;transition-duration:300ms;}
+/*****************游戏界面****************/
+.page_game{background:url(../img/game_bg.jpg) no-repeat center bottom; background-size:cover;}
+.top_bg{position: relative; z-index: 999; width:100%;height:117px;background:url(../img/top_bg.png) no-repeat center top;background-size:100% 117px;}
+.logo2{width:104px;height:76px;position: absolute;left:5px;top:10px;}
+.jifen{width:172px;height:55px;background: url(../img/jifen_box.png) no-repeat center;background-size:172px 55px;position: absolute;top:8px;right:15px;font-size:16px;font-family: "微软雅黑";font-weight: bold;line-height:55px;color:#fff;text-align: center;text-indent: -28px;}
+.jifen::after{content: "积分"; font-size: 16px; margin:0 5px;vertical-align:bottom;}
+#rule{ position: absolute; left: 50%; top: 50%; margin-left:-139px; margin-top: -130px; padding: 25px; height: 211px;width: 228px; background: url(../img/rule.png) no-repeat center; background-size:contain; color: #e63b39; font-size: 14px;}
+.rule_tit{ font-size: 14px; font-weight: bold;}
+.index .btn_ok{ margin-top: 20px;}
+/* 分享遮罩层 */
+#share{ position: fixed; left: 0;right: 0;top: 0;bottom: 0; background:rgba(0,0,0,.6) url(../img/share.png) no-repeat center 65px; background-size: 70%; z-index: 9999}
+#share span{position: absolute;color:#ff4542;font-size:19px;left:50%;margin-left:-116px;bottom:33%;font-weight:bold}
+.false_tit{position:absolute;left: 42px;top: 30px; font: bold 18px/24px "微软雅黑";}
+.again{ position: absolute; left: 10px; bottom: 30px;}
+#false .share{ position:absolute; left: 115px; bottom: 30px;}
+.false_icon{ position: absolute; right: -55px; bottom: 0; width: 176px; height: 196px;}
+.mask_child{width:111px;height:139px;position: absolute;left:50%;margin-left:-55px;top:122px;}
+.feng{ position: absolute; bottom: 160px; color: #ffe745; font-size: 34px;-webkit-transform:translate(0,20px);transform:translate(0,20px); opacity: 0;
+	-webkit-transition:-webkit-transform 500ms,opacity 500ms;transition:transform 500ms,opacity 500ms;
+}
+.feng.show{-webkit-transform:translateZ(0);transform:translateZ(0); opacity: 1;}
+#mask{ position:absolute; left: 0; top:118px; right: 0;bottom: 0; background-color: rgba(0,0,0,.6); z-index: 9999;}
+/* 抽奖遮罩层 */
+.dialog{ width:277px;height:462px;position: absolute; left: 50%;margin-left: -138px;  background:url(../img/dialog.png) no-repeat center;background-size:277px 462px;top:-29px}
+.icon_chart{width:44px;height:37px;position:absolute;left:50%;margin-left:-22px;top:10px;}
+.draw{ display: block; width:96px;height:68px; margin:115px auto;text-align:center}
+.draw span{font-family:"微软雅黑";font-size:13px;color:#fff;display:block; padding-top: 20px;}
+.draw img{width:19px;margin:9px auto; display: block; }
+/* 分享遮罩层 */
+#share{ position: fixed; left: 0;right: 0;top: 0;bottom: 0; background:rgba(0,0,0,.6) url(../img/share.png) no-repeat center 65px; background-size: 70%; z-index: 9999}
+#mask.mask_share{top:0}
+#share span{position: absolute;color:#ff4542;font-size:19px;left:50%;margin-left:-116px;bottom:33%;font-weight:bold}
+.hint{display:block;font-size:27px;color:#ff4542;font-weight:bold;padding:15px 16px;text-align: center; margin-top:148px;}
+.false_tit{position:absolute;left: 42px;top: 30px; font: bold 18px/24px "微软雅黑";}
+.again{ position: absolute; left: 10px; bottom: 30px;}
+#false .share{ position:absolute; left: 115px; bottom: 30px;}
+.false_icon{ position: absolute; right: -55px; bottom: 0; width: 176px; height: 196px;}
+.mask_child{width:111px;height:139px;position: absolute;left:50%;margin-left:-55px;top:122px;}
+/* 一等奖 */
+.first_place{width:272px;height:589px;background:url(../img/gj_box2.png) no-repeat center;background-size:272px auto;top:-34px}
+.gj_text1.gj_text_one{width:235px;height:63px;top:270px;}
+.gj_text1.gj_text_one .nums{line-height:63px;}
+.two_place .hint{margin-left:-122px;text-align:left}
+.three_place .hint{margin-left:-158px}
+.three_place .draw{top:450px;margin-left:-42px}
+.dialog_game .hint{margin-top: 249px;}
+.dialog_game .draw{margin-top:19px;}

@@ -1,0 +1,766 @@
+<?php
+
+header('content-type:text/html;charset=utf-8');
+
+//error_reporting(E_ALL ^ E_NOTICE);
+
+class IndexController extends Controller {
+
+    const PREFIX = 'vip_';
+
+    public $weObj; //wechat类对象
+    public $openid; //用户openid
+    public $mesObj; //用户消息对象
+
+    public function __construct($id, $module = null) {
+        parent::__construct($id, $module);
+        $options = array(
+            'token' => Yii::app()->params['jinganshun']['wxtoken'], //填写你设定的key
+            'encodingaeskey' => Yii::app()->params['jinganshun']['wxencodingaeskey'], //填写加密用的EncodingAESKey
+            'appid' => Yii::app()->params['jinganshun']['wxappid'], //填写高级调用功能的app id
+            'appsecret' => Yii::app()->params['jinganshun']['wxappsecret'], //填写高级调用功能的密钥
+        );
+        $this->weObj = new Wechatg($options);
+    }
+
+    //回调入口文件
+    public function actionIndex() {
+        $this->weObj->valid(); //注释掉 本方法中全部的代码，先验证域名可用性
+        //接收用户输入开始,可以根据用户输入，激活程序代码，实现数据库的增删改查，但不支持根据事件或者用户输入命令，进行代码跳转web页，只能用用户点击的形式跳转页面
+        $this->mesObj = $this->weObj->getRev(); //先获取用户消息对象
+        $type = $this->mesObj->getRevType();
+        switch ($type) {//判断传入类型
+            case 'event':
+                $event = $this->mesObj->getRevEvent();
+                switch ($event['event']) {
+                    case 'subscribe'://关注事件
+                        //更改分享者关注状态
+                        $openid = $this->mesObj->getRevFrom();
+                        $this->_updatestate($openid);
+                        $this->mesObj->text('大家好,我是一名80后，,也是唯一一个做保安行业的北京孩子。公司从最开始看护自由市场到现在保卫国家数十亿资产，四年的光阴让我公司从拥有两名队员到现在的千人队伍是让我最自豪的事情。我一直相信生意可以靠关系，但人心靠的是信誉。所以有人说我管理无章法，是家庭式管理，我倒是很喜欢这个定义，员工生病不予理睬，难道就因为他仅入职了一个月吗？我是一个有血有肉的人，京安顺是一个讲情义的公司，四年的时间不算太长，但从零基础的保安公司到今天近千人的员工人数不是精打细算算出来的，是人心换人心积攒起来的。效益不好的时候我也当过班车司机，队员素质不够精炼的时候我也站过岗，我懂得大家要的是什么，大家要的是尊重，平等，和从不拖欠的待遇。所以我要建立一个平台，给大家安全感，让大家有归属感，提供一个平台让大家有去交流，有地方去抒发自己的情感。我希望能有越来越多的有志之士来加入到我的团队，让我们共同拥有一个美好的未来。欢迎你的加入。')->reply();
+                        break;
+                    case 'CLICK'://单击菜单
+                        switch ($event['key']) {
+                            case 'CLICK_11':
+                                $this->mesObj->image('ghz23NXfLbytfTVhxDymWywY4x1MOW_61_uSzPE6J9I')->reply(); //回复一张图片
+                                break;
+                            default:
+                                $this->mesObj->text('2')->reply();
+                                break;
+                        }
+                        break;
+
+                    default :
+                }
+                break;
+            case'text':
+            case 'image':
+            case 'voice':
+            case'video':
+            case'shortvideo':
+            case'link':
+            case 'location'://地理位置准确
+                $this->mesObj->transfer_customer_service()->reply();
+                break;
+            default :
+        }
+    }
+
+    //测试
+    public function actionDemo() {
+        $data = array(
+            'button' => array(
+                0 => array(
+                    "name" => "公司文化",
+                    "sub_button" => array(
+                        0 => array(
+                            "type" => "view",
+                            "name" => "公司简介",
+                            "url" => "http://vip2.hui.net/jinganshun/index/profile"
+                        ),
+                        1 => array(
+                            "type" => "view",
+                            "name" => "公司荣誉",
+                            "url" => "http://vip2.hui.net/jinganshun/index/honor"
+                        ),
+                        2 => array(
+                            'type' => 'view',
+                            'name' => '员工风采',
+                            'url' => 'http://vip2.hui.net/jinganshun/index/thunder'
+                        ),
+                        3 => array(
+                            'type' => 'view',
+                            'name' => '员工关怀',
+                            'url' => 'http://vip2.hui.net/jinganshun/index/care'
+                        ),
+                    )
+                ),
+                1 => array(
+                    'name' => '人才招聘',
+                    'sub_button' => array(
+                        0 => array(
+                            'type' => 'view',
+                            'name' => '成长路径',
+                            'url' => 'http://vip2.hui.net/jinganshun/index/growpath',
+                        ),
+                        1 => array(
+                            'type' => 'view',
+                            'name' => '招聘流程',
+                            'url' => 'http://vip2.hui.net/jinganshun/index/applypath',
+                        ),
+                        2 => array(
+                            'type' => 'view',
+                            'name' => '职位申请',
+                            'url' => 'http://vip2.hui.net/jinganshun/index/apply',
+                        ),
+                    ),
+                ),
+                2 => array(
+                    'name' => '交流区',
+                    'sub_button' => array(
+                        0 => array(
+                            'type' => 'view',
+                            'name' => '有奖答题',
+                            'url' => 'http://vip2.hui.net/jinganshun/index/ask',
+                        ),
+                        1 => array(
+                            'type' => 'view',
+                            'name' => '有奖征稿',
+                            'url' => 'http://vip2.hui.net/jinganshun/index/article',
+                        ),
+                        2 => array(
+                            "type" => "view",
+                            "name" => "员工嘉奖",
+                            "url" => "http://vip2.hui.net/jinganshun/index/elect",
+                        ),
+                        3 => array(
+                            "type" => "view",
+                            "name" => "分享有礼",
+                            "url" => "http://vip2.hui.net/jinganshun/index/share",
+                        ),
+                        4 => array(
+                            "type" => "click",
+                            "name" => "你问我答",
+                            "key" => "CLICK_11",
+                        ),
+                    ),
+                ),
+            ),
+        );
+//        $data = array(
+//            'button' => array(
+//                0 => array(
+//                    "name" => "公司文化",
+//                    "sub_button" => array(
+//                        0 => array(
+//                            "type" => "click",
+//                            "name" => "公司简介",
+//                            "key" => "001"
+//                        ),
+//                        1 => array(
+//                            "type" => "click",
+//                            "name" => "公司荣誉",
+//                            "key" => "002"
+//                        ),
+//                        2 => array(
+//                            'type' => 'click',
+//                            'name' => '员工风采',
+//                            'key' => '003'
+//                        ),
+//                        3 => array(
+//                            'type' => 'click',
+//                            'name' => '员工关怀',
+//                            'key' => '004'
+//                        ),
+//                    )
+//                ),
+//                1 => array(
+//                    'name' => '人才招聘',
+//                    'sub_button' => array(
+//                        0 => array(
+//                            'type' => 'click',
+//                            'name' => '成长路径',
+//                            'key' => '005',
+//                        ),
+//                        1 => array(
+//                            'type' => 'click',
+//                            'name' => '招聘流程',
+//                            'key' => '006',
+//                        ),
+//                        2 => array(
+//                            'type' => 'click',
+//                            'name' => '职位申请',
+//                            'key' => '007',
+//                        ),
+//                    ),
+//                ),
+//                2 => array(
+//                    'name' => '交流区',
+//                    'sub_button' => array(
+//                        0 => array(
+//                            'type' => 'click',
+//                            'name' => '你问我答',
+//                            'key' => '008',
+//                        ),
+//                        1 => array(
+//                            'type' => 'click',
+//                            'name' => '有奖征稿',
+//                            'key' => '009',
+//                        ),
+//                        2 => array(
+//                            "type" => "click",
+//                            "name" => "评选系统",
+//                            "key" => "010",
+//                        ),
+//                        3 => array(
+//                            "type" => "click",
+//                            "name" => "分享有礼",
+//                            "key" => "011",
+//                        ),
+//                        4 => array(
+//                            "type" => "click",
+//                            "name" => "协会网站",
+//                            "key" => "http://www.bjbaw.cn/",
+//                        ),
+//                    ),
+//                ),
+//            ),
+//        );
+        $result = $this->weObj->createMenu($data);
+        var_dump($result);
+    }
+
+    //公司简介
+    public function actionProfile() {
+        $this->renderPartial('profile');
+    }
+
+    //公司荣誉
+    public function actionHonor() {
+        $this->renderPartial('honor');
+    }
+
+    //保安风采
+    public function actionThunder() {
+        $this->renderPartial('thunder');
+    }
+
+    //员工关怀
+    public function actionCare() {
+        $this->renderPartial('care');
+    }
+
+    //成长路径
+    public function actionGrowpath() {
+        $this->renderPartial('growpath');
+    }
+
+    //招聘流程
+    public function actionApplypath() {
+        $this->renderPartial('applypath');
+    }
+
+    public function actionApplypath2() {
+        $this->renderPartial('applypath2');
+    }
+
+    //招聘管理
+    public function actionApply() {
+        $this->renderPartial('apply');
+    }
+
+    //招聘内页
+    public function actionApplydetail() {
+        $detail = Yii::app()->request->getParam('detail');
+        if (empty($detail)) {
+            returnJs('缺少参数');
+        }
+        $this->renderPartial($detail);
+    }
+
+    //保安招聘页面
+    public function actionBaoan() {
+        $type = Yii::app()->request->getParam('positiontype');
+        $name = Yii::app()->request->getParam('positionname');
+        switch ($type) {
+            case 'one':
+                $this->renderPartial('apply_baoan_one', array(
+                    'name' => $name,
+                ));
+
+                break;
+            case 'two':
+                $this->renderPartial('apply_baoan_two', array(
+                    'name' => $name,
+                ));
+
+                break;
+            case 'three':
+                $this->renderPartial('apply_baoan_three', array(
+                    'name' => $name,
+                ));
+
+                break;
+
+            default:
+                returnJs('请求页面不存在！');
+                break;
+        }
+    }
+
+    //招聘管理----申请职位
+    public function actionRecruitadd() {
+        if (Yii::app()->request->isAjaxRequest) {
+            if (empty($_POST['name']) || empty($_POST['phone'])) {
+                returnJson('缺少必填项', '500005');
+            }
+            $recruiter = new JinganshunRecruiter();
+            $recruiter->name = $_POST['name'];
+            $recruiter->phone = $_POST['phone'];
+            $recruiter->province = $_POST['province'];
+            $recruiter->address = $_POST['address'];
+            $recruiter->job = $_POST['position'];
+            $recruiter->ctime = time();
+            if ($recruiter->save()) {
+                returnJson('操作成功', '100000');
+            } else {
+                returnJson('添加应聘者失败', '500006');
+            }
+        } else {
+            $position = Yii::app()->request->getParam('position');
+            $this->renderPartial('offer', array(
+                'position' => $position,
+            ));
+        }
+    }
+
+    //有奖答题前端页面
+    public function actionAsk() {
+        $this->_Getopenid();
+        $this->_checkuser(); //是否注册
+        $this->_checklogin(); //信息是否完善
+        $this->_checkstate(); //今天是否已经答题完毕
+        $other = JinganshunOther::model()->findByAttributes(array('type' => '5'));
+        $sql = "select * from " . self::PREFIX . 'jinganshun_ask';
+        $data = Yii::app()->db->createCommand($sql)->queryAll();
+        $dataindex = array_rand($data, 10);
+        $list = array(); //题库列表
+        $asw = ''; //答案列表
+        foreach ($dataindex as $k => $v) {
+            $data[$v]['option'] = explode(',', $data[$v]['options']);
+            $list[] = $data[$v];
+            $asw.=$data[$v]['answer'];
+        }
+        setYS('asw', $asw); //临时存储答案
+        $this->renderPartial('ask', array(
+            'list' => $list,
+            'content' => $other->content,
+        ));
+    }
+
+    //有奖答题，完善用户信息
+    public function actionRegister() {
+        $this->_Getopenid();
+        if (empty($_POST['name']) || empty($_POST['phone'])) {
+            returnJs('缺少必填项');
+        }
+        if (!checkPhone($_POST['phone'])) {
+            returnJs('手机号不正确');
+        }
+        $user = JinganshunUser::model()->findByAttributes(array('openid' => $this->openid));
+        if ($user) {
+            //检查姓名
+            $user1=JinganshunUser::model()->findByAttributes(array('name' => $_POST['name']));
+            if($user1){
+                returnJs('姓名已存在！');
+            }
+            //检查手机
+            $user2=JinganshunUser::model()->findByAttributes(array('phone' => $_POST['phone']));
+            if($user2){
+                returnJs('手机号已存在！');
+            }
+            $user->name = $_POST['name'];
+            $user->phone = $_POST['phone'];
+            if ($user->save()) {
+                $url = getYS('url');
+                $this->redirect($url);
+            } else {
+                returnJs('完善用户信息失败');
+            }
+        } else {
+            returnJs('用户不存在');
+        }
+    }
+
+    //有奖征稿
+    public function actionArticle() {
+        $this->_Getopenid();
+        $this->_checkuser(); //是否注册
+        $this->_checklogin(); //信息是否完善
+        $sql = "select * from " . self::PREFIX . "jinganshun_other where type=1 order by ctime desc";
+        $data = Yii::app()->db->createCommand($sql)->queryRow();
+        $this->renderPartial('article', array('data' => $data));
+    }
+
+    //有奖征稿---提交表单
+    public function actionArticleadd() {
+        $this->_Getopenid();
+        if (Yii::app()->request->isAjaxRequest) {
+            $article = new JinganshunArticle();
+            $article->openid = $this->openid;
+            $article->title = $_POST['title'];
+            $article->content = $_POST['content'];
+            $article->ctime = time();
+            if ($article->save()) {
+                JinganshunArticletemp::model()->deleteAllByAttributes(array('openid' => $this->openid));
+                returnJson('成功', '100000');
+            } else {
+                returnJson('文章保存失败', '500003');
+            }
+        } else {
+            //读取存稿
+            $article = JinganshunArticletemp::model()->findByAttributes(array('openid' => $this->openid));
+            if (!$article) {
+                $article = array();
+            }
+            $sql = "select * from " . self::PREFIX . "jinganshun_other where type=4 order by ctime desc";
+            $data = Yii::app()->db->createCommand($sql)->queryRow();
+            $this->renderPartial('articleadd', array(
+                'list' => $article,
+                'data' => $data,
+            ));
+        }
+    }
+
+    //有奖征稿---提交表单
+    public function actionArticletempadd() {
+        $this->_Getopenid();
+        //清除其他存稿
+        JinganshunArticletemp::model()->deleteAllByAttributes(array('openid' => $this->openid));
+        $article = new JinganshunArticletemp();
+        $article->openid = $this->openid;
+        $article->title = $_POST['title'];
+        $article->content = $_POST['content'];
+        if ($article->save()) {
+            returnJson('成功', '100000');
+        } else {
+            returnJson('存稿保存失败', '500004');
+        }
+    }
+
+    //评选系统
+    public function actionElect() {
+        $sql = "select content from " . self::PREFIX . "jinganshun_other where type=2";
+        $data = Yii::app()->db->createCommand($sql)->queryRow();
+        $sql2 = "select * from " . self::PREFIX . "jinganshun_elect";
+        $list = Yii::app()->db->createCommand($sql2)->queryAll();
+
+        $this->renderPartial('elect', array(
+            'data' => $data['content'],
+            'list' => $list,
+        ));
+    }
+
+    //分享有礼----分享页面
+    public function actionShare() {
+        $this->_Getopenid();
+        $this->_checkuser(); //是否注册
+        $this->_checklogin(); //信息是否完善
+        $this->renderPartial('share', array(
+            'openid' => $this->openid,
+        ));
+    }
+
+    public function actionShare2() {
+        $this->_Getopenid();
+        $openid = Yii::app()->request->getParam('openid');
+        //自己点击自己的链接，直接显示分享页面
+        if ($openid == $this->openid) {
+            $this->renderPartial('share2', array(
+                'openid' => $this->openid,
+            ));
+            die;
+        }
+        if ($openid) {//分享表里注册下用户
+            //检查用户是否是已存在
+            $share = JinganshunShare::model()->findByAttributes(array('fopenid' => $this->openid));
+            if ($share) {
+                //已经关注过，无需重复注册
+            } else {
+                $share = new JinganshunShare();
+                $share->openid = $openid;
+                $share->fopenid = $this->openid;
+                $share->ctime = time();
+                if ($this->_checkUserinfo()) {
+                    $share->state = 2;
+                } else {
+                    $share->state = 0;
+                }
+                if ($share->save()) {
+                    //returnJson('操作成功', '100000');
+                } else {
+                    returnJs('分享者注册失败');
+                }
+            }
+        } else {
+            returnJs('缺少必填项');
+        }
+
+        $this->renderPartial('share2', array(
+            'openid' => $openid,
+        ));
+    }
+    
+    //顾客满意支持
+    public function actionUsersupport(){
+        $fopenid=$_GET['fopenid'];//被扫着微信码
+       if(empty($fopenid)){
+           returnJs('缺少参数');
+       }
+       $this->_Getopenid();
+       
+       //检查是否是本人扫码
+       if($this->openid == $fopenid){
+           returnJs('自己不能给自己加满意度');
+       }
+       
+       //检查被扫者是否存在
+       $user=JinganshunUser::model()->findByAttributes(array('openid'=>$fopenid));
+       if(!$user){
+           returnJs('被扫用户不存在');
+       }
+       
+       $support=JinganshunSupport::model()->findByAttributes(array('openid'=>$fopenid,'fopenid'=>$this->openid));
+       if($support){
+           returnJs('您已经扫过这个码');
+       }else{
+           $support=new JinganshunSupport();
+           $support->openid=$fopenid;
+           $support->fopenid=$this->openid;
+           $support->ctime=time();
+           if(!$support->save()){
+               returnJson('保存失败','10001');
+           }else{
+               $this->renderPartial('support');
+           }
+       }
+       
+       
+       
+       
+        
+    }
+
+    //异步方法，判断用户是否通过答题
+    public function actionAjaxcheckasw() {
+        //查询本月答对次数
+        $this->_Getopenid();
+        $ask = Yii::app()->request->getParam('ask');
+        $asw = getYS('asw');
+
+        $stime = strtotime(substr(date('Y-m-d', time()), 0, 8) . '01');
+        $etime = $stime * 1 + 30 * 24 * 60 * 60;
+        $sql = "select count(id) as num from " . self::PREFIX . "jinganshun_askresult where openid='{$this->openid}' and state=1 and ctime<=" . $etime . " and ctime >= " . $stime . " order by ctime desc";
+        $result = Yii::app()->db->createCommand($sql)->queryRow();
+        $oknum = $result['num'];
+//        if ($result && date('Y-m-d', $result['ctime']) == date('Y-m-d', time())) {
+//            //今天用户答过题了
+//            if ($result['state'] == '1') {
+//                returnJson('今天已答题完毕，请明天再来吧', '400005');
+//            } else {
+//                $newresult = JinganshunAskresult::model()->findByPk($result['id']);
+//                $num=0;
+//                if(strlen($ask) != 10 || strlen($asw) != 10){
+//                    returnJson('题库异常，请刷新重试！', '400007');
+//                }
+//                for($i=0;$i<strlen($ask);$i++){
+//                    if($ask{$i} == $asw{$i}){
+//                        $num++;
+//                    }
+//                }
+//                if ($num < 5) {
+//                    $newresult->ctime = time();
+//                    if (!$newresult->save()) {
+//                        returnJson('保存失败', '400006');
+//                    } else {
+//                        returnJson('答题失败', '400002');
+//                    }
+//                } else {
+//                    $newresult->ctime = time();
+//                    $newresult->state = 1;
+//                    if (!$newresult->save()) {
+//                        returnJson('保存失败', '400006');
+//                    } else {
+//                        returnJson('答题成功', '100000');
+//                    }
+//                }
+//            }
+//        } else {
+        ////今天用户没答过题
+        //插入答题结果表
+        $result = new JinganshunAskresult();
+        $result->openid = $this->openid;
+        $result->ctime = time();
+        $num = 0;
+        if (strlen($ask) != 10 || strlen($asw) != 10) {
+            returnJson('题库异常，请刷新重试！', '400007');
+        }
+        for ($i = 0; $i < strlen($ask); $i++) {
+            if ($ask{$i} == $asw{$i}) {
+                $num++;
+            }
+        }
+        if ($num <= 5) {
+            $result->state = 0;
+            if (!$result->save()) {
+                returnJson('保存失败', '400003');
+            }
+            returnJson($oknum, '400002');
+        } else {
+            $result->state = 1;
+            if (!$result->save()) {
+                returnJson('保存失败', '400004');
+            }
+            unsetYS('asw');
+
+            returnJson($oknum, '100000');
+        }
+        //}
+    }
+
+    /*     * ***********************私有方法*************************************************** */
+
+    //私有方法，封装获取openid过程
+    private function _Getopenid() {
+        if (checkWeixinBrowser()) {
+            if (!getYS('openid')) {
+                $callback = Yii::app()->request->hostInfo . Yii::app()->request->requestUri; //此回调地址是单独为 授权回调页面设置的，跟应用的回调地址无关
+                $this->_Author($callback, 'snsapi_base');
+            }
+            $this->openid = getYS('openid');
+        } else {
+            $this->openid = '9999999999999999999999999999'; //非微信
+        }
+    }
+
+    //私有方法，封装页面授权过程（//$type:snsapi_base 静默获取用户openid   snsapi_userinfo授权获取用户openid和用户信息）
+    private function _Author($callback, $type) {
+        if (!@$_GET['code']) {
+            $url = $this->weObj->getOauthRedirect($callback, '', $type);
+            $this->redirect($url);
+            Yii::app()->end();
+        }
+        $res = $this->weObj->getOauthAccessToken();
+        setYS('openid', $res['openid']);
+        setYS('sq_access_token', $res['access_token']);
+    }
+
+    //私有方法，检测是否屏蔽非微信浏览器
+    private function _checkBrowser() {
+        if (Yii::app()->params['minsheng']['checkBrowser'] && !checkWeixinBrowser()) {
+            returnJs('请在微信中打开页面'); //以后替换成错误页面
+            return false;
+        }
+
+        return true;
+    }
+
+    //私有方法，检查用户是否关注过公众号
+    //获取已关注用户信息，如果未关注调用此方法，仅返回openid和describe信息
+    public function _checkUserinfo() {
+        if (!getYS('openid')) {
+            $callback = Yii::app()->request->hostInfo . Yii::app()->request->requestUri; //此回调地址是单独为 授权回调页面设置的，跟应用的回调地址无关
+            $this->_Author($callback, 'snsapi_userinfo');
+        }
+        $openid = getYS('openid');
+        $userinfo = $this->weObj->getUserInfo($openid);
+        if ($userinfo['subscribe'] == 1) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    //私有方法--判断并注册新用户
+    private function _checkuser() {
+        $user = JinganshunUser::model()->findByAttributes(array('openid' => $this->openid));
+        if (!$user) {
+            $user = new JinganshunUser();
+            $user->openid = $this->openid;
+            $time = time();
+            $code = $time . rand(1, 999);
+            $ewa = getImage(Yii::app()->request->hostInfo . "/qr/API.php?Data=" . urlencode(Yii::app()->request->hostInfo . "/jinganshun/index/usersupport?fopenid=" . $this->openid ."&qrcode=".$code)."&Type=Customized&Stype=FangFund&Config=;", "uploads/jinganshun/" . $code . ".png");
+            $user->erweima=$ewa;
+            $user->erweimaurl=Yii::app()->request->hostInfo.'/jinganshun/index/usersupport?fopenid='.$this->openid;
+            $user->enable = 0;
+            $user->ctime = $time;
+            if (!$user->save()) {
+                returnJson('用户注册失败', '400001');
+            }
+        }
+    }
+
+    //私有方法---检查用户是否完善信息
+    private function _checklogin() {
+        setYS('url', Yii::app()->request->hostInfo . Yii::app()->request->requestUri);
+        $user = JinganshunUser::model()->findByAttributes(array('openid' => $this->openid));
+        if (empty($user->name)) {
+            $this->renderPartial('login');
+            die;
+        }
+    }
+
+    //私有方法---检测用户今天是否答题通过
+    private function _checkstate() {
+        $sql = "select * from " . self::PREFIX . "jinganshun_askresult where openid='{$this->openid}' order by ctime desc";
+        $result = Yii::app()->db->createCommand($sql)->queryRow();
+        if ($result && date('Y-m-d', $result['ctime']) == date('Y-m-d', time())) {
+            //returnJs('今天已答题完毕，请明天再来吧');
+            //客服回复文本
+            $data = array(
+                "touser" => $this->openid,
+                "msgtype" => "text",
+                "text" => array(
+                    "content" => "今天已答题完毕，请明天再来吧！",
+                ),
+            );
+            $message = $this->weObj->sendCustomMessage($data);
+            $this->renderPartial('closepage');
+            die;
+        }
+    }
+
+    //私有方法--关注公众号，更改状态
+    private function _updatestate($openid) {
+        $share = JinganshunShare::model()->findByAttributes(array('fopenid' => $openid));
+        if ($share) {
+            if ($share->state == "0") {
+                $share->state = 1;
+                $share->ctime = time();
+                $share->save();
+            }
+        }
+    }
+
+    public function actionDao() {
+        set_time_limit(0);
+        require_once Yii::app()->basePath . '/extensions/PHPExcel/PHPExcel/IOFactory.php';
+        $filename = $_SERVER['DOCUMENT_ROOT'] . '/uploads/aaa.xls';
+        if (!file_exists($filename)) {
+            die('testexcel文件不存在');
+        }
+        //导入excel文件
+        $objPHPExcel = PHPExcel_IOFactory::load($filename);
+        $data = $objPHPExcel->getActiveSheet()->toArray(); //0键值中存放的是 属性名
+        foreach ($data as $key => $value) {
+            $user = new JinganshunAsk();
+            $user->question = $value[0];
+            $user->options = $value[1];
+            $user->answer = $value[2];
+            $user->save();
+        }
+    }
+
+    
+
+}

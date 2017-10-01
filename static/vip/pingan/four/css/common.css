@@ -1,0 +1,610 @@
+@charset "UTF-8";
+/******************通用*******************/
+/* @import "screen.scss" */
+/* line 17, ../scss/sass/common.scss */
+html, body {
+  -webkit-tap-highlight-color: transparent;
+  color: #9c0b0b;
+  font: 13.5px/2.6 "宋体",Helvetica;
+  -webkit-user-select: none;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+/* line 18, ../scss/sass/common.scss */
+form, table, td, h1, h2, h3, h4, ul, ol, li, p, dt, dd {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  list-style: none;
+}
+
+/* line 19, ../scss/sass/common.scss */
+input, img {
+  vertical-align: middle;
+}
+
+/* line 20, ../scss/sass/common.scss */
+html, body {
+  min-width: 100%;
+}
+
+/* line 21, ../scss/sass/common.scss */
+body {
+  -webkit-text-size-adjust: none;
+}
+
+/* line 22, ../scss/sass/common.scss */
+img {
+  border: 0 none;
+  max-width: 100%;
+  height: auto;
+}
+
+/* line 23, ../scss/sass/common.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 24, ../scss/sass/common.scss */
+:focus {
+  outline: 0;
+}
+
+/* line 25, ../scss/sass/common.scss */
+textarea {
+  resize: none;
+  overflow: auto;
+}
+
+/* line 26, ../scss/sass/common.scss */
+a {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  text-decoration: none;
+}
+
+/* line 27, ../scss/sass/common.scss */
+a:link {
+  -webkit-tap-highlight-color: rgba(229, 59, 44, 0.4);
+}
+
+/* line 28, ../scss/sass/common.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 29, ../scss/sass/common.scss */
+input:focus, textarea:focus {
+  outline: 0;
+}
+
+/* line 30, ../scss/sass/common.scss */
+#wrap {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* line 31, ../scss/sass/common.scss */
+#page_list {
+  width: 100%;
+  height: 100%;
+  -webkit-transition: all ease-out 1s;
+  transition: all ease-out 1s;
+}
+
+/* line 32, ../scss/sass/common.scss */
+#page_list > .page {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 9;
+  background-color: #fff;
+  -webkit-transition: all ease-in-out .5s;
+  transition: all ease-in-out .5s;
+}
+
+/* line 33, ../scss/sass/common.scss */
+#page_list.draw > .page,
+#page_list.jump > .page {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* line 35, ../scss/sass/common.scss */
+#page_list > .page.show {
+  z-index: 99;
+}
+
+/*跳转式*/
+/* line 37, ../scss/sass/common.scss */
+#page_list.jump > .page {
+  -webkit-transform: translate(0, -100%);
+  transform: translate(0, -100%);
+}
+
+/* line 38, ../scss/sass/common.scss */
+#page_list.jump > .page.show {
+  -webkit-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+
+/* line 39, ../scss/sass/common.scss */
+#page_list.jump > .page.show ~ .page {
+  -webkit-transform: translate(0, 100%);
+  transform: translate(0, 100%);
+}
+
+/*抽取卡片式*/
+/* line 41, ../scss/sass/common.scss */
+#page_list.draw > .page {
+  -webkit-transform: translate(0, -416px);
+  transform: translate(0, -416px);
+  opacity: 0;
+}
+
+/* line 42, ../scss/sass/common.scss */
+#page_list.draw > .page.show {
+  -webkit-transform: translate(0, 0);
+  transform: translate(0, 0);
+  opacity: 1;
+}
+
+/* line 43, ../scss/sass/common.scss */
+#page_list.draw > .page.show ~ .page {
+  -webkit-transform: translate(0, 0);
+  transform: translate(0, 0);
+  opacity: 1;
+}
+
+/* line 46, ../scss/sass/common.scss */
+.page > .page_body {
+  width: 415px;
+  height: 540px;
+  left: 50%;
+  top: 50%;
+  margin-left: -207.5px;
+  margin-top: -270px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* line 47, ../scss/sass/common.scss */
+.page_bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: no-repeat center;
+  background-size: cover;
+}
+
+/* line 48, ../scss/sass/common.scss */
+.page_body {
+  position: absolute;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 49, ../scss/sass/common.scss */
+.page_body > img {
+  position: absolute;
+}
+
+/***********************出场效果**********************/
+/* line 51, ../scss/sass/common.scss */
+.out-biter_rotate {
+  -webkit-transform: rotate(30deg);
+}
+
+/* line 52, ../scss/sass/common.scss */
+.out-left {
+  -webkit-transform: translate(-90px, 0);
+  transform: translate(-90px, 0);
+}
+
+/* line 53, ../scss/sass/common.scss */
+.out-right {
+  -webkit-transform: translate(90px, 0);
+  transform: translate(90px, 0);
+}
+
+/* line 54, ../scss/sass/common.scss */
+.out-top {
+  -webkit-transform: translate(0, -90px);
+  transform: translate(0, -90px);
+}
+
+/* line 55, ../scss/sass/common.scss */
+.out-bottom {
+  -webkit-transform: translate(0, 90px);
+  transform: translate(0, 90px);
+}
+
+/* line 56, ../scss/sass/common.scss */
+.out-rotate {
+  -webkit-transform: scale(0.1) rotate(180deg);
+  transform: scale(0.1) rotate(180deg);
+}
+
+/* line 57, ../scss/sass/common.scss */
+.out-rotateY {
+  -webkit-transform: rotateY(90deg);
+  transform: rotateY(90deg);
+}
+
+/* line 58, ../scss/sass/common.scss */
+.out-more_left {
+  -webkit-transform: translate(-180px, 0);
+  transform: translate(-180px, 0);
+}
+
+/* line 59, ../scss/sass/common.scss */
+.out-more_right {
+  -webkit-transform: translate(180px, 0);
+  transform: translate(180px, 0);
+}
+
+/* line 60, ../scss/sass/common.scss */
+.out-more_top {
+  -webkit-transform: translate(0, -180px);
+  transform: translate(0, -180px);
+}
+
+/* line 61, ../scss/sass/common.scss */
+.out-more_bottom {
+  -webkit-transform: translate(0, 180px);
+  transform: translate(0, 180px);
+}
+
+/* line 62, ../scss/sass/common.scss */
+.out-more_rotat {
+  -webkit-transform: scale(0.1) rotate(-1800deg);
+  transform: scale(0.1) rotate(-1800deg);
+}
+
+/* line 63, ../scss/sass/common.scss */
+.out-big {
+  -webkit-transform: scale(5);
+  transform: scale(5);
+}
+
+/* line 64, ../scss/sass/common.scss */
+.out-small {
+  -webkit-transform: scale(0.1);
+  transform: scale(0.1);
+}
+
+/* line 65, ../scss/sass/common.scss */
+.out-rotateX {
+  -webkit-transform: rotateX(90deg);
+  transform: rotateX(90deg);
+}
+
+/* line 66, ../scss/sass/common.scss */
+.out-opacity {
+  opacity: 0;
+}
+
+/***********************入场效果**********************/
+/*设置延迟时间*/
+/* line 70, ../scss/sass/common.scss */
+[delay], [touch-delay] {
+  -webkit-transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+  transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+  opacity: 0;
+}
+
+/*设置动画函数*/
+/* line 72, ../scss/sass/common.scss */
+.active {
+  -webkit-transform: translateZ(0);
+  opacity: 1;
+}
+
+/* line 73, ../scss/sass/common.scss */
+#preload {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: url(../img/p1.jpg) no-repeat center;
+  background-size: cover;
+  z-index: 99;
+}
+
+/* line 75, ../scss/sass/common.scss */
+#page_list {
+  overflow: hidden;
+}
+
+/* line 76, ../scss/sass/common.scss */
+.page > * {
+  position: absolute;
+  left: 50%;
+}
+
+/* line 77, ../scss/sass/common.scss */
+.page {
+  background-position: center;
+  background-size: cover;
+}
+
+/* line 79, ../scss/sass/common.scss */
+#music {
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  z-index: 91;
+  width: 30px;
+  height: 30px;
+  background: url(../img/music_off.png) no-repeat center;
+  background-size: contain;
+}
+
+/* line 80, ../scss/sass/common.scss */
+#music.on {
+  background-image: url(../img/music.png);
+  -webkit-animation: rotate 2s infinite linear;
+  animation: rotate 2s infinite linear;
+}
+
+/* line 81, ../scss/sass/common.scss */
+#drop_down {
+  position: fixed;
+  width: 25px;
+  left: 50%;
+  margin-left: -12px;
+  bottom: 20px;
+  -webkit-animation: up_down 1s linear infinite;
+}
+
+/* line 83, ../scss/sass/common.scss */
+.logo {
+  width: 145px;
+  height: 26px;
+  left: 0;
+  top: 10%;
+  margin-left: 20px;
+  margin-top: -26px;
+}
+
+/* line 84, ../scss/sass/common.scss */
+.map {
+  max-width: 444px;
+  margin-left: -222px;
+}
+
+/* line 85, ../scss/sass/common.scss */
+.font_red {
+  color: #ff6600;
+}
+
+/* line 86, ../scss/sass/common.scss */
+.font_hide {
+  visibility: hidden;
+}
+
+/******************page1*******************/
+/* line 89, ../scss/sass/common.scss */
+#p1 {
+  background-image: url(../img/p1.jpg);
+}
+
+/* line 90, ../scss/sass/common.scss */
+.p1_t {
+  width: 97px;
+  height: 316px;
+  margin: -130px 0 0 -49px;
+  top: 45%;
+}
+
+/* line 91, ../scss/sass/common.scss */
+.p1_bg1 {
+  width: 307px;
+  height: 315px;
+  left: -30px;
+  top: 70%;
+  margin-top: 80px;
+}
+
+/* line 92, ../scss/sass/common.scss */
+.p1_bg2 {
+  width: 167px;
+  height: 162px;
+  left: -10px;
+  top: 70%;
+  margin-top: 60px;
+}
+
+/* line 93, ../scss/sass/common.scss */
+.p1_bg3 {
+  width: 240px;
+  height: 246px;
+  left: 55%;
+  top: 0;
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+}
+
+/******************page2*******************/
+/* line 95, ../scss/sass/common.scss */
+#p2 {
+  background-image: url(../img/p1.jpg);
+}
+
+/* line 96, ../scss/sass/common.scss */
+.p2_w {
+  margin-left: -135px;
+  top: 40%;
+}
+
+/* line 97, ../scss/sass/common.scss */
+.p2_t {
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 5px;
+}
+.p2_p{
+  line-height: 1.6;
+}
+/* line 98, ../scss/sass/common.scss */
+.p2_t1 {
+  width: 372px;
+  height: 79px;
+  margin: -88px 0 0 -186px;
+  top: 36%;
+}
+
+/* line 99, ../scss/sass/common.scss */
+.p2_t2 {
+  width: 327px;
+  height: 12px;
+  margin: -10px 0 0 -172px;
+  top: 36%;
+}
+
+/******************page3*******************/
+/* line 101, ../scss/sass/common.scss */
+#p3 {
+  background-image: url(../img/p3.jpg);
+}
+
+/* line 102, ../scss/sass/common.scss */
+.p3_w1 {
+  width: 33px;
+  height: 30px;
+  top: 50%;
+  left: 30px;
+  margin-top: -220px;
+}
+
+/* line 103, ../scss/sass/common.scss */
+.p3_i1 {
+  width: 332px;
+  height: 316px;
+  margin: -158px 0 0 -166px;
+  top: 55%;
+}
+
+/* line 104, ../scss/sass/common.scss */
+.p3_i2 {
+  width: 30px;
+  height: 40px;
+  margin: -122px 0 0 -66px;
+  top: 55%;
+}
+
+/* line 105, ../scss/sass/common.scss */
+.p3_i2.active {
+  -webkit-animation: jump 1s linear infinite alternate;
+  animation: jump 1s linear infinite alternate;
+}
+
+/******************page4*******************/
+/* line 107, ../scss/sass/common.scss */
+#p4 {
+  background-image: url(../img/p4.jpg);
+}
+
+/* line 108, ../scss/sass/common.scss */
+.p4_w {
+  font-size: 16px;
+  line-height: 2;
+  font-weight: bold;
+  margin-left: -170px;
+  top: 45%;
+  margin-top: -153px;
+}
+
+/* line 109, ../scss/sass/common.scss */
+.p4_t {
+  margin-bottom: 10px;
+}
+
+/* line 110, ../scss/sass/common.scss */
+.p4_p {
+  padding-left: 1em;
+  min-height: 50px;
+}
+
+/******************page5*******************/
+/* line 112, ../scss/sass/common.scss */
+#p5 {
+  background-image: url(../img/p5.jpg);
+}
+
+/* line 113, ../scss/sass/common.scss */
+.p5_t1 {
+  width: 372px;
+  height: 79px;
+  margin: -72px 0 0 -186px;
+  top: 45%;
+}
+
+/* line 114, ../scss/sass/common.scss */
+.p5_t2 {
+  width: 327px;
+  height: 12px;
+  margin: 8px 0 0 -172px;
+  top: 45%;
+}
+
+/* line 115, ../scss/sass/common.scss */
+.p5_w {
+  left: 80%;
+  bottom: 10%;
+  width: 49px;
+  border-bottom: 1px solid #9c0b0b;
+  font-size: 12px;
+  line-height: 1.2;
+  font-weight: bold;
+}
+
+@-webkit-keyframes up_down {
+  0% {
+    -webkit-transform: translate(0, -10px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translate(0, 10px);
+    opacity: 1;
+  }
+}
+@keyframes up_down {
+  0% {
+    transform: translate(0, -10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0, 10px);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes jump {
+  0% {
+    -webkit-transform: translate(0, -10px);
+  }
+  100% {
+    -webkit-transform: translate(0, 0px);
+  }
+}
+@keyframes jump {
+  0% {
+    transform: translate(0, -10px);
+  }
+  100% {
+    transform: translate(0, 0px);
+  }
+}

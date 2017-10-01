@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no">
+	<meta name="format-detection" content="email=no">
+    <meta id="viewport" name="viewport" content="width=415,maximum-scale=2.5,minimum-scale=0.5,user-scalable=no">
+    <title>平安银行</title>
+    <style>
+    </style>
+    <link rel="stylesheet" href="css/page.css">
+    <script>
+		var h5 = { 
+			skip 		:"draw",	
+      move    :1,//1为竖直滑动切换，0为水平滑动切换
+			clear 	:true,		//页面清除动画
+			address :"",		//默认地址
+      preload :true,
+			lazy 		:3,			//懒加载页面个数
+		}
+	</script>
+  </head>
+  <body>
+  	<div id="wrap"> 
+  		<ul id="page_list" stage="">
+  			<li class="page show" id="p1" scene="1" stop-move="-1">
+  				<img src="img/logo.png" class="logo">
+  				<img src="img/p1_tit.png" class="p1_tit out-top" delay="300">
+  				<div class="p1_i">
+  					<img src="img/p1_i1.png" class="p1_i1 active_rotate" delay="1800">
+  				</div>
+  				<img src="img/p1_i2.png" class="p1_i2 out-bottom"  delay="600">
+  			</li>
+	        <li class="page" id="p2" scene="2" >
+	        	<img src="img/logo.png" class="logo">
+				<div class="p2_p1 out-bottom" delay="300">诚 挚 邀 请 阁 下 莅 临 盛 典</div>
+				<div class="p2_p2 out-bottom" delay="800">时 间：2015年12月8日（星期二）</div>
+				<div class="p2_p3 out-bottom" delay="1300">签到时间：10:00-10:30</div>
+				<div class="p2_p4 out-bottom" delay="1800">典礼时间：10:40-11:40</div>
+				<div class="p2_p5 out-bottom" delay="2300">地 点：北京朝阳区新源南路1号 （燕莎桥西100米路北）</div>
+	        </li>
+	        <li class="page" id="p3" scene="3">
+	        	<img src="img/logo.png" class="logo">
+
+	        	<dl class="p3_list">
+	        		<dt class="p3_lt">典  礼  流  程</dt>
+	        		<dd class="p3_li out-more_right" delay="300"><span>10:00 － 10:30</span>迎宾签到</dd>
+	        		<dd class="p3_li out-more_right" delay="800"><span>10:38 － 10:40</span>主持人开场</dd>
+	        		<dd class="p3_li out-more_right" delay="1300"><span>10:40 － 10:45</span>总行领导致辞</dd>
+	        		<dd class="p3_li out-more_right" delay="1800"><span>10:45 － 10:50</span>分行领导致辞</dd>
+	        		<dd class="p3_li out-more_right" delay="2300"><span>10:50 － 10:55</span>宣传片播放</dd>
+	        		<dd class="p3_li out-more_right" delay="2800"><span>10:55 － 11:00</span>授卡仪式</dd>
+	        		<dd class="p3_li out-more_right" delay="3300"><span>11:00 － 11:05</span>启动仪式</dd>
+	        		<dd class="p3_li out-more_right" delay="3800"><span>11:05 － 11:10</span>合影留念</dd>
+	        		<dd class="p3_li out-more_right" delay="4300"><span>11:10 － 11:40</span>入场参观</dd>
+	        		<dd class="p3_li out-more_right" delay="4800"><span>11:40</span>典礼结束</dd>
+	        		<div class="p3_i" delay="300"></div>
+	        	</dl>
+	        </li>
+	        <li class="page" id="p4" scene="4">
+				<img src="img/logo.png" class="logo">
+				<div class="p4_p">典 礼 地 址</div>
+				<img src="img/p4_i1.png" class="p4_i1 out-small" delay="300">
+				<img src="img/p4_i2.png" class="p4_i2 active_down" delay="1800">
+				<img src="img/p4_i3.png" class="p4_i3 out-right" delay="1300">
+	        </li>
+
+	        <li class="page" id="p5" scene="5" stop-move="1">
+				<img src="img/logo.png" class="logo">
+				<img src="img/p5_i1.png" class="p5_i1 out-bottom" delay="300">
+				<img src="img/p5_i2.png" class="p5_i2 out-bottom" delay="900">
+				<img src="img/p5_i3.png" class="p5_i3 out-bottom" delay="1500">
+				<img src="img/p5_i4.png" class="p5_i4 out-bottom" delay="2100">
+	        </li>
+  		</ul>
+      <img id="drop_down" src="img/btn_down.png">
+      <audio id="audio" loop="loop" autoplay="autoplay" preload='auto' pre-src="video/bg.mp3"></audio>
+      <div id="music" class='on'>
+        <div class="logo"></div>
+      </div>
+    </div> 
+	  <script type="text/javascript" src="js/slide.js"></script>
+    <script type="text/javascript" src="js/zepto.min.js"></script>
+    <script type="text/javascript" src="js/init.js"></script>
+
+  </body>
+</html>
