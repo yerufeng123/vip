@@ -202,32 +202,5 @@ class UserController extends BaseController
 		echo json_encode(['code' => '10000', 'msg' => 'success', 'data' => $newData]);
 	}
 
-	//抽奖接口
-    public function actionLottery() {
-    	$_POST = array_merge($_GET, $_POST);
-    	if(!isset($_POST['level']) || empty($_POST['level'])){
-        	echo json_encode(['code' => '20009', 'msg' => '缺少游戏级别', 'data' => []]);exit();
-        }
-
-        //奖池设定
-        //统计3等奖和2等奖个数
-
-
-        $arr1 = $arr2 = $arr3 = [];
-        for ($i = 1; $i < 101; $i++) { 
-        	$arr1[] = 1,
-        }
-
-        for ($i = 101; $i < 1101 ; $i++) { 
-        	$arr2[] = 1,
-        }
-
-        if（$_POST['level'] == 1）{
-        	if(rand(1,100) == 2){
-        		echo json_encode(['code' => '10000', 'msg' => '中三等奖', 'data' => []]);exit();
-        	}
-        }
-
-    	
-    }
+	
 }
