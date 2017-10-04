@@ -81,5 +81,4 @@ class UserController extends BaseController
             'list'=>$result['content'],
         ));
     }
-
 }
