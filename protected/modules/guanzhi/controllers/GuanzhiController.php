@@ -131,12 +131,32 @@ class GuanzhiController extends Controller
 	//抽奖接口
     public function actionLottery() {
     	$_POST = array_merge($_GET, $_POST);
+        if(!isset($_POST['phone']) || empty($_POST['phone'])){
+            echo json_encode(['code' => '200010', 'msg' => '缺少手机号', 'data' => []]);exit();
+        }
+
     	if(!isset($_POST['level']) || empty($_POST['level'])){
         	echo json_encode(['code' => '20009', 'msg' => '缺少游戏级别', 'data' => []]);exit();
         }
 
+        //检查用户是否已参加抽奖
+        $sql= "select * from vip_guanzhi_user where phone = {$_POST['phone']}";
+        $userinfo=Yii::app()->db->createCommand($sql)->queryRow();
+        if(!$userinfo){
+            echo json_encode(['code' => '200012', 'msg' => '用户不存在', 'data' => []]);exit();
+        }
+        if($userinfo['ranking']){
+            echo json_encode(['code' => '200011', 'msg' => '已参加过抽奖活动', 'data' => []]);exit();
+        }
+
         //奖池设定
         //统计3等奖和2等奖个数
+        $sql= "select count(id) as num from vip_guanzhi_user where ranking = 3";
+        $data=Yii::app()->db->createCommand($sql)->queryRow();
+        $numThree= $data['num'];
+        $sql= "select count(id) as num from vip_guanzhi_user where ranking = 2";
+        $data=Yii::app()->db->createCommand($sql)->queryRow();
+        $numTwo= $data['num'];
 
 
         $arr1 = $arr2 = $arr3 = [];
@@ -148,12 +168,40 @@ class GuanzhiController extends Controller
         	$arr2[] = 1;
         }
 
+        $sql= "select * from vip_guanzhi_coupon where type = 1 and status= 0";
+        $coupon=Yii::app()->db->createCommand($sql)->queryRow();
+
+
         if($_POST['level'] == 1){
-        	if(rand(1,100) == 2){
-        		echo json_encode(['code' => '10000', 'msg' => '中三等奖', 'data' => []]);exit();
+        	if($numThree < 40 && $coupon && rand(1,100) == 2){
+                //更新优惠券和用户表
+                $sql= "update vip_guanzhi_coupon set status = 1 where id = {$coupon['id']}";
+                Yii::app()->db->createCommand($sql)->execute();
+                $sql= "update vip_guanzhi_user set ranking = 3,coupon_id = {$coupon['id']} where phone = {$_POST['phone']}";
+                Yii::app()->db->createCommand($sql)->execute();
+
+        		echo json_encode(['code' => '10000', 'msg' => '中三等奖', 'data' => ['ranking' => 3,'coupon' => $coupon['couponnum']]]);exit();
         	}
+        }elseif($_POST['level'] == 2 || $_POST['level'] == 3){
+            if($numTwo < 20 && rand(101,1101) == 102){
+                //更新优惠券和用户表
+                $sql= "update vip_guanzhi_user set ranking = 2 where phone = {$_POST['phone']}";
+                Yii::app()->db->createCommand($sql)->execute();
+                echo json_encode(['code' => '10000', 'msg' => '中二等奖', 'data' => ['ranking' => 2]]);exit();
+            }
+
+            if($numThree < 40 && $coupon && rand(1,100) == 2){
+                //更新优惠券和用户表
+                $sql= "update vip_guanzhi_coupon set status = 1 where id = {$coupon['id']}";
+                Yii::app()->db->createCommand($sql)->execute();
+                $sql= "update vip_guanzhi_user set ranking = 3,coupon_id = {$coupon['id']} where phone = {$_POST['phone']}";
+                Yii::app()->db->createCommand($sql)->execute();
+                echo json_encode(['code' => '10000', 'msg' => '中三等奖', 'data' => ['ranking' => 3,'coupon' => $coupon['couponnum']]]);exit();
+            }
+
         }
 
-    	
+
+        echo json_encode(['code' => '10001', 'msg' => '未中奖', 'data' => []]);exit();
     }
 }
