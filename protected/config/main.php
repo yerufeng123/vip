@@ -30,6 +30,7 @@ return array(
         'bairong',
         'strasbourg',
         'jinganshun',
+        'guanzhi',
         'testadmin',
     ),
     // application components

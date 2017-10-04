@@ -1,0 +1,114 @@
+/* CSS Document */
+.clear{ clear:both; height:0; line-height:0;}
+html,body,header, footer, nav, article, section, aside, time, code, div, p, ul, ol, li, dl, dd, dt, h1, h2, h3, a, span, strong, em, small, form, label, input, textarea {border:0;margin:0;padding:0;font-family:Microsoft YaHei; font-style:normal; font-weight:normal;list-style:none}
+html,body{ height:100%; width:100%; display:block;background:url(../img/page_bg.jpg) no-repeat center;}
+body{}
+a{color:inherit; text-decoration: none;}
+/* 通用 */
+#wrap{width:100%;overflow-x:hidden;}
+
+
+/************************** 首页 **********************************/
+
+.header{width:100%;height:30px;background-color:rgb(8,59,75);color:#fff;text-align:center;line-height:30px;font-size:17px;position: fixed;left:0;right:0;top:0;z-index:99}
+.header > h3{font-size:15px;}
+#top_nav{display: block;position:absolute;right:0;z-index:99;}
+#top_nav > span{display:block;height: 18px;width: 18px;background: url(../img/topNav.png) no-repeat center;background-size: 18px 18px;position:absolute;right:10px;top:-24px;}
+.open{display:block;}
+.uls {margin:10px 10px 0 0;display:none}
+.uls:before{width:10px;height:6px;display:inline-block;right:20px;margin-top:-5px;content:"";position:absolute;background:url(../img/icon1.png) no-repeat right;background-size:10px 6px}
+/* 修改开始3-16 */
+.uls > li{font-size:12px;background-color:rgba(8,59,75,.9);list-style:none;width:110px;height:41px;text-align:center;border-top:solid 1px #517f8d;color:#fff;text-overflow:ellipsis; overflow:hidden; white-space:nowrap;padding:0 10px}
+.uls > li > a{color:#fff;text-overflow:ellipsis; overflow:hidden; white-space:nowrap;}
+.uls > li > a:link {font-size: 12px;color: #fff; text-decoration: none;} 
+.uls > li > a:visited {font-size: 12px;color: #fff;text-decoration: none;}   
+.uls > li >a:hover {font-size: 12px;color: #fff;text-decoration: none;} 
+ 
+ 
+
+/* 修改结束3-16 */
+
+/* 焦点图 */
+.main{width:320px;margin:0 auto;position:relative;margin-top:60px;padding-bottom:100px;margin-bottom:30px}
+.slide_img{height:157px;position:relative;}
+#center{width:298px;height:157px;overflow:hidden;cursor:pointer;margin:0 auto;-webkit-box-shadow:1px 4px 7px #333;border-radius:5px;}
+#uls{width:4320px;height:157px;}		
+#uls li{float:left;width:298px;height:157px;}
+#uls li img{width:298px;height:157px;}
+#line{height:20px;position:absolute;bottom:0;right:25px;}
+#line ul li{width:6px;height:6px;border:solid 1px #fff;float:left;margin:0 3px;border-radius:50%;display:inline;}
+#line ul .on{background:#fff;}
+
+/* 产品展示 */
+/* 修改开始3-11 */
+.product_frame{width:170px;height:50px;display:block;margin:10px auto;background:url(../img/page.png) no-repeat center;background-size:170px 50px;font-size:14px;font-weight:bold;text-align:center;line-height:50px;position:relative;left:50%;margin-left:-85px;}
+/* 修改结束3-11 */
+.content{/*width: calc( 90% - -10px );*/border:solid 1px #e2dadb;margin-left:20px;background:#fff;position: relative;right:10px;}
+.content dl{padding:10px 15px;}
+.content dl:nth-child(1){height:140px;padding:15px 15px}
+.content dl > dt{height:25px;color:#333;font-size:14px;font-weight:bold;}
+.content dl > dt:before{content:"";width:4px;height:14px;background:#45c0c8;display:inline;float:left;margin-right:5px}
+.content dl > dd{color:#999;line-height:18px;font-size:13px;}
+.content dl:nth-child(1) > dd:nth-child(2){width:132px;height:92px;;margin:-5px 0;}
+.content dl:nth-child(1) > dd:nth-child(2)> img{width:125px;height:125px;display:inline-block;position:absolute;left:50%;margin-left:-50px;margin-top:7px}
+/* 修改开始3-11 */
+.img_show{width:320px;height:auto;position:relative;display:inline-block;}
+/* 修改结束3-11 */
+.img_show ul{width:300px;margin:0 auto;}
+.img_show ul li{width:140px;height:110px;float:left;margin:5px 5px;border-radius:5px}
+.img_show ul li img{width:140px;height:110px;background-size:140px 110px;border-radius:5px}
+.img_show ul li div{width:140px;height:30px;background:#083b4b;position:absolute;margin-top:-33px;line-height:30px;text-align:center;color:#fff;opacity:.6;border-bottom-left-radius:5px;border-bottom-right-radius:5px;}
+.img_show ul li div p{}
+
+/* 页尾 */
+.footer{height:30px;background:#083b4b;color:#fff;font-size:12px;text-align:center;line-height:30px;position: absolute;width:100%;bottom:0}
+.footer img{width:20px;height:20px;background-size:20px 20px;vertical-align:middle;margin-right:5px}
+
+
+/* 滚动到顶部 */
+.scroll_top{visibility: visible;opacity:1;width:35px;height:35px;right:20px;position:fixed;bottom:60px;background:url(../img/up.png) no-repeat center;background-size:35px 35px;-webkit-transition:all ease-in 1s;transition:all ease-in 1s;}
+
+/* 产品介绍 */
+/* 修改开始3-20 */
+.about_product{width:304px;border:solid 1px #e2dadb;background:#fff;margin: 50px 0 80px 7px;padding-bottom:40px;position:relative;left:50%;margin-left:-152px;}
+/* 修改结束3-20 */
+.about_product > dl{margin:5px 0 0 4px}
+.about_product > dl > dt{width:320px;height:147px}
+.about_product > dl > dt > img{width:295px;height:147px;background-size:295px 147px;display:inline-block;-webkit-box-shadow:1px 4px 7px #333;border-radius:5px;}
+.about_product > dl > dd{font-size:13px;color:#333;line-height:20px;text-indent:13px;margin-top:18px;padding:0 2px;}
+.about_product > p{padding:7px 10px}
+
+/* 登录页面 */
+/* 修改开始3-17 */
+.login_img{width:100%;height:204px;margin:0 auto;display:block;background-size: cover;}
+/* 修改结束3-17 */
+.login_cont{width:320px;/*height:126px;*/margin:30px auto;text-align:center;}
+.login_cont > label{font-size:14px;color:#333;}
+/*修改开始3-17*/
+.login_cont > input{width:190px;height:45px;background:#fff;border-radius:5px;border:solid 1px #e2dadb;margin-left:10px;text-indent: 10px;font-size:16px;}
+.login{width:174px;height:53px;display:inline-block;border-radius:15px;background:url(../img/login.png) no-repeat center;background-size:174px 53px;margin-top:7%;}
+/*修改结束3-17*/
+
+/* 登录失败弹出层 */
+.mask{position:absolute;left:0;right:0;bottom:0;top:0;background-color:rgba(0,0,0,.5);display:none}
+.mask_pro{width:249px;height:127px;background:#fff;border-radius:5px;position:absolute;left:50%;top:50%;margin-top:-63px;margin-left:-124px;}
+.close{width:17px;height:17px;position:absolute;right:10px;top:10px;}
+.mask_pro > span:nth-child(2){font-size:14px;color:#333;text-align:center;display:block;margin:35px auto;}
+.confirm{width:111px;height:40px;background:url(../img/confirm.png) no-repeat center;background-size:111px 40px;position:absolute;left:50%;top:50%;margin-top:10px;position:absolute;margin-left:-55px;}
+
+/* META分析 */
+.analyze{font-size:14px;color:#333;display:inline-block;vertical-align: middle;margin-bottom:10px;}
+.analyze:before{content:"";width:3px;height:14px;background:#45c0c8;display:inline-block;margin-right:6px}
+.login_cont > dl{width:300px;height:60px;border:solid 1px #e2dadb;border-radius:5px;margin-top:5px;background:#fff}
+.login_cont > dl > a > dt{float:left;margin:8px 8px}
+.login_cont > dl > a > dt > img{width:45px;height:45px;background-size:45px 45px;display:black;}
+.login_cont > dl > a > dd{font-size:14px;color:#333;line-height:60px;}
+
+
+
+
+
+
+
+
+
