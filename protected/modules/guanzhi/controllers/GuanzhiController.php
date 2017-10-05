@@ -95,7 +95,7 @@ class GuanzhiController extends Controller
             setYS('randNum'.$_POST['phone'],$randNum);
             setYC(md5('sendcode'.$_POST['phone']),1,50);
             //echo json_encode(['code' => '10000', 'msg' => 'success', 'data' => [$randNum]]);exit();
-            $this->jsonptxt(['code' => '10000', 'msg' => 'success', 'data' => [$randNum]]);
+            $this->jsonptxt(['code' => '10000', 'msg' => 'success', 'data' => []]);
         }else{
             $this->jsonptxt(['code' => '10001', 'msg' => 'failed', 'data' => []]);
         }
