@@ -45,7 +45,6 @@ class GuanzhiController extends Controller
 
         //检查用户验证码是否正确
         if($_POST['code'] != getYS('randNum'.$_POST['phone'])){
-        	unsetYS('randNum'.$_POST['phone']);
         	//echo json_encode(['code' => '20008', 'msg' => '验证码不正确', 'data' => []]);exit();
             $this->jsonptxt(['code' => '20008', 'msg' => '验证码不正确', 'data' => []]);
         }
@@ -84,13 +83,24 @@ class GuanzhiController extends Controller
             $this->jsonptxt(['code' => '20006', 'msg' => '该手机号已被使用', 'data' => []]);
         }
 
+        //检查防刷cookie是否存在
+        if(getYC(md5('sendcode'.$_POST['phone']))){
+            $this->jsonptxt(['code' => '10001', 'msg' => 'failed', 'data' => []]);
+        }
+
         //随机生产一个6位验证码
         $randNum=rand(100000,999999);
         //@TODO:发送短信通知用户验证码
+        if($this->sendMsg($_POST['phone'],$randNum)){
+            setYS('randNum'.$_POST['phone'],$randNum);
+            setYC(md5('sendcode'.$_POST['phone']),1,50);
+            //echo json_encode(['code' => '10000', 'msg' => 'success', 'data' => [$randNum]]);exit();
+            $this->jsonptxt(['code' => '10000', 'msg' => 'success', 'data' => [$randNum]]);
+        }else{
+            $this->jsonptxt(['code' => '10001', 'msg' => 'failed', 'data' => []]);
+        }
 
-        setYS('randNum'.$_POST['phone'],$randNum);
-        //echo json_encode(['code' => '10000', 'msg' => 'success', 'data' => [$randNum]]);exit();
-        $this->jsonptxt(['code' => '10000', 'msg' => 'success', 'data' => [$randNum]]);
+        
     }
 
 	//获取题库
@@ -231,6 +241,23 @@ class GuanzhiController extends Controller
         Yii::app()->db->createCommand($sql)->execute();
         //echo json_encode(['code' => '10001', 'msg' => '未中奖', 'data' => []]);exit();
         $this->jsonptxt(['code' => '10001', 'msg' => '未中奖', 'data' => []]);
+    }
+
+    //发送短信
+    public function sendMsg($phone,$code){
+        $url = 'https://sms.yunpian.com/v2/sms/tpl_single_send.json';
+        $data = array(
+            'apikey' => '1e0c0d21ccc7b8765db75bab684e21a6',
+            'mobile' => $phone,
+            'tpl_id' => '1976520',
+            'tpl_value' => urlencode("#code#").'='.urlencode($code)
+        );
+        $result=http_post($url, $data);
+        $res = json_decode($result,true);
+        if($res && $res['code'] == 0){
+           return true; 
+        }
+        return false;
     }
 
     public function jsonptxt($data,$mode = 1){
