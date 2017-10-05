@@ -261,9 +261,9 @@ class GuanzhiController extends Controller
     }
 
     public function jsonptxt($data,$mode = 1){
-        if($mode && isset($_POST['jsoncallback'])){
-            $jsoncallback = htmlspecialchars($_REQUEST ['jsoncallback']);
-            echo  $jsoncallback . "(" . json_encode($data) . ")";exit();
+        if($mode && isset($_POST['callback'])){
+            $callback = htmlspecialchars($_REQUEST ['callback']);
+            echo  $callback . "(" . json_encode($data) . ")";exit();
         }else{
             echo json_encode($data);exit();
         }
