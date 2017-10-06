@@ -35,7 +35,7 @@ class GuanzhiController extends Controller
         	//echo json_encode(['code' => '20006', 'msg' => '缺少级别', 'data' => []]);exit();
             $this->jsonptxt(['code' => '20006', 'msg' => '缺少级别', 'data' => []]);
         }
-        if(!isset($_POST['score']) || empty($_POST['score'])){
+        if(!isset($_POST['score']) || $_POST['score'] == ''){
         	//echo json_encode(['code' => '20007', 'msg' => '缺少游戏分数', 'data' => []]);exit();
             $this->jsonptxt(['code' => '20007', 'msg' => '缺少游戏分数', 'data' => []]);
         }
