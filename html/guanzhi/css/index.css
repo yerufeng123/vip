@@ -261,6 +261,7 @@ dl,dd,dt,ul,li,ol{
     border-radius: 30px;
     margin:0 50px;
     }.index_route{
+        display: none;
         position: absolute;
         background: url(../img/route.jpg) center;
         background-size: 100% auto;
