@@ -3,6 +3,13 @@ html,body,#main,#load,#wrap,.page,#cnt{
     padding: 0;margin: 0;
     overflow: hidden;
 }
+body,img{
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+    -webkit-tap-highlight-color: rgba(200,200,200,0);
+}
 h1,h2,h3,h4,h5{
     margin:0;
 }
@@ -11,7 +18,9 @@ p{
 }
 img,button,input{
     margin:0;padding: 0;
-    outline: none;
+    border:0;
+    border: none;
+    text-decoration:none;
 }
 dl,dd,dt,ul,li,ol{
     list-style: none;
@@ -68,7 +77,7 @@ dl,dd,dt,ul,li,ol{
 
 #music{
     position: absolute;
-    z-index:500;
+    z-index:200;
     left: 60px;top:75px;
 }
 #music.playing{
@@ -77,7 +86,7 @@ dl,dd,dt,ul,li,ol{
 }
 #logo{
     position: absolute;
-    z-index: 500;
+    z-index: 200;
     right: 60px;top:40px;
 }
 .cars{
@@ -119,12 +128,9 @@ dl,dd,dt,ul,li,ol{
     top:50%;
     z-index: 100;
     left: 0;right: 0;
-    }.lights div{
-        position: absolute;
-        left: 50%;
     }.lights img{
         position: absolute;
-        
+        clip:rect(0px 350px 310px 0px);
     }.light1{
         margin-left: -380px;
         animation: animate 1s linear backwards infinite;
@@ -221,10 +227,10 @@ dl,dd,dt,ul,li,ol{
     width:100%;height: 100%;
     background-position: center center;
     background-size:cover;
-    perspective: 1000px;
+    /* perspective: 1000px;
     -webkit-perspective: 1000px;
     perspective-origin:center;
-    -webkit-perspective-origin:center;
+    -webkit-perspective-origin:center; */
     }.index_t1{
     position: absolute;
     left: 50%;top:50%;
@@ -249,7 +255,7 @@ dl,dd,dt,ul,li,ol{
     }.index_btns{
     position: absolute;
     left: 0;bottom:10%;right:0;
-    z-index: 9;
+    z-index: 101;
     transform: translateZ(10px);
     -webkit-transform: translateZ(10px);
     }.index_btn{
@@ -261,20 +267,20 @@ dl,dd,dt,ul,li,ol{
     border-radius: 30px;
     margin:0 50px;
     }.index_route{
-        display: none;
         position: absolute;
+        display: none;
         background: url(../img/route.jpg) center;
         background-size: 100% auto;
-        transform-origin: 50% 0%;
-        -webkit-transform-origin: 50% 0%;
+        /* transform-origin: 50% 0%;
+        -webkit-transform-origin: 50% 0%; */
         width: 100%;
         height: 100%;
         margin-top: -75px;
         left: 0;
         top: 50%;
         animation: route 2s infinite linear;
-        transform: rotateX(44deg);
-        -webkit-transform: rotateX(44deg);
+        /* transform: rotateX(44deg);
+        -webkit-transform: rotateX(44deg); */
 }
 /* 首页规则 */
 .index_rule{
@@ -558,8 +564,9 @@ dl,dd,dt,ul,li,ol{
 .question_share{
     position: fixed;
     display: none;
+    z-index: 260;
     left: 0;top: 0;right: 0;bottom: 0;
-    background: rgba(0,0,0,.4) url('../img/share.png') no-repeat 95% 15%;
+    background: rgba(0,0,0,.4) url('../img/share.png') no-repeat right top;
     }.question_share_text{ 
 }
 .question_lights{
@@ -618,6 +625,7 @@ dl,dd,dt,ul,li,ol{
     50%{clip:rect(0px 350px 0px 0px)}
     51%{clip:rect(310px 350px 310px 0px)}
     100%{clip:rect(0px 350px 310px 0px)}
+
 }
 @-webkit-keyframes animate{
     0%{clip:rect(0px 350px 310px 0px)}

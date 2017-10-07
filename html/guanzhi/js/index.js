@@ -287,6 +287,9 @@ $(document).ready(function(){
                 case 'fail':{
                     _temp = this.renderResult('fail');
                 }break;
+                case 'null':{
+                    _temp = this.renderResult('null');
+                }break;
                 case 'lottery':{
                     _temp = this.renderLottery('success',msg);
                 }break;
@@ -417,7 +420,7 @@ $(document).ready(function(){
                                 success:callbackLottery
                             });
                         }else{
-                            window.location.reload();
+                            self.renderResult('null');
                         }
                     }else{
                         self.tips(e.msg);
@@ -608,7 +611,7 @@ $(document).ready(function(){
             if(this.info.level == 2){
                 _lev = "三";
             }
-            if(sign !== 'fail'){
+            if(sign === 'success'){
                 if(this.info.level == 3){
                     _tit = '<h2>闯关成功!</h2>\
                         你得了'+_score+'分\
@@ -622,12 +625,15 @@ $(document).ready(function(){
                         <li class="question_btn" data-info="success">放弃挑战 马上领奖~</li>';
                 }
                 
-            }else{
+            }else if(sign === 'fail'){
                 _tit = '你得了'+ _score +'分<p>今晚骑骑共享单车也不错</p>';
                 _btns = '<li class="question_btn" data-question="again">不服再战</li>\
                         <li class="question_btn" data-js="share">测试朋友的智商</li>\
                         <li class="question_btn" data-info="fail">领安慰奖</li>';
                 _tip = '<p class="question_over">GAME OVER</p>';
+            }else{
+                _btns = '<li class="question_btn" data-question="again">不服再战</li>\
+                        <li class="question_btn" data-js="share">测试朋友的智商</li>';
             }
 
             var _temp = '<div class="question_info">\
