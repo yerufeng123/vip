@@ -375,7 +375,7 @@ $(document).ready(function(){
                 data.phone = $('#phone').val();
                 data.code = $('#code').val();
                 data.city = $('#city').val();
-                data.intention = $('.question_form_option.select').index()-1;
+                data.intention = $('.question_form_option.select').index()+1;
                 data.level = self.info.level||1;
                 data.score = self.info.score||0;
                 if(!data.name){
@@ -671,7 +671,7 @@ $(document).ready(function(){
                                 <div class="question_form_option" date-js="option">\
                                     <div class="question_select_cnt">3个月内有意向</div>\
                                 </div>\
-                                <div class="question_form_option select" date-js="option">\
+                                <div class="question_form_option" date-js="option">\
                                     <div class="question_select_cnt">半年内无购车意向</div>\
                                 </div>\
                                 </div>\

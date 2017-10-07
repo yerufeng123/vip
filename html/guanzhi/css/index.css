@@ -222,7 +222,9 @@ dl,dd,dt,ul,li,ol{
     background-position: center center;
     background-size:cover;
     perspective: 1000px;
+    -webkit-perspective: 1000px;
     perspective-origin:center;
+    -webkit-perspective-origin:center;
     }.index_t1{
     position: absolute;
     left: 50%;top:50%;
@@ -238,6 +240,7 @@ dl,dd,dt,ul,li,ol{
     margin-left:-312px;
     z-index: 101;
     transform: translateZ(10px);
+    -webkit-transform: translateZ(10px);
     }.index_cars{
     top:50%;
     margin-top:-116px;
@@ -262,6 +265,7 @@ dl,dd,dt,ul,li,ol{
         background: url(../img/route.jpg) center;
         background-size: 100% auto;
         transform-origin: 50% 0%;
+        -webkit-transform-origin: 50% 0%;
         width: 100%;
         height: 100%;
         margin-top: -75px;
@@ -269,6 +273,7 @@ dl,dd,dt,ul,li,ol{
         top: 50%;
         animation: route 2s infinite linear;
         transform: rotateX(44deg);
+        -webkit-transform: rotateX(44deg);
 }
 /* 首页规则 */
 .index_rule{
@@ -318,6 +323,7 @@ dl,dd,dt,ul,li,ol{
 
 /* 答题 */
 .qusetion_bg{
+    transform:translateY(-50%);
     -webkit-transform:-webkit-translateY(-50%);
     animation: change 2s alternate infinite;
 }
@@ -327,6 +333,7 @@ dl,dd,dt,ul,li,ol{
     left:0;
     top:50%;
     transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
 }
 /* 过度 */
 .car_mask{
@@ -435,6 +442,7 @@ dl,dd,dt,ul,li,ol{
     padding: 102px;
     top:50%;
     transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
     background-color: rgba(0,0,0,.8);
     text-align: left;
     font-size: 26px;
@@ -490,10 +498,12 @@ dl,dd,dt,ul,li,ol{
         position: absolute;
         width:20px;height: 20px;
         transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
         border:2px solid #fff;
         border-top-color:transparent;
         border-right-color:transparent;
     }.question_selection.show .question_select_head::before{
+        margin-top:15px;
         border:2px solid #fff;
         border-bottom-color:transparent;
         border-left-color:transparent;
@@ -530,6 +540,7 @@ dl,dd,dt,ul,li,ol{
     position: absolute;
     top:50%;left: 0;right: 0;
     transform: translateY(-60%);
+    -webkit-transform: translateY(-60%);
     }.question_lottery_tit{
         font-size: 125px;
         margin-bottom: 40px;
@@ -582,8 +593,8 @@ dl,dd,dt,ul,li,ol{
     100%{transform:scale(1)}
 }
 @-webkit-keyframes show{
-    0%{transform:scale(0.01)}
-    100%{transform:scale(1)}
+    0%{-webkit-transform:scale(0.01)}
+    100%{-webkit-transform:scale(1)}
 }
 @keyframes change{
     0%{filter: grayscale(0%); }
