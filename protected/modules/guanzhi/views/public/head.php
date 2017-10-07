@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <title>奇正藏药后台管理程序</title>
+        <title>观致汽车后台管理程序</title>
         <link type="text/css" href="<?php echo _STATIC_ . 'vip/guanzhi/admin1/'; ?>css/common.css?radom=<?php echo time();?>" rel="stylesheet">
         <link type="text/css" href="<?php echo _STATIC_ . 'vip/guanzhi/admin1/'; ?>css/gxd.css?radom=<?php echo time();?>" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="<?php echo _STATIC_ . 'vip/guanzhi/'; ?>uploadify/uploadify.css?radom=<?php echo time();?>" />
