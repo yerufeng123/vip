@@ -43,12 +43,12 @@
                 <tr>
                     <td><table width="962" border="0" align="center" cellpadding="0" cellspacing="0">
                             <tr>
-                                <td height="235" background="<?php echo _STATIC_ . 'vip/guanzhi/'; ?>img/login_03.gif">&nbsp;</td>
+                                <!-- <td height="235" background="<?php echo _STATIC_ . 'vip/guanzhi/'; ?>img/login_03.gif">&nbsp;</td> -->
                             </tr>
                             <tr>
                                 <td height="53"><table width="100%" border="0" cellspacing="0" cellpadding="0">
                                         <tr>
-                                            <td width="394" height="53" background="<?php echo _STATIC_ . 'vip/guanzhi/'; ?>img/login_05.gif">&nbsp;</td>
+                                            <td width="394" height="53" >&nbsp;</td>
                                             <td width="206" background="<?php echo _STATIC_ . 'vip/guanzhi/'; ?>img/login_06.gif"><table width="100%" border="0" cellspacing="0" cellpadding="0">
                                                     <tr>
                                                         <td width="16%" height="25"><div align="right"><span class="STYLE1">用户</span></div></td>
@@ -65,12 +65,12 @@
                                                         <td height="25"><div align="left"><input type="image" src="<?php echo _STATIC_ . 'vip/guanzhi/'; ?>img/dl.gif" onclick="return checkFormSerialize();"></div></td>
                                                     </tr>
                                                 </table></td>
-                                            <td width="362" background="<?php echo _STATIC_ . 'vip/guanzhi/'; ?>img/login_07.gif">&nbsp;</td>
+                                            <td width="362">&nbsp;</td>
                                         </tr>
                                     </table></td>
                             </tr>
                             <tr>
-                                <td height="213" background="<?php echo _STATIC_ . 'vip/guanzhi/'; ?>img/login_08.gif">&nbsp;</td>
+                                <!-- <td height="213" background="<?php echo _STATIC_ . 'vip/guanzhi/'; ?>img/login_08.gif">&nbsp;</td> -->
                             </tr>
                         </table></td>
                 </tr>

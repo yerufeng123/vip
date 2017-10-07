@@ -2,7 +2,7 @@
 <?php $this->renderPartial("/public/lefter") ?>
 <div class="cont_right">
 					<div class="cont_right_page1">
-						<span><img src="<?php echo _STATIC_ . 'vip/guanzhi/admin1/'; ?>img/icon_place.png" />您当前位置：<span>管理员管理</span></span>
+						<span><img src="<?php echo _STATIC_ . 'vip/guanzhi/admin1/'; ?>img/icon_place.png" />您当前位置：<span>信息查看</span></span>
 					</div>
 					<div class="cont_right_page2">
 						<form action="/guanzhi/admin/admin_add?model=1" method="POST">
