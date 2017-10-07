@@ -28,7 +28,21 @@
 								<td><?php echo $value['phone']?></td>
 								<td><?php echo $value['level']?></td>
 								<td><?php echo $value['score']?></td>
-								<td><?php echo $value['ranking']?></td>
+								<td>
+									<?php 
+										if($value['ranking'] == '1'){
+											echo '一等奖';
+										}elseif ($value['ranking']  == '2') {
+											echo '二等奖';
+										}elseif ($value['ranking'] == '3') {
+											echo '三等奖';
+										}elseif ($value['ranking'] == '5') {
+											echo '未中奖';
+										}else{
+											echo '未抽奖';
+										}
+									?>
+								</td>
 								<td><?php echo $value['couponCode']?></td>
 								<td><?php echo $value['code']?></td>
 								<td><?php echo date('Y-m-d',$value['created_at']);?></td>

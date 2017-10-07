@@ -8,5 +8,5 @@
 $count = $result['count'] * 1; // 查询满足要求的总记录数
 
 require_once (Yii::app()->basePath . '/extensions/Myclass/Page.class.php');
-$Page = new Page($count, 5, '1'); // 实例化分页类 传入总记录数和每页显示的记录数
+$Page = new Page($count, 20, '1'); // 实例化分页类 传入总记录数和每页显示的记录数
 $show = $Page->show(); // 分页显示输出
