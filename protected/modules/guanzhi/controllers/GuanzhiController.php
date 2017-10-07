@@ -178,7 +178,7 @@ class GuanzhiController extends Controller
 
         if($_POST['level'] == 1){
         	//if($numThree < 40 && $coupon && rand(1,100) == 2){
-            if($numThree < 40 && $coupon && rand(1,2) == 2){
+            if($numThree < 40 && $coupon && rand(2,2) == 2){
                 //更新优惠券和用户表
                 $sql= "update vip_guanzhi_coupon set status = 1 where id = {$coupon['id']}";
                 Yii::app()->db->createCommand($sql)->execute();
@@ -189,7 +189,7 @@ class GuanzhiController extends Controller
         	}
         }elseif($_POST['level'] == 2 || $_POST['level'] == 3){
             //if($numTwo < 20 && rand(101,1101) == 102){
-            if($numTwo < 20 && rand(101,104) == 102){
+            if($numTwo < 20 && rand(102,102) == 102){
                 //更新优惠券和用户表
                 $sql= "update vip_guanzhi_user set ranking = 2 where phone = {$_POST['phone']}";
                 Yii::app()->db->createCommand($sql)->execute();
