@@ -3,7 +3,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <script type="text/javascript" src="<?php echo _STATIC_ . 'vip/guanzhi/admin1/'; ?>js/jquery.js"></script>
         <script type="text/javascript" src="<?php echo _STATIC_ . 'vip/guanzhi/admin1/'; ?>js/jquery.form.js"></script>
-        <title>奇正藏药——后台登录</title>
+        <title>观致汽车——后台登录</title>
         <style type="text/css">
             <!--
             body {
