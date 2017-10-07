@@ -12,31 +12,24 @@ class GuanzhiController extends Controller
     public function actionRegister() {
         $_POST = array_merge($_GET, $_POST);
         if(!isset($_POST['name']) || empty($_POST['name'])){
-        	//echo json_encode(['code' => '20001', 'msg' => '请填写用户名', 'data' => []]);exit();
             $this->jsonptxt(['code' => '20001', 'msg' => '请填写用户名', 'data' => []]);
         }
         if(!isset($_POST['phone']) || empty($_POST['phone'])){
-        	//echo json_encode(['code' => '20002', 'msg' => '请填写手机号', 'data' => []]);exit();
             $this->jsonptxt(['code' => '20002', 'msg' => '请填写手机号', 'data' => []]);
         }
         if(!isset($_POST['code']) || empty($_POST['code'])){
-        	//echo json_encode(['code' => '20003', 'msg' => '手机验证码不正确', 'data' => []]);exit();
             $this->jsonptxt(['code' => '20003', 'msg' => '手机验证码不正确', 'data' => []]);
         }
         if(!isset($_POST['city']) || empty($_POST['city'])){
-        	//echo json_encode(['code' => '20004', 'msg' => '请填写城市', 'data' => []]);exit();
             $this->jsonptxt(['code' => '20004', 'msg' => '请填写城市', 'data' => []]);
         }
         if(!isset($_POST['intention']) || empty($_POST['intention'])){
-        	//echo json_encode(['code' => '20005', 'msg' => '请选择购车意向', 'data' => []]);exit();
             $this->jsonptxt(['code' => '20005', 'msg' => '请选择购车意向', 'data' => []]);
         }
         if(!isset($_POST['level']) || empty($_POST['level'])){
-        	//echo json_encode(['code' => '20006', 'msg' => '缺少级别', 'data' => []]);exit();
             $this->jsonptxt(['code' => '20006', 'msg' => '缺少级别', 'data' => []]);
         }
         if(!isset($_POST['score']) || $_POST['score'] == ''){
-        	//echo json_encode(['code' => '20007', 'msg' => '缺少游戏分数', 'data' => []]);exit();
             $this->jsonptxt(['code' => '20007', 'msg' => '缺少游戏分数', 'data' => []]);
         }
 
@@ -45,7 +38,6 @@ class GuanzhiController extends Controller
 
         //检查用户验证码是否正确
         if($_POST['code'] != getYS('randNum'.$_POST['phone'])){
-        	//echo json_encode(['code' => '20008', 'msg' => '验证码不正确', 'data' => []]);exit();
             $this->jsonptxt(['code' => '20008', 'msg' => '验证码不正确', 'data' => []]);
         }
         unsetYS('randNum'.$_POST['phone']);
@@ -54,16 +46,13 @@ class GuanzhiController extends Controller
         //查询用户手机号是否已存在
         $sql = "select * from vip_guanzhi_user where phone = {$_POST['phone']}";
         if(Yii::app()->db->createCommand($sql)->queryAll()){
-        	//echo json_encode(['code' => '20006', 'msg' => '该手机号已被使用', 'data' => []]);exit();
             $this->jsonptxt(['code' => '20006', 'msg' => '该手机号已被使用', 'data' => []]);
         }
 
         $sql = "insert into vip_guanzhi_user(name,phone,code,city,intention,level,score) value('{$_POST['name']}','{$_POST['phone']}','{$_POST['code']}','{$_POST['city']}',{$_POST['intention']},{$_POST['level']},{$_POST['score']})";
         if(Yii::app()->db->createCommand($sql)->execute()){
-        	//echo json_encode(['code' => '10000', 'msg' => 'success', 'data' => []]);exit();
             $this->jsonptxt(['code' => '10000', 'msg' => 'success', 'data' => []]);
         }else{
-        	//echo json_encode(['code' => '10001', 'msg' => 'failed', 'data' => []]);exit();
             $this->jsonptxt(['code' => '10001', 'msg' => 'failed', 'data' => []]);
         }
     }
@@ -72,14 +61,12 @@ class GuanzhiController extends Controller
     public function actionSendcode() {
     	$_POST = array_merge($_GET, $_POST);
     	if(!isset($_POST['phone']) || empty($_POST['phone'])){
-        	//echo json_encode(['code' => '20002', 'msg' => '请填写手机号', 'data' => []]);exit();
             $this->jsonptxt(['code' => '20002', 'msg' => '请填写手机号', 'data' => []]);
         }
 
     	//查询用户手机号是否已存在
         $sql = "select * from vip_guanzhi_user where phone = {$_POST['phone']}";
         if(Yii::app()->db->createCommand($sql)->queryAll()){
-        	//echo json_encode(['code' => '20006', 'msg' => '该手机号已被使用', 'data' => []]);exit();
             $this->jsonptxt(['code' => '20006', 'msg' => '该手机号已被使用', 'data' => []]);
         }
 
@@ -89,12 +76,12 @@ class GuanzhiController extends Controller
         }
 
         //随机生产一个6位验证码
-        $randNum=rand(100000,999999);
-        //@TODO:发送短信通知用户验证码
-        if($this->sendMsg($_POST['phone'],$randNum)){
+        //$randNum=rand(100000,999999);
+        $randNum=123456;
+        //if($this->sendMsg($_POST['phone'],$randNum)){
+        if(1){
             setYS('randNum'.$_POST['phone'],$randNum);
             setYC(md5('sendcode'.$_POST['phone']),1,50);
-            //echo json_encode(['code' => '10000', 'msg' => 'success', 'data' => [$randNum]]);exit();
             $this->jsonptxt(['code' => '10000', 'msg' => 'success', 'data' => []]);
         }else{
             $this->jsonptxt(['code' => '10001', 'msg' => 'failed', 'data' => []]);
@@ -152,7 +139,6 @@ class GuanzhiController extends Controller
 				$newData[2][] = $tempData[3][$key];
 			}
 		}
-		//echo json_encode(['code' => '10000', 'msg' => 'success', 'data' => $newData]);
         $this->jsonptxt(['code' => '10000', 'msg' => 'success', 'data' => $newData]);
 	}
 
@@ -160,12 +146,10 @@ class GuanzhiController extends Controller
     public function actionLottery() {
     	$_POST = array_merge($_GET, $_POST);
         if(!isset($_POST['phone']) || empty($_POST['phone'])){
-            //echo json_encode(['code' => '200010', 'msg' => '缺少手机号', 'data' => []]);exit();
             $this->jsonptxt(['code' => '200010', 'msg' => '缺少手机号', 'data' => []]);
         }
 
     	if(!isset($_POST['level']) || empty($_POST['level'])){
-        	//echo json_encode(['code' => '20009', 'msg' => '缺少游戏级别', 'data' => []]);exit();
             $this->jsonptxt(['code' => '20009', 'msg' => '缺少游戏级别', 'data' => []]);
         }
 
@@ -173,11 +157,9 @@ class GuanzhiController extends Controller
         $sql= "select * from vip_guanzhi_user where phone = {$_POST['phone']}";
         $userinfo=Yii::app()->db->createCommand($sql)->queryRow();
         if(!$userinfo){
-            //echo json_encode(['code' => '200012', 'msg' => '用户不存在', 'data' => []]);exit();
             $this->jsonptxt(['code' => '200012', 'msg' => '用户不存在', 'data' => []]);
         }
         if($userinfo['ranking']){
-            //echo json_encode(['code' => '200011', 'msg' => '已参加过抽奖活动', 'data' => []]);exit();
             $this->jsonptxt(['code' => '200011', 'msg' => '已参加过抽奖活动', 'data' => []]);
         }
 
@@ -192,11 +174,13 @@ class GuanzhiController extends Controller
 
 
         $arr1 = $arr2 = $arr3 = [];
-        for ($i = 1; $i < 101; $i++) { 
+        //for ($i = 1; $i < 101; $i++) { 
+        for ($i = 1; $i < 3; $i++) { 
         	$arr1[] = 1;
         }
 
-        for ($i = 101; $i < 1101; $i++) { 
+        //for ($i = 101; $i < 1101; $i++) { 
+        for ($i = 101; $i < 105; $i++) {  
         	$arr2[] = 1;
         }
 
@@ -205,32 +189,32 @@ class GuanzhiController extends Controller
 
 
         if($_POST['level'] == 1){
-        	if($numThree < 40 && $coupon && rand(1,100) == 2){
+        	//if($numThree < 40 && $coupon && rand(1,100) == 2){
+            if($numThree < 40 && $coupon && rand(1,3) == 2){
                 //更新优惠券和用户表
                 $sql= "update vip_guanzhi_coupon set status = 1 where id = {$coupon['id']}";
                 Yii::app()->db->createCommand($sql)->execute();
                 $sql= "update vip_guanzhi_user set ranking = 3,coupon_id = {$coupon['id']} where phone = {$_POST['phone']}";
                 Yii::app()->db->createCommand($sql)->execute();
 
-        		//echo json_encode(['code' => '10000', 'msg' => '中三等奖', 'data' => ['ranking' => 3,'coupon' => $coupon['couponnum']]]);exit();
                 $this->jsonptxt(['code' => '10000', 'msg' => '中三等奖', 'data' => ['ranking' => 3,'coupon' => $coupon['couponnum']]]);
         	}
         }elseif($_POST['level'] == 2 || $_POST['level'] == 3){
-            if($numTwo < 20 && rand(101,1101) == 102){
+            //if($numTwo < 20 && rand(101,1101) == 102){
+            if($numTwo < 20 && rand(101,105) == 102){
                 //更新优惠券和用户表
                 $sql= "update vip_guanzhi_user set ranking = 2 where phone = {$_POST['phone']}";
                 Yii::app()->db->createCommand($sql)->execute();
-                //echo json_encode(['code' => '10000', 'msg' => '中二等奖', 'data' => ['ranking' => 2]]);exit();
                 $this->jsonptxt(['code' => '10000', 'msg' => '中二等奖', 'data' => ['ranking' => 2]]);
             }
 
-            if($numThree < 40 && $coupon && rand(1,100) == 2){
+            //if($numThree < 40 && $coupon && rand(1,100) == 2){
+            if($numThree < 40 && $coupon && rand(1,3) == 2){
                 //更新优惠券和用户表
                 $sql= "update vip_guanzhi_coupon set status = 1 where id = {$coupon['id']}";
                 Yii::app()->db->createCommand($sql)->execute();
                 $sql= "update vip_guanzhi_user set ranking = 3,coupon_id = {$coupon['id']} where phone = {$_POST['phone']}";
                 Yii::app()->db->createCommand($sql)->execute();
-                //echo json_encode(['code' => '10000', 'msg' => '中三等奖', 'data' => ['ranking' => 3,'coupon' => $coupon['couponnum']]]);exit();
                 $this->jsonptxt(['code' => '10000', 'msg' => '中三等奖', 'data' => ['ranking' => 3,'coupon' => $coupon['couponnum']]]);
             }
 
@@ -239,7 +223,6 @@ class GuanzhiController extends Controller
 
         $sql= "update vip_guanzhi_user set ranking = 5 where phone = {$_POST['phone']}";
         Yii::app()->db->createCommand($sql)->execute();
-        //echo json_encode(['code' => '10001', 'msg' => '未中奖', 'data' => []]);exit();
         $this->jsonptxt(['code' => '10001', 'msg' => '未中奖', 'data' => []]);
     }
 
