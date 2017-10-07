@@ -1,10 +1,10 @@
 
-<script type="text/javascript" src="<?php echo _STATIC_ . 'vip/qizheng/admin1/'; ?>js/jquery-1.8.3.min.js"></script> 
-<script type="text/javascript" src="<?php echo _STATIC_ . 'vip/qizheng/admin1/'; ?>js/jquery.form.js"></script>
-<script type="text/javascript" src="<?php echo _STATIC_ . 'vip/qizheng/'; ?>uploadify/jquery.uploadify.min.js?<?php echo time(); ?>"></script>
-<script type="text/javascript" charset="utf-8" src="<?php echo _STATIC_ . 'vip/qizheng/admin1/'; ?>js/ueditor/ueditor.config.js"></script>
-<script type="text/javascript" charset="utf-8" src="<?php echo _STATIC_ . 'vip/qizheng/admin1/'; ?>js/ueditor/ueditor.all.min.js"></script>
-<script type="text/javascript" src="<?php echo _STATIC_ . 'vip/qizheng/admin1/'; ?>js/gxd.js"></script>
+<script type="text/javascript" src="<?php echo _STATIC_ . 'vip/guanzhi/admin1/'; ?>js/jquery-1.8.3.min.js"></script> 
+<script type="text/javascript" src="<?php echo _STATIC_ . 'vip/guanzhi/admin1/'; ?>js/jquery.form.js"></script>
+<script type="text/javascript" src="<?php echo _STATIC_ . 'vip/guanzhi/'; ?>uploadify/jquery.uploadify.min.js?<?php echo time(); ?>"></script>
+<script type="text/javascript" charset="utf-8" src="<?php echo _STATIC_ . 'vip/guanzhi/admin1/'; ?>js/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" charset="utf-8" src="<?php echo _STATIC_ . 'vip/guanzhi/admin1/'; ?>js/ueditor/ueditor.all.min.js"></script>
+<script type="text/javascript" src="<?php echo _STATIC_ . 'vip/guanzhi/admin1/'; ?>js/gxd.js"></script>
 </body>
 </html>
 <script>
