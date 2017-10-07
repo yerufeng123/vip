@@ -33,9 +33,9 @@
 										if($value['ranking'] == '1'){
 											echo '一等奖';
 										}elseif ($value['ranking']  == '2') {
-											echo '二等奖';
+											echo '<font color="red">二等奖</font>';
 										}elseif ($value['ranking'] == '3') {
-											echo '三等奖';
+											echo '<font color="green">三等奖</font>';
 										}elseif ($value['ranking'] == '5') {
 											echo '未中奖';
 										}else{
