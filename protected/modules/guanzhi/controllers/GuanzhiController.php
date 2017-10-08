@@ -76,8 +76,10 @@ class GuanzhiController extends Controller
         }
 
         //随机生产一个6位验证码
-        $randNum=rand(100000,999999);
-        if($this->sendMsg($_POST['phone'],$randNum)){
+        //$randNum=rand(100000,999999);
+        $randNum=123456;
+        //if($this->sendMsg($_POST['phone'],$randNum)){
+        if(1){
             setYS('randNum'.$_POST['phone'],$randNum);
             setYC(md5('sendcode'.$_POST['phone']),1,50);
             $this->jsonptxt(['code' => '10000', 'msg' => 'success', 'data' => []]);
