@@ -12,13 +12,13 @@
 								<th>序号</th>
 								<th>姓名</th>
 								<th>手机</th>
+								<th>城市</th>
 								<th>用户游戏关数</th>
 								<th>用户分数</th>
 								<th>奖品等级</th>
+								<th>购车意愿</th>
 								<th>优惠券code</th>
-								<th>验证码code</th>
-								<th>创建时间</th>
-								<th>更新时间</th>
+								<!-- <th>验证码code</th> -->
 							</thead>
 							 <?php if (isset($list) && is_array($list)): ?>
                                     <?php foreach ($list as $key => $value): ?>
@@ -26,6 +26,7 @@
 								<td><?php echo $key + 1; ?></td>
 								<td><?php echo $value['name'] ?></td>
 								<td><?php echo $value['phone']?></td>
+								<td><?php echo $value['city']?></td>
 								<td><?php echo $value['level']?></td>
 								<td><?php echo $value['score']?></td>
 								<td>
@@ -43,10 +44,21 @@
 										}
 									?>
 								</td>
+								<td>
+									<?php 
+										if($value['intention'] == '1'){
+											echo '本月内有意向';
+										}elseif ($value['intention']  == '2') {
+											echo '3个月内有意向';
+										}elseif ($value['intention'] == '3') {
+											echo '半年内无购车意向';
+										}else{
+											echo '未知';
+										}
+									?>
+								</td> 
 								<td><?php echo $value['couponCode']?></td>
-								<td><?php echo $value['code']?></td>
-								<td><?php echo date('Y-m-d',$value['created_at']);?></td>
-								<td><?php echo date('Y-m-d',$value['updated_at'])?></td>
+								<!-- <td><?php echo $value['code']?></td> -->
 							</tr>
                                                         <?php endforeach; ?>
                                 <?php endif; ?>
