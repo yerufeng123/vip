@@ -76,10 +76,8 @@ class GuanzhiController extends Controller
         }
 
         //随机生产一个6位验证码
-        //$randNum=rand(100000,999999);
-        $randNum=123456;
-        //if($this->sendMsg($_POST['phone'],$randNum)){
-        if(1){
+        $randNum=rand(100000,999999);
+        if($this->sendMsg($_POST['phone'],$randNum)){
             setYS('randNum'.$_POST['phone'],$randNum);
             setYC(md5('sendcode'.$_POST['phone']),1,50);
             $this->jsonptxt(['code' => '10000', 'msg' => 'success', 'data' => []]);
@@ -177,8 +175,7 @@ class GuanzhiController extends Controller
 
 
         if($_POST['level'] == 1){
-        	//if($numThree < 40 && $coupon && rand(1,100) == 2){
-            if($numThree < 40 && $coupon && rand(2,2) == 2){
+        	if($numThree < 40 && $coupon && rand(1,100) == 2){
                 //更新优惠券和用户表
                 $sql= "update vip_guanzhi_coupon set status = 1 where id = {$coupon['id']}";
                 Yii::app()->db->createCommand($sql)->execute();
@@ -188,16 +185,14 @@ class GuanzhiController extends Controller
                 $this->jsonptxt(['code' => '10000', 'msg' => '中三等奖', 'data' => ['ranking' => 3,'coupon' => $coupon['couponnum']]]);
         	}
         }elseif($_POST['level'] == 2 || $_POST['level'] == 3){
-            //if($numTwo < 20 && rand(101,1101) == 102){
-            if($numTwo < 20 && rand(102,102) == 102){
+            if($numTwo < 20 && rand(101,1101) == 102){
                 //更新优惠券和用户表
                 $sql= "update vip_guanzhi_user set ranking = 2 where phone = {$_POST['phone']}";
                 Yii::app()->db->createCommand($sql)->execute();
                 $this->jsonptxt(['code' => '10000', 'msg' => '中二等奖', 'data' => ['ranking' => 2]]);
             }
 
-            //if($numThree < 40 && $coupon && rand(1,100) == 2){
-            if($numThree < 40 && $coupon && rand(1,3) == 2){
+            if($numThree < 40 && $coupon && rand(1,100) == 2){
                 //更新优惠券和用户表
                 $sql= "update vip_guanzhi_coupon set status = 1 where id = {$coupon['id']}";
                 Yii::app()->db->createCommand($sql)->execute();
