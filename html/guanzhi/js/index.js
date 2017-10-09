@@ -407,20 +407,21 @@ $(document).ready(function(){
                 });
                 function callback(e){
                     if(e.code === '10000'){
+                        console.log(self.info.state)
                         if(self.info.state === 'success'){
                             $.ajax({
                                 url:_ajaxUrl + '/lottery',
                                 dataType:'jsonp',
                                 type:'GET',
                                 data:{
-                                    level:self.info.level + 1,
+                                    level:self.info.level,
                                     phone:data.phone,
                                 },
                                 error:callbackLottery,
                                 success:callbackLottery
                             });
                         }else{
-                            self.renderResult('null');
+                            self.render('null');
                         }
                     }else{
                         self.tips(e.msg);
@@ -497,12 +498,9 @@ $(document).ready(function(){
             var $music = $('#music');
             _music.addEventListener('load',function(){
                 _music.play();
-                //没有自动播放，点击页面播放音乐
-                if(_music.paused){
-                    $(document).one('click',function(){
-                        _music.play();
-                    });
-                }
+            });
+            $(document).one('click',function(){
+                _music.play();
             });
             _music.addEventListener('playing',function(){
                 $('#music').addClass('playing');
@@ -521,7 +519,9 @@ $(document).ready(function(){
         renderIndex:function(){
             var _temp = '<div id="index" class="page">\
                             <div class="index_page" style="background-image:url('+_baseImgUrl+'index_bg.jpg)">\
-                                <div class="index_route"></div>\
+                                <div class="index_route_box">\
+                                    <div class="index_route"></div>\
+                                </div>\
                                 <div class="index_lights lights">\
                                     <img class="light18" src="'+_baseImgUrl+'index_r4.png">\
                                     <img class="light17" src="'+_baseImgUrl+'index_r3.png">\
@@ -687,7 +687,7 @@ $(document).ready(function(){
                         </div>';
             return _temp;
         },
-        renderLottery:function(type,info){
+        renderLottery:function(type,e){
             var _temp = '';
             if(type === 'success'){
                 var lotteryInfo = "";

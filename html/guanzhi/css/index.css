@@ -29,7 +29,7 @@ dl,dd,dt,ul,li,ol{
 }
 
 #load{
-    background-color: gray;
+    background-color: #111;
 }
 .spinner {
     width: 100px;
@@ -227,17 +227,11 @@ dl,dd,dt,ul,li,ol{
     width:100%;height: 100%;
     background-position: center center;
     background-size:cover;
-    /* perspective: 1000px;
-    -webkit-perspective: 1000px;
-    perspective-origin:center;
-    -webkit-perspective-origin:center; */
     }.index_t1{
     position: absolute;
     left: 50%;top:50%;
     margin-left:-310px;
     margin-top:25px;
-    transform: translateZ(10px);
-    -webkit-transform: translateZ(10px);
     z-index: 101;
     }.index_t2{
     position: absolute;
@@ -245,8 +239,6 @@ dl,dd,dt,ul,li,ol{
     margin-top:220px;
     margin-left:-312px;
     z-index: 101;
-    transform: translateZ(10px);
-    -webkit-transform: translateZ(10px);
     }.index_cars{
     top:50%;
     margin-top:-116px;
@@ -256,8 +248,6 @@ dl,dd,dt,ul,li,ol{
     position: absolute;
     left: 0;bottom:10%;right:0;
     z-index: 101;
-    transform: translateZ(10px);
-    -webkit-transform: translateZ(10px);
     }.index_btn{
     display: inline-block;
     font-size: 36px;
@@ -266,21 +256,30 @@ dl,dd,dt,ul,li,ol{
     padding: 0 40px;
     border-radius: 30px;
     margin:0 50px;
-    }.index_route{
+    }.index_route_box{
         position: absolute;
-        display: none;
-        background: url(../img/route.jpg) center;
-        background-size: 100% auto;
-        /* transform-origin: 50% 0%;
-        -webkit-transform-origin: 50% 0%; */
         width: 100%;
         height: 100%;
         margin-top: -75px;
         left: 0;
         top: 50%;
+        perspective: 1000px;
+        -webkit-perspective: 1000px;
+        perspective-origin:center;
+        -webkit-perspective-origin:center;
+    }.index_route{
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: url(../img/route.jpg) center;
+        background-size: 100% auto;
+        transform-origin: 50% 0%;
+        -webkit-transform-origin: 50% 0%;
+        width: 100%;
+        height: 100%;
         animation: route 2s infinite linear;
-        /* transform: rotateX(44deg);
-        -webkit-transform: rotateX(44deg); */
+        transform:rotateX(44deg);
+        -webkit-transform:rotateX(44deg);
 }
 /* 首页规则 */
 .index_rule{
@@ -289,16 +288,16 @@ dl,dd,dt,ul,li,ol{
     text-align: left;
     z-index: 600;
     left: 66px;right:66px;
-    padding: 66px 66px 80px;
+    padding: 80px 66px;
     line-height: 2.2em;
     top:50%;
     transform:translateY(-50%);
     -webkit-transform:-webkit-translateY(-50%);
     /* margin-top:-502px; */
-    background-color: rgba(0,0,0,.6);
+    background-color: rgba(0,0,0,.8);
     }.index_close{
     position: absolute;
-    right: 40px;
+    right: 25px;
     top:25px;
     }.index_rule h3{
     font-size: 25px;
@@ -434,7 +433,7 @@ dl,dd,dt,ul,li,ol{
     }.question_over{
         font-size: 52px;
     }.question_tip{
-        z-index: 101;
+        z-index: 201;
         position: absolute;
         left: 0;right: 0;
         bottom: 5%;
