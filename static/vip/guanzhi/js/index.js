@@ -556,7 +556,7 @@ $(document).ready(function(){
                                 </dl>\
                                 <dl>\
                                     <dt>奖品设置:</dt>\
-                                    <dd>一等奖iphone8；</dd>\
+                                    <dd>一等奖iphoneX；</dd>\
                                     <dd>二等奖JBL音响；</dd>\
                                     <dd>三等奖腾讯视频18天会员。</dd>\
                                 </dl>\
