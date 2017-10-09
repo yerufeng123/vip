@@ -108,5 +108,18 @@ return array(
         'checkBrowser' => true, //是否开启微信浏览器检测，默认否(个别项目需要单独配置的，请另写)
         'isradom' => true, //是否开启缓存清楚，默认是（生产环境，建议关闭，缓存可以提高效率)
     ),
+      'guanzhi' => array(
+        /* 系统配置 */
+        'adminEmail' => 'webmaster@example.com',
+        /* 公众号配置----果冻配置 */
+        'wxtoken' => 'qoros', //微信公众号 token值
+        'wxencodingaeskey' => 'IBVcmekfj2Zx1LLmiahfAZBjOFCCenFJCuEQ8SqnAFR', //微信公众号加密EncodingAESKey
+        'wxappid' => 'wxe1e68f1d9cfd957e', //微信公众号appid
+        'wxappsecret' => '2995b29231ac66599cf01ff301848962', //微信公众号appsecret
+
+        /* 项目配置 */
+        'checkBrowser' => true, //是否开启微信浏览器检测，默认否(个别项目需要单独配置的，请另写)
+        'isradom' => true, //是否开启缓存清楚，默认是（生产环境，建议关闭，缓存可以提高效率)
+    ),
     'base_host'=>'vip.jellyideas.net',
 );

@@ -62,6 +62,144 @@
     <script src="<?php echo _STATIC_?>vip/guanzhi/js/zepto.js"></script>
     <script src="<?php echo _STATIC_?>vip/guanzhi/js/load.js"></script>
     <script src="<?php echo _STATIC_?>vip/guanzhi/js/index.js"></script>
+    <script src="<?php echo _STATIC_ ;?>js/globals.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+        <?php
+        $jssdk = new JSSDK(Yii::app()->params['guanzhi']['wxappid'], Yii::app()->params['guanzhi']['wxappsecret']);
+        $signPackage = $jssdk->GetSignPackage();
+        ?>
+        <script>
+                                            /*
+                                             * 注意：
+                                             *需要到公众号设置——〉功能设置——〉JS接口安全域名 中添加当前域名
+                                             */
+                                            var title = '观致汽车';//分享标题
+                                            var desc = '观致汽车邀你闯关抽奖！';//分享描述
+                                            var link = 'http://' + window.location.host + '/guazhi/guanzhi/index';//分享链接
+                                            var imgUrl = '<?php echo _STATIC_; ?>vip/strasbourg/img/share.png';//分享图标
+                                                var type = '';// 分享类型,music、video或link，不填默认为link
+                                                var dataUrl = '';//如果type是music或video，则要提供数据链接，默认为空
+                                                wx.config({
+                                                    debug: false,
+                                                    appId: '<?php echo $signPackage["appId"]; ?>',
+                                                    timestamp: <?php echo $signPackage["timestamp"]; ?>,
+                                                    nonceStr: '<?php echo $signPackage["nonceStr"]; ?>',
+                                                    signature: '<?php echo $signPackage["signature"]; ?>',
+                                                    jsApiList: [
+                                                        'chooseImage',
+                                                        'previewImage',
+                                                        'uploadImage',
+                                                        'downloadImage',
+                                                        'closeWindow',
+                                                        'onMenuShareTimeline',
+                                                        'onMenuShareAppMessage',
+                                                        'onMenuShareQQ',
+                                                        'onMenuShareWeibo',
+                                                        'onMenuShareQZone',
+                                                        'hideMenuItems',
+                                                        'showMenuItems'
+                                                    ]
+                                                });
+                                                wx.ready(function () {
+                                                    wx.hideMenuItems({
+                                                        menuList: [
+                                                           //'menuItem:share:appMessage',
+                                                           //'menuItem:share:timeline',
+                                                           'menuItem:share:qq',
+                                                           'menuItem:share:weiboApp',
+                                                           //'menuItem:favorite',
+                                                           'menuItem:share:facebook',
+                                                           'menuItem:share:QZone',
+                                                           'menuItem:editTag',
+                                                           'menuItem:delete',
+                                                           'menuItem:copyUrl',
+                                                           'menuItem:originPage',
+                                                           'menuItem:readMode',
+                                                           'menuItem:openWithQQBrowser',
+                                                           'menuItem:openWithSafari',
+                                                           'menuItem:share:email',
+                                                           'menuItem:share:brand'
+                                                           
+                                                       ] 
+                                                    });
+                                                    wx.showMenuItems({
+                                                        menuList: [
+                                                              'menuItem:share:appMessage',
+                                                              'menuItem:share:timeline',
+                                                              //'menuItem:share:qq',
+                                                              //'menuItem:share:weiboApp',
+                                                              //'menuItem:favorite',
+                                                              //'menuItem:share:facebook',
+                                                              //'menuItem:share:QZone',
+                                                          ]
+                                                    });
+                                                    //分享到朋友圈
+                                                    wx.onMenuShareTimeline({
+                                                        title: title, // 分享标题
+                                                        link: link, // 分享链接
+                                                        imgUrl: imgUrl, // 分享图标
+                                                        success: function () {
+                                                            // 用户确认分享后执行的回调函数
+                                                            //shareok('friends');
+                                                        },
+                                                        cancel: function () {
+                                                            // 用户取消分享后执行的回调函数
+                                                            //sharecancel('friends');
+                                                        }
+                                                    });
+
+                                                    //分享给朋友
+                                                    wx.onMenuShareAppMessage({
+                                                        title: title, // 分享标题
+                                                        desc: desc, // 分享描述
+                                                        link: link, // 分享链接
+                                                        imgUrl: imgUrl, // 分享图标
+                                                        type: type, // 分享类型,music、video或link，不填默认为link
+                                                        dataUrl: dataUrl, // 如果type是music或video，则要提供数据链接，默认为空
+                                                        success: function () {
+                                                            // 用户确认分享后执行的回调函数
+                                                            //shareok('friend');
+                                                        },
+                                                        cancel: function () {
+                                                            // 用户取消分享后执行的回调函数
+                                                            //sharecancel('friend');
+                                                        }
+                                                    });
+
+                                                    //分享到QQ
+                                                    wx.onMenuShareQQ({
+                                                        title: title, // 分享标题
+                                                        desc: desc, // 分享描述
+                                                        link: link, // 分享链接
+                                                        imgUrl: imgUrl, // 分享图标
+                                                        success: function () {
+                                                            // 用户确认分享后执行的回调函数
+                                                            //shareok('qq');
+                                                        },
+                                                        cancel: function () {
+                                                            // 用户取消分享后执行的回调函数
+                                                            //sharecancel('qq');
+                                                        }
+                                                    });
+
+                                                    //分享到腾讯微博
+                                                    wx.onMenuShareWeibo({
+                                                        title: title, // 分享标题
+                                                        desc: desc, // 分享描述
+                                                        link: link, // 分享链接
+                                                        imgUrl: imgUrl, // 分享图标
+                                                        success: function () {
+                                                            // 用户确认分享后执行的回调函数
+                                                            //shareok('weibo');
+                                                        },
+                                                        cancel: function () {
+                                                            // 用户取消分享后执行的回调函数
+                                                            // sharecancel('weibo');
+                                                        }
+                                                    });
+
+                                                });
+        </script>
 </body>
 
 </html>
