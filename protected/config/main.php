@@ -52,7 +52,7 @@ return array(
         // database settings are configured in database.php
         //'db' => require(dirname(__FILE__) . '/database.php'),
         'db' => array(
-            'connectionString' => 'mysql:host=112.126.80.45;dbname=vip',
+            'connectionString' => 'mysql:host=localhost;dbname=vip',
             'emulatePrepare' => true,
             'username' => 'root',
             'password' => 'j@lly_%@!s%#',
