@@ -1,0 +1,642 @@
+html,body,#main,#load,#wrap,.page,#cnt{
+    width:100%;height: 100%;
+    padding: 0;margin: 0;
+    overflow: hidden;
+}
+body,img{
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+    -webkit-tap-highlight-color: rgba(200,200,200,0);
+}
+h1,h2,h3,h4,h5{
+    margin:0;
+}
+p{
+    margin:0;
+}
+img,button,input{
+    margin:0;padding: 0;
+    border:0;
+    border: none;
+    text-decoration:none;
+}
+dl,dd,dt,ul,li,ol{
+    list-style: none;
+    padding: 0;
+    margin:0;
+}
+
+#load{
+    background-color: #111;
+}
+.spinner {
+    width: 100px;
+    height: 100px;
+    background-color: #67CF22;
+    position: absolute;
+    left: 50%;top:50%;
+    margin: -250px 0 0 -50px;
+    -webkit-animation: rotateplane 1.2s infinite ease-in-out;
+    animation: rotateplane 1.2s infinite ease-in-out;
+  }
+.load_text{
+    position: absolute;
+    left: 0;right: 0;
+    text-align: center;
+    font-size:48px;
+    color:#fff;
+    top:80%;
+}
+@-webkit-keyframes rotateplane {
+    0% { -webkit-transform: perspective(120px) }
+    50% { -webkit-transform: perspective(120px) rotateY(180deg) }
+    100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg) }
+  }
+   
+  @keyframes rotateplane {
+    0% {
+      transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+      -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg)
+    } 50% {
+      transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+      -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg)
+    } 100% {
+      transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+      -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+    }
+  }
+
+
+#main{
+    position: relative;
+    color:#fff;
+    text-align: center;
+}
+
+#music{
+    position: absolute;
+    z-index:200;
+    left: 60px;top:75px;
+}
+#music.playing{
+    animation: rotate 4s infinite linear;
+    -webkit-animation: rotate 4s infinite linear;
+}
+#logo{
+    position: absolute;
+    z-index: 200;
+    right: 60px;top:40px;
+}
+.cars{
+    position: absolute;
+    width:100%;
+    z-index: 500;
+    left: 0;
+    }.car1,.car2,.car3,.car4,.car5{
+        position: absolute;
+        left: 50%;
+        animation: show 500ms linear backwards;
+    }.car1{
+        margin-left: -118px;
+        transform-origin: center top;
+    }.car2{
+        top:17px;
+        margin-left: -258px;
+        transform-origin: right top;
+        animation-delay:100ms;
+    }.car3{
+        top:16px;
+        margin-left: 61px;
+        transform-origin: left top;
+        animation-delay:200ms;
+    }.car4{
+        top:28px;
+        margin-left: -334px;
+        transform-origin: right top;
+        animation-delay:300ms;
+    }.car5{
+        top:25px;
+        margin-left: 110px;
+        transform-origin: left top;
+        animation-delay:400ms;
+}
+
+.lights{
+    position: absolute;
+    top:50%;
+    z-index: 100;
+    left: 0;right: 0;
+    }.lights img{
+        position: absolute;
+        clip:rect(0px 350px 310px 0px);
+    }.light1{
+        margin-left: -380px;
+        animation: animate 1s linear backwards infinite;
+        -webkit-animation: animate 1s linear backwards infinite;
+        top: 30px;
+    }.light2{
+        margin-left: -400px;
+        top: 0;
+        animation: animate 1.2s linear backwards infinite;
+        -webkit-animation: animate 1.2s linear backwards infinite;
+    }.light3{
+        margin-left: -400px;
+        top: -30px;
+        animation: animate 1.2s linear backwards infinite;
+        -webkit-animation: animate 1.2s linear backwards infinite;
+    }.light4{
+        margin-left: -440px;
+        top: -45px;
+        animation: animate 1.4s linear backwards infinite;
+        -webkit-animation: animate 1.4s linear backwards infinite;
+    }.light5{
+        margin-left: 0;
+        top: 20px;
+        animation: animate 1.4s linear backwards infinite;
+        -webkit-animation: animate 1.4s linear backwards infinite;
+    }.light6{
+        margin-left: 42px;
+        top: -2px;
+        animation: animate 1.6s linear backwards infinite;
+        -webkit-animation: animate 1.6s linear backwards infinite;
+    }.light7{
+        margin-left: 75px;
+        top: -15px;
+        animation: animate 1.6s linear backwards infinite;
+        -webkit-animation: animate 1.6s linear backwards infinite;
+    }.light8{
+        margin-left: 160px;
+        top: -20px;
+        animation: animate 1.8s linear backwards infinite;
+        -webkit-animation: animate 1.8s linear backwards infinite;
+    }.light9{
+        margin-left: 150px;
+        top: -40px;
+        animation: animate 1.8s linear backwards infinite;
+        -webkit-animation: animate 1.8s linear backwards infinite;
+    }.light10{
+        margin-left: 180px;
+        top: -40px;
+        animation: animate 2s linear backwards infinite;
+        -webkit-animation: animate 2s linear backwards infinite;
+    }.light11{
+        margin-left: -390px;
+        top: 45px;
+        animation: animate 2s linear backwards infinite;
+        -webkit-animation: animate 2s linear backwards infinite;
+    }.light12{
+        margin-left: -390px;
+        top: 0px;
+        animation: animate 2s linear backwards infinite;
+        -webkit-animation: animate 2s linear backwards infinite;
+    }.light13{
+        margin-left: -375px;
+        top: -46px;
+        animation: animate 2s linear backwards infinite;
+        -webkit-animation: animate 2s linear backwards infinite;
+    }.light14{
+        margin-left: -390px;
+        top: -76px;
+        animation: animate 2s linear backwards infinite;
+        -webkit-animation: animate 2s linear backwards infinite;
+    }.light15{
+        margin-left: 5px;
+        top: -22px;
+        animation: animate 2s linear backwards infinite;
+        -webkit-animation: animate 2s linear backwards infinite;
+    }.light16{
+        margin-left: 89px;
+        top: -10px;
+        animation: animate 2s linear backwards infinite;
+        -webkit-animation: animate 2s linear backwards infinite;
+    }.light17{
+        margin-left: 45px;
+        top: -40px;
+        animation: animate 2s linear backwards infinite;
+        -webkit-animation: animate 2s linear backwards infinite;
+    }.light18{
+        margin-left: 91px;
+        top: -35px;
+        animation: animate 2s linear backwards infinite;
+        -webkit-animation: animate 2s linear backwards infinite;
+    }
+/* 首页 */
+.index_page{
+    width:100%;height: 100%;
+    background-position: center center;
+    background-size:cover;
+    }.index_t1{
+    position: absolute;
+    left: 50%;top:50%;
+    margin-left:-310px;
+    margin-top:25px;
+    z-index: 101;
+    }.index_t2{
+    position: absolute;
+    left: 50%;top:50%;
+    margin-top:220px;
+    margin-left:-312px;
+    z-index: 101;
+    }.index_cars{
+    top:50%;
+    margin-top:-116px;
+    }.index_lights{
+        
+    }.index_btns{
+    position: absolute;
+    left: 0;bottom:10%;right:0;
+    z-index: 101;
+    }.index_btn{
+    display: inline-block;
+    font-size: 36px;
+    line-height: 60px;
+    border:4px solid #73003b;
+    padding: 0 40px;
+    border-radius: 30px;
+    margin:0 50px;
+    }.index_route_box{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        margin-top: -75px;
+        left: 0;
+        top: 50%;
+        perspective: 1000px;
+        -webkit-perspective: 1000px;
+        perspective-origin:center;
+        -webkit-perspective-origin:center;
+    }.index_route{
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: url(../img/route.jpg) center;
+        background-size: 100% auto;
+        transform-origin: 50% 0%;
+        -webkit-transform-origin: 50% 0%;
+        width: 100%;
+        height: 100%;
+        animation: route 2s infinite linear;
+        transform:rotateX(44deg);
+        -webkit-transform:rotateX(44deg);
+}
+/* 首页规则 */
+.index_rule{
+    display: none;
+    position: fixed;
+    text-align: left;
+    z-index: 600;
+    left: 66px;right:66px;
+    padding: 80px 66px;
+    line-height: 2.2em;
+    top:50%;
+    transform:translateY(-50%);
+    -webkit-transform:-webkit-translateY(-50%);
+    /* margin-top:-502px; */
+    background-color: rgba(0,0,0,.8);
+    }.index_close{
+    position: absolute;
+    right: 25px;
+    top:25px;
+    }.index_rule h3{
+    font-size: 25px;
+    }.index_rule dl{
+    padding:14px 0;
+    border-top: 1px solid #fff;
+    }.index_rule dt{
+    font-size: 25px;
+    }.index_rule dd{
+    padding-top:10px;
+    font-size: 22px;
+    }.index_list{
+    counter-reset: list 0;
+    }.index_li{
+    position: relative;
+    counter-increment: list;
+    padding-left: 32px;
+    }.rule_tips{
+        position: absolute;
+        left: 0;right: 0;
+        bottom: 30px;
+        text-align: center;
+        font-size: 16px;
+    }.index_li::before{
+    position: absolute;
+    left: 0;
+    content:counter(list)"、";
+}
+
+/* 答题 */
+.qusetion_bg{
+    transform:translateY(-50%);
+    -webkit-transform:-webkit-translateY(-50%);
+    animation: change 2s alternate infinite;
+}
+.qusetion_bg_load,.qusetion_bg{
+    position: absolute;
+    width:100%;
+    left:0;
+    top:50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+}
+/* 过度 */
+.car_mask{
+    position: absolute;
+    left: 0;top: 50%;
+    margin-top: -300px;
+    animation: flash 2s alternate infinite linear;
+    }.question_tit{
+    position: absolute;
+    width: 100%;
+    font-size: 48px;
+    line-height: 1.6em;
+    margin-top:-500px;
+    top:57%;
+    }.question_des{
+    position: absolute;
+    width: 100%;
+    font-size: 30px;
+    margin-top: -310px;
+    top:57%;
+    
+    }.question_wait{
+    position: absolute;
+    width: 100%;
+    font-size: 23px;
+    line-height: 1.6em;
+    margin-top:-36px;
+    top:75%;
+    
+}
+/* 问题 */
+.question_subject{
+    position: absolute;
+    top:50%;
+    margin-top:-310px;
+    left: 80px;right: 79px;
+    font-size:38px;
+    text-align: left;
+    }.question_option{
+        position: absolute;
+        top:50%;
+        left: 98px;right: 98px;
+        margin-top:-160px;
+        font-size:48px;
+        text-align: left;
+    }.question_item{
+        margin:25px 0;
+        text-shadow: #000 5px 0 5px;
+    }.question_item::before{
+        content: '';
+        display: inline-block;
+        vertical-align: text-bottom;
+        background-color: rgba(114,0,59,.5);
+        width:66px;
+        height: 58px;
+        margin-right: 36px;
+        border: 2px solid #fff;
+    }.question_cars{
+        position: absolute;
+        margin-top:370px;
+        top:50%;
+        z-index: 200;
+}
+/* 结果 */
+.question_info{
+    position: absolute;
+    left: 0;right: 0;
+    text-align: center;
+    top:50%;
+    transform: translateY(-50%);
+    -webkit-transform: -webkit-translateY(-50%);
+    }.question_result{
+    font-size:87px;
+    }.question_result h2{
+        font-size:102px;
+    }.question_result p{
+        font-size:42px;
+    }.question_result div{
+        margin-top:20px;
+        font-size:34px;
+    }.question_btns{
+        padding:30px 0 15px;
+    }.question_btn{
+        margin:36px auto;
+        font-size: 36px;
+        line-height: 68px;
+        width:420px;
+        border-radius: 40px;
+        border:6px solid #fff;
+        background-color: rgba(114,0,59,.5);
+    }.question_over{
+        font-size: 52px;
+    }.question_tip{
+        z-index: 201;
+        position: absolute;
+        left: 0;right: 0;
+        bottom: 5%;
+        font-size: 23px;
+        line-height: 2em;
+}
+/* 提交 */
+.question_form{
+    position: absolute;
+    z-index: 300;
+    left: 64px;right: 64px;
+    padding: 102px;
+    top:50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    background-color: rgba(0,0,0,.8);
+    text-align: left;
+    font-size: 26px;
+    line-height: 40px;
+    }.question_form input{
+        color:#fff;
+        height: 40px;
+        line-height: 40px;
+        font-size: 26px;
+        background-color:transparent;
+        border:none;
+    }.question_form input::placeholder{
+        /* font-size:16px; */
+        color:#514a4d;
+    }.question_form_tit{
+        font-size: 36px;
+        text-align: center;
+    }.question_form_item{
+        border:2px solid #fff;
+        margin:15px 0;
+        padding: 15px 0;
+    }.question_form_lab{
+        padding: 0 15px;
+        border-right:2px solid #fff;
+        display: inline-block;
+    }.question_form_input{
+        vertical-align: bottom;
+        height: 40px;
+        font-size: 26px;
+    }input.question_form_labArea{
+        text-align: center;
+        width:190px;
+        line-height: 40px;
+        padding: 9px;
+        border:2px solid #fff;
+    }.question_form_inputArea{
+        text-align: center;
+        display: inline-block;
+        line-height: 56px;
+        width:190px;
+        border:2px solid #fff;
+    }.question_selection{
+        border:2px solid #fff;
+    }.question_selection.show .question_select_body{
+        display: block;
+    }.question_select_body{
+        display: none;
+    }.question_select_head{
+        position: relative;
+        padding: 10px 0 10px 30px;
+    }.question_select_head::before{
+        content: "";
+        position: absolute;
+        width:20px;height: 20px;
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+        border:2px solid #fff;
+        border-top-color:transparent;
+        border-right-color:transparent;
+    }.question_selection.show .question_select_head::before{
+        margin-top:15px;
+        border:2px solid #fff;
+        border-bottom-color:transparent;
+        border-left-color:transparent;
+    }.question_form_option{
+        padding: 10px 0 10px 30px; 
+        border-top:2px solid #fff;
+    }.question_form_option::before{
+        content: "";
+        display: inline-block;
+        float: left;
+        border:2px solid #fff;
+        width:20px;
+        height: 20px;
+        margin-top:8px;
+        border-radius: 50%;
+    }.question_form_option.select::before{
+        background-color: #fff;
+    }.question_form_tip{
+        font-size: 15px;
+        line-height: 2em;
+        margin:15px 0;
+    }.question_form_submit{
+        border:2px solid #fff;
+        margin:0 auto;
+        line-height: 58px;
+        text-align: center;
+    }.question_select_cnt{
+        margin-left: 55px;
+        font-size: 23px;
+        padding-left: 5px;
+        border-left: 2px solid #fff;
+}
+.question_lottery{
+    position: absolute;
+    top:50%;left: 0;right: 0;
+    transform: translateY(-60%);
+    -webkit-transform: translateY(-60%);
+    }.question_lottery_tit{
+        font-size: 125px;
+        margin-bottom: 40px;
+    }.question_lottery_cnt{
+        font-size:38px;
+    }.question_lottery_fail{
+        font-size:36px;
+        margin: 0 auto 20px;
+        border:2px solid #fff;
+        width:324px;
+        padding: 40px 60px;
+        background-color: rgba(81,74,77,.6);
+}
+.question_share{
+    position: fixed;
+    display: none;
+    z-index: 260;
+    left: 0;top: 0;right: 0;bottom: 0;
+    background: rgba(0,0,0,.4) url('../img/share.png') no-repeat right top;
+    }.question_share_text{ 
+}
+.question_lights{
+    margin-top:450px;
+}
+#tips{
+    position: fixed;
+    top:20%;
+    left: 0;right: 0;
+    text-align: center; 
+    font-size: 32px;
+    color:#fff;
+    z-index: 9999;
+}
+.tips{
+    background-color: rgba(114,0,59,.5);
+    padding:20px 40px;
+    display: inline-block;
+    animation: show 200ms linear;
+}
+
+@keyframes flash{
+    0%{opacity: 1;}
+    100%{opacity: 0;}
+}
+@-webkit-keyframes flash{
+    0%{opacity: 1;}
+    100%{opacity: 0;}
+}
+@keyframes show{
+    0%{transform:scale(0.01)}
+    100%{transform:scale(1)}
+}
+@-webkit-keyframes show{
+    0%{-webkit-transform:scale(0.01)}
+    100%{-webkit-transform:scale(1)}
+}
+@keyframes change{
+    0%{filter: grayscale(0%); }
+    100%{filter: grayscale(100%); }
+}
+@-webkit-keyframes change{
+    0%{-webkit-filter: grayscale(0%); }
+    100%{-webkit-filter: grayscale(100%); }
+}
+@keyframes rotate{
+    0%{transform: rotate(0);}
+    100%{transform: rotate(360deg);}
+}
+@-webkit-keyframes rotate{
+    0%{-webkit-transform: rotate(0);}
+    100%{-webkit-transform: rotate(360deg);}
+}
+@keyframes animate{
+    0%{clip:rect(0px 350px 310px 0px)}
+    50%{clip:rect(0px 350px 0px 0px)}
+    51%{clip:rect(310px 350px 310px 0px)}
+    100%{clip:rect(0px 350px 310px 0px)}
+
+}
+@-webkit-keyframes animate{
+    0%{clip:rect(0px 350px 310px 0px)}
+    50%{clip:rect(0px 350px 0px 0px)}
+    51%{clip:rect(310px 350px 310px 0px)}
+    100%{clip:rect(0px 350px 310px 0px)}
+}
+@keyframes route{
+    0%{background-position: 0 0;}
+    100%{background-position: 0 -984.375px;}
+}
+@-webkit-keyframes route{
+    0%{background-position: 0 0;}
+    100%{background-position: 0 -984.375px;}
+}

@@ -239,4 +239,8 @@ class GuanzhiController extends Controller
             echo json_encode($data);exit();
         }
     }
+
+    public function actionIndex(){
+        $this->renderPartial('index');
+    }
 }
