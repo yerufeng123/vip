@@ -562,7 +562,7 @@ $(document).ready(function(){
                                 </dl>\
                                 <dl>\
                                     <dt>活动时间：</dt>\
-                                    <dd>截止到2017年10月13日</dd>\
+                                    <dd>截止到2017年10月27日</dd>\
                                 </dl>\
                                 <div class="rule_tips">本活动最终解释权归观致汽车所有</div>\
                             </div>\
@@ -696,7 +696,7 @@ $(document).ready(function(){
                 }else if(e.data.ranking == 2){
                     lotteryInfo = '你抽中了bigger不一般的<br/>JBL音响一枚！<br/>奖品即将寄出，<br/>=请耐心等待工作人员与你联系！';
                 }else{
-                    lotteryInfo = '你抽中了iphone8！<br/>奖品即将寄出，<br/>请耐心等待工作人员与你联系！';
+                    lotteryInfo = '你抽中了iphoneX！<br/>奖品即将寄出，<br/>请耐心等待工作人员与你联系！';
                 }
                 _temp = '<h3 class="question_lottery_tit">恭喜</h3>\
                             <div class="question_lottery_cnt">'+ lotteryInfo +'</div>\
