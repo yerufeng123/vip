@@ -74,7 +74,7 @@
                                              *需要到公众号设置——〉功能设置——〉JS接口安全域名 中添加当前域名
                                              */
                                             var title = '挑战你与百万豪车的缘分';//分享标题
-                                            var desc = '答题闯关有机会开走百万豪车，快来测一测吧！';//分享描述
+                                            var desc = '百万豪车已就位，不服来战！';//分享描述
                                             var link = 'http://' + window.location.host + '/guanzhi/guanzhi/index';//分享链接
                                             var imgUrl = '<?php echo _STATIC_; ?>vip/guanzhi/img/share.jpg';//分享图标
                                                 var type = '';// 分享类型,music、video或link，不填默认为link
