@@ -239,7 +239,7 @@ $(document).ready(function(){
             goods:{
                 0:'腾讯视频会员',
                 1:'JBL音响',
-                2:'iPhone8',
+                2:'iPhoneX',
             }
         };
         this.getQuestion(0,function(e){
